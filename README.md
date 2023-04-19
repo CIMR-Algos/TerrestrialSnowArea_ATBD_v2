@@ -1,6 +1,6 @@
 # CIMR L2 Terrestrial Snow Area ATBD
 
-This repository holds the ATBD (JupyterBook) v1 for a prototype Level-2 Sea Ice Concentraiton and Sea Ice Edge product for the CIMR mission.
+This repository holds the ATBD (JupyterBook) v2 for a prototype Level-2 Sea Ice Concentraiton and Sea Ice Edge product for the CIMR mission.
 
 An HTML build of the ATBD is [online](https://cimr-algos.github.io/TerrestrialSnowArea_ATBD/intro.html).
 
