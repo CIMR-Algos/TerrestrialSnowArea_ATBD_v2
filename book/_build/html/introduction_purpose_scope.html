@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction, Purpose and Scope &#8212; CIMR L2 Terrestrial Snow Area ATBD v1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="_static/watermark.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction_purpose_scope';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Background and Justification of Selected Algorithm" href="background_justification_algorithm.html" />
+    <link rel="prev" title="Definitions" href="definitions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    ATBD Terrestrial Snow Area
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applicable_ref_docs.html">Applicable and Reference Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acronyms.html">Acronyms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction, Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 Product Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/introduction_purpose_scope.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction, Purpose and Scope</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-purpose-and-scope">
+<h1>Introduction, Purpose and Scope<a class="headerlink" href="#introduction-purpose-and-scope" title="Permalink to this heading">#</a></h1>
+<p>Snow cover, the second-largest component of the cryosphere, is a crucial factor in the Earth’s energy balance owing to its high albedo <span id="id1">[<a class="reference internal" href="references.html#id4" title="M. Tedesco. Remote Sensing of the Cryosphere. John Wiley &amp; Sons, Ltd, 2014. doi:10.1002/9781118368909.">Tedesco, 2014</a>]</span>. Even though the largest annual and interannual variations in surface albedo are due to seasonal changes in snow conditions, seasonal snow occurs predominantly in the Northern Hemisphere only. Here, the vast majority of seasonal snow is found above 40° N and the maximum extent reaches about 50% of the hemispheric land area, making snow the dominant land cover type during snow season <span id="id2">[<a class="reference internal" href="references.html#id5" title="W. Rees. Remote Sensing of Snow and Ice. CRC Press, 2005. doi:10.1201/9781420023749.">Rees, 2005</a>]</span>. Meltwater from seasonal snow thus has an essential impact on freshwater resources as well as soil moisture <span id="id3">[<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">Pulliainen <em>et al.</em>, 2020</a>]</span>.</p>
+<p>Snow monitoring on global scale is an important task considering the essential role of snow in global climate and hydrologic systems, and given the scarcity of ground-based snow observations. Snow has distinctive, frequency-dependent characteristics in terms of microwave emission. This enables the use of brightness temperatures, as measured by spaceborne passive microwave sensors, for the estimation of terrestrial snow area (TSA) through (dry) snow detection methods. Those dry snow detection methods form a typical preprocessing step for the global retrieval of snow water equivalent (SWE) in order to minimise uncertainties in the latter. Reliable dry snow detection is thus crucial not only for the estimation of TSA, but also for the quantification of snow mass as demonstrated by <span id="id4">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">2020</a>]</span>. The authors assess hemispheric snow distribution as shown in <a class="reference internal" href="#swe-nature"><span class="std std-numref">Fig. 1</span></a>, amongst other, and their trend analysis provides critical information for the evaluation of the impacts and feedbacks due to changes in snow mass.</p>
+<figure class="align-default" id="swe-nature">
+<a class="reference internal image-reference" href="_images/SWE_nature.png"><img alt="_images/SWE_nature.png" src="_images/SWE_nature.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Average snow distribution of the Northern Hemisphere (non-alpine regions above 40° N) between 1980-2018 <span id="id5">[<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">Pulliainen <em>et al.</em>, 2020</a>]</span>.</span><a class="headerlink" href="#swe-nature" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Dry snow is often detected by the use of multi-spectral and/or multi-polarization methods <span id="id6">[<a class="reference internal" href="references.html#id4" title="M. Tedesco. Remote Sensing of the Cryosphere. John Wiley &amp; Sons, Ltd, 2014. doi:10.1002/9781118368909.">Tedesco, 2014</a>]</span>. Such passive microwave dry snow detection algorithms are commonly based on the Ka and Ku-band <span id="id7">[<a class="reference internal" href="references.html#id7" title="A. Chang, J. Foster, and D. Hall. Nimbus-7 SMMR derived global snow cover parameters. Ann. Glaciol., 9:39-44, 1987. doi:10.3189/S0260305500200736.">Chang <em>et al.</em>, 1987</a>, <a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">Hall <em>et al.</em>, 2002</a>]</span>, though some also incorporate further channels provided by CIMR <span id="id8">[<a class="reference internal" href="references.html#id11" title="R. Kelly. The AMSR-E Snow Depth Algorithm: Description and Initial Results. Journal of the Remote Sensing Society of Japan, 29:307-17, 01 2009. doi:10.11440/rssj.29.307.">Kelly, 2009</a>]</span>.</p>
+<p>The purpose of this study as part of CIMR Devalgo is the development of a dry snow detection algorithm tailored to the specifications of CIMR. The scope is to establish a stable initial version using Ka and Ku as core frequency bands according to <span id="id9">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id10">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>, and to prepare a snow dataset for validation and verification purposes. Upon stable performance, the X and C-band will be investigated regarding their potential to improve the dry snow detection algorithm, with the aim to develop a decision tree following the example of <span id="id11">Grody and Basist [<a class="reference internal" href="references.html#id9" title="N. Grody and A. Basist. Global identification of snowcover using SSM/I measurements. IEEE T. Geosci. Remote, 34(1):237-249, 1996. doi:10.1109/36.481908.">1996</a>]</span>. Ultimately, it is planned to evaluate L-band for the determination of subnivean soil properties.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="definitions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Definitions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="background_justification_algorithm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Background and Justification of Selected Algorithm</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lina Zschenderlein and Kari Luojus, Finnish Meteorological Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR DEVALGO study (2022-2024) (contract 4000137493).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+</div>
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

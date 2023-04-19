@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: CIMR L2 Terrestrial Snow Area ATBD
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Lina
+    family-names: Zschenderlein
+    orcid: 'https://orcid.org/0000-0001-7192-0072'
+    affiliation: Finnish Meteorological Institute
+  - given-names: Kari
+    family-names: Luojus
+    orcid: 'https://orcid.org/0000-0002-4066-6005'
+    affiliation: Finnish Meteorological Institute
+repository-code: 'https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD'
+url: >-
+  https://cimr-algos.github.io/TerrestrialSnowArea_ATBD/intro.html
+keywords:
+  - Copernicus Imaging Microwave Radiometer (CIMR)
+  - ESA DEVALGO
+version: '1'
