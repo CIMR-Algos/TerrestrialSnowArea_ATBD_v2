@@ -12,6 +12,6 @@ width: 400px
 Average snow distribution of the Northern Hemisphere (non-alpine regions above 40° N) between 1980-2018 {cite:p}`pulliainen_2020`.
 ```
 
-Dry snow is often detected by the use of multi-spectral and/or multi-polarization methods {cite:p}`tedesco_2014`. Such passive microwave dry snow detection algorithms are commonly based on the Ka and Ku-band {cite:p}`chang_1987,hall_2002`, though some also incorporate further channels provided by CIMR {cite:p}`kelly_2009`.
+Dry snow is often detected by the use of multi-spectral and/or multi-polarization methods {cite:p}`tedesco_2014`. Such passive microwave dry snow detection algorithms are commonly based on the Ka and Ku-band {cite:p}`chang_1987,hall_2002`, though some also incorporate further channels provided by CIMR {cite:p}`kelly_2009,foster_2011`.
 
 The purpose of this study as part of CIMR Devalgo is the development of a dry snow detection algorithm tailored to the specifications of CIMR. The scope is to establish a stable initial version using Ka and Ku as core frequency bands according to {cite:t}`hall_2002` and {cite:t}`pulliainen_2010`, and to prepare a snow dataset for validation and verification purposes. Upon stable performance, the X and C-band will be investigated regarding their potential to improve the dry snow detection algorithm, with the aim to develop a decision tree following the example of {cite:t}`grody_basist_1996`. Ultimately, it is planned to evaluate L-band for the determination of subnivean soil properties.

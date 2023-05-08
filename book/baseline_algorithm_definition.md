@@ -12,10 +12,10 @@ N/a
 N/a
 
 
-## CIMR Level-1B Re-sampling Approach
+## CIMR Level-1b Re-sampling Approach
 
 Resampling approach to be defined.
-Subsequent reprojection to EASE-Grid 2.0 polar projections of the Northern Hemisphere (NH) or Southern Hemisphere (SH).
+Subsequent reprojection to EASE-Grid 2.0 polar projections of the Northern Hemisphere (NH).
 
 
 ## Algorithm Assumptions and Simplifications
@@ -85,7 +85,7 @@ N/a
 ### Validation process
 
 The Level-2 TSA product is validated using brightness temperatures from operational instruments, e.g. AMSR2, which are collocated and temporally matched to exhaustive in situ SD observations from weather stations across the Northern Hemisphere.
-Main sources for SD measurements are the European Centre for Medium-Range Weather Forecasts (ECMWF) and the Global Historical Climatology Network {cite:p}`menne_2012`. Those are complemented by observations of the World Data Center of the All-Russia Research Institute of Hydrometeorological Information {cite:p}`bulygina_2011`, of the Meteorological Service of Canada, and from across the continental United States {cite:p}`dyer_2006`. The observations encompass both snow and snow-free conditions for thorough validation of both true positive and true negative classifications. The validation dataset follows closely the structure of the Round Robin Data Package (RRDP) {cite:p}`pedersen_2021`.
+Main sources for SD measurements are the European Centre for Medium-Range Weather Forecasts (ECMWF) and the Global Historical Climatology Network {cite:p}`menne_2012`. Those are complemented by observations of the World Data Center of the All-Russia Research Institute of Hydrometeorological Information {cite:p}`bulygina_2012`, of the Meteorological Service of Canada, and from across the continental United States {cite:p}`dyer_mote_2006`. The observations encompass both snow and snow-free conditions for thorough validation of both true positive and true negative classifications. The validation dataset follows closely the structure of the Round Robin Data Package (RRDP) {cite:p}`pedersen_2021`.
 
 The main metric used for validation is classification accuracy, including daily as well as monthly and total mean accuracy values.
 By binning observation classes according to in situ SD, the ability of the TSA product to map dry snow for varying snow depth can be evaluated.
