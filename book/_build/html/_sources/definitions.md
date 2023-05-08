@@ -5,7 +5,7 @@ Copernicus Imaging Microwave Radiometer
   The Copernicus Imaging Microwave Radiometer or CIMR mission by ESA includes a wide-swath conically-scanning multi-frequency microwave radiometer with launch planned for 2028.
 
 Dry snow
-  Snowpack with liquid water content equal to zero
+  Snowpack with liquid water content equal to zero.
 
 Equal-Area Scalable Earth Grid
   Northern and Southern Hemisphere projections of EASE-Grid 2.0 are based on polar aspect Lambert azimuthal equal-area projections, as defined by {cite:t}`brodzik_2012`.

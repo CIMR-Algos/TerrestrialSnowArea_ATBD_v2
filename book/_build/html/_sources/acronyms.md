@@ -1,12 +1,18 @@
 # Acronyms
 
+ACDAT
+: Algorithm Calibration Data Set
+
 AD
 : Applicable Document
 
 AMSR2
 : Advanced Microwave Scanning Radiometer 2
 
-TBD
+AVDAT
+: Algorithm Validation Data Set
+
+ATBD
 : Algorithm Theoretical Basis Document
 
 CF
@@ -39,11 +45,20 @@ IMS
 IODD
 : Input and Output Data Definition
 
+MPEF
+: Algorithm Performance Metrics
+
 NH
 : Northern Hemisphere
 
+NRT
+: Near Real Time
+
 PMW
 : Passive microwave
+
+QA
+: Quality Assessment
 
 RRDP
 : Round Robin Data Package
@@ -56,6 +71,9 @@ SD
 
 SH
 : Southern Hemisphere
+
+SMAP
+: Soil Moisture Active Passive
 
 SSM/I
 : Special Sensor Microwave/Imager
