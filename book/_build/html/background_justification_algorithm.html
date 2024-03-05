@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,12 +40,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Level-2 Product Definition" href="L2_product_definition.html" />
     <link rel="prev" title="Introduction, Purpose and Scope" href="introduction_purpose_scope.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -153,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    ATBD Terrestrial Snow Area
+                    CIMR L2 Terrestrial Snow Area ATBD
                 </a>
             </li>
         </ul>
@@ -333,11 +334,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passive-microwave-remote-sensing-of-snow">Passive Microwave Remote Sensing of Snow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-selection">Algorithm Selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-snow-detection">Dry Snow Detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subnivean-soil-status">Subnivean Soil Status</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-selection">Algorithm Selection</a></li>
 </ul>
             </nav>
         </div>
@@ -350,7 +347,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="background-and-justification-of-selected-algorithm">
-<h1>Background and Justification of Selected Algorithm<a class="headerlink" href="#background-and-justification-of-selected-algorithm" title="Permalink to this headline">#</a></h1>
+<h1>Background and Justification of Selected Algorithm<a class="headerlink" href="#background-and-justification-of-selected-algorithm" title="Permalink to this heading">#</a></h1>
 <p>Snow is a mixture of ice crystals, liquid water and air. Over time, the density of a snow pack increases due to compaction by wind and gravity, and due to thermal metamorphism <span id="id1">[<a class="reference internal" href="references.html#id5" title="W. Rees. Remote Sensing of Snow and Ice. CRC Press, 2005. doi:10.1201/9781420023749.">Rees, 2005</a>]</span>.
 Its internal structure is characterised primarily by the grain or crystal size, and by the form and orientation of those crystals.
 A further property is snow wetness which refers to the liquid water content.
@@ -358,7 +355,7 @@ For temperatures at or above the freezing point, a considerable amount of liquid
 For temperatures below the freezing point, on the other hand, a snowpack is unlikely to contain any liquid water and is thus considered to be ‘dry’.
 Below we discuss PMW remote sensing of snow with a focus on dry snow detection and associated challenges.</p>
 <section id="passive-microwave-remote-sensing-of-snow">
-<h2>Passive Microwave Remote Sensing of Snow<a class="headerlink" href="#passive-microwave-remote-sensing-of-snow" title="Permalink to this headline">#</a></h2>
+<h2>Passive Microwave Remote Sensing of Snow<a class="headerlink" href="#passive-microwave-remote-sensing-of-snow" title="Permalink to this heading">#</a></h2>
 <p>In contrast to visible and infrared bands, dry snow is comparatively transparent to microwave radiation.
 The microwave energy that is emitted from a snowpack hence originates not only from its surface, but also from deeper snow layers and from the ground beneath.
 For dry snow detection, the contribution in emission from the snow layer itself is most of the times negligible because of its low emissivity in comparison to the ground underneath <span id="id2">[<a class="reference internal" href="references.html#id4" title="M. Tedesco. Remote Sensing of the Cryosphere. John Wiley &amp; Sons, Ltd, 2014. doi:10.1002/9781118368909.">Tedesco, 2014</a>]</span>.
@@ -418,11 +415,8 @@ Besides, overlying vegetation reflects upwelling microwave radiation and emits s
 Snow cover in forested areas consequently presents higher emissivities and brightness temperatures than in unforested regions.</p>
 </section>
 <section id="algorithm-selection">
-<h2>Algorithm Selection<a class="headerlink" href="#algorithm-selection" title="Permalink to this headline">#</a></h2>
-<p>The selection of algorithms mainly addresses dry snow detection. Later development stages may focus on the determination of subnivean soil properties.</p>
-<section id="dry-snow-detection">
-<h3>Dry Snow Detection<a class="headerlink" href="#dry-snow-detection" title="Permalink to this headline">#</a></h3>
-<p>For the TSA product, the algorithm by <span id="id23">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> is selected with updated thresholds as proposed by <span id="id24">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>.
+<h2>Algorithm Selection<a class="headerlink" href="#algorithm-selection" title="Permalink to this heading">#</a></h2>
+<p>For the TSA product, the dry snow detection algorithm by <span id="id23">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> is selected with updated thresholds as proposed by <span id="id24">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>.
 The algorithm in this form is found to perform best for the channels available from CIMR, according to a recent study by <span id="id25">Zschenderlein <em>et al.</em> [<a class="reference internal" href="references.html#id20" title="L. Zschenderlein, K. Luojus, M. Takala, P. Venäläinen, and J. Pulliainen. Evaluation of passive microwave dry snow detection algorithms and application to SWE retrieval during seasonal snow accumulation. Remote Sensing of Environment, 288:113476, 2023. doi:10.1016/j.rse.2023.113476.">2023</a>]</span>.
 This study includes an extensive long-term comparison of PMW dry snow detection approaches focusing on the Ka and Ku-bands, namely <span id="id26">Armstrong and Brodzik [<a class="reference internal" href="references.html#id10" title="R. Armstrong and M. Brodzik. Recent Northern Hemisphere snow extent: a comparison of data derived from visible and microwave satellite sensors. Geophysical Research Letters, 28(19):3673-3676, 2001. doi:10.1029/2000GL012556.">2001</a>], Chang <em>et al.</em> [<a class="reference internal" href="references.html#id7" title="A. Chang, J. Foster, and D. Hall. Nimbus-7 SMMR derived global snow cover parameters. Ann. Glaciol., 9:39-44, 1987. doi:10.3189/S0260305500200736.">1987</a>], Foster <em>et al.</em> [<a class="reference internal" href="references.html#id8" title="J. Foster, A. Chang, and D. Hall. Comparison of snow mass estimates from a prototype passive microwave snow algorithm, a revised algorithm and a snow depth climatology. Remote Sensing of Environment, 62(2):132-142, 1997. doi:10.1016/S0034-4257(97)00085-0.">1997</a>], Grody and Basist [<a class="reference internal" href="references.html#id9" title="N. Grody and A. Basist. Global identification of snowcover using SSM/I measurements. IEEE T. Geosci. Remote, 34(1):237-249, 1996. doi:10.1109/36.481908.">1996</a>]</span>, <span id="id27">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id28">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>.
 The latter two algorithms are implemented in the GlobSnow v3.0 SWE product and in the EUMETSAT H SAF snow status (dry/wet) H11 product and are thus referred to as <em>GlobSnow</em> and <em>H SAF</em>, respectively.</p>
@@ -452,11 +446,6 @@ Even though the spatial correctness of the TSA as estimated by the PMW approache
 </figure>
 <p>Investigations on the implementation of the X and C-band will be based for instance on the work of <span id="id34">Kelly [<a class="reference internal" href="references.html#id11" title="R. Kelly. The AMSR-E Snow Depth Algorithm: Description and Initial Results. Journal of the Remote Sensing Society of Japan, 29:307-17, 01 2009. doi:10.11440/rssj.29.307.">2009</a>]</span>.</p>
 </section>
-<section id="subnivean-soil-status">
-<h3>Subnivean Soil Status<a class="headerlink" href="#subnivean-soil-status" title="Permalink to this headline">#</a></h3>
-<p>A possible future implementation of L-band brightness temperatures in order to specify the soil status underneath the snowpack may be based on <span id="id35">Rautiainen <em>et al.</em> [<a class="reference internal" href="references.html#id13" title="K. Rautiainen, J. Lemmetyinen, M. Schwank, A. Kontu, C. Ménard, C. Mätzler, M. Drusch, A. Wiesmann, J. Ikonen, and J. Pulliainen. Detection of soil freezing from L-band passive microwave observations. Remote Sensing of Environment, 147:206-218, 2014. doi:10.1016/j.rse.2014.03.007.">2014</a>]</span>.</p>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -485,10 +474,7 @@ Even though the spatial correctness of the TSA as estimated by the PMW approache
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="introduction_purpose_scope.html"
@@ -508,10 +494,7 @@ Even though the spatial correctness of the TSA as estimated by the PMW approache
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -527,11 +510,7 @@ Even though the spatial correctness of the TSA as estimated by the PMW approache
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passive-microwave-remote-sensing-of-snow">Passive Microwave Remote Sensing of Snow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-selection">Algorithm Selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-snow-detection">Dry Snow Detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subnivean-soil-status">Subnivean Soil Status</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-selection">Algorithm Selection</a></li>
 </ul>
   </nav></div>
 
@@ -540,7 +519,7 @@ Even though the spatial correctness of the TSA as estimated by the PMW approache
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -571,7 +550,7 @@ ESA is not responsible in any way for the content of this document.
 </div>
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -580,8 +559,8 @@ ESA is not responsible in any way for the content of this document.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>

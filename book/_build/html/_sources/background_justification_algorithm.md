@@ -90,11 +90,7 @@ Snow cover in forested areas consequently presents higher emissivities and brigh
 
 ## Algorithm Selection 
 
-The selection of algorithms mainly addresses dry snow detection. Later development stages may focus on the determination of subnivean soil properties.
-
-### Dry Snow Detection
-
-For the TSA product, the algorithm by {cite:t}`hall_2002` is selected with updated thresholds as proposed by {cite:t}`pulliainen_2010`.
+For the TSA product, the dry snow detection algorithm by {cite:t}`hall_2002` is selected with updated thresholds as proposed by {cite:t}`pulliainen_2010`.
 The algorithm in this form is found to perform best for the channels available from CIMR, according to a recent study by {cite:t}`zschenderlein_2023`.
 This study includes an extensive long-term comparison of PMW dry snow detection approaches focusing on the Ka and Ku-bands, namely {cite:t}`chang_1987,grody_basist_1996,foster_1997,armstrong_brodzik_2001`, {cite:t}`hall_2002` and {cite:t}`pulliainen_2010`.
 The latter two algorithms are implemented in the GlobSnow v3.0 SWE product and in the EUMETSAT H SAF snow status (dry/wet) H11 product and are thus referred to as *GlobSnow* and *H SAF*, respectively.
@@ -130,7 +126,3 @@ Daily mean terrestrial snow area for snow seasons from 2007/2008 until 2016/2017
 ```
 
 Investigations on the implementation of the X and C-band will be based for instance on the work of {cite:t}`kelly_2009`.
-
-### Subnivean Soil Status
-
-A possible future implementation of L-band brightness temperatures in order to specify the soil status underneath the snowpack may be based on {cite:t}`rautiainen_2014`.

@@ -51,7 +51,7 @@ Some global attributes of the Level-2 product files are given in {numref}`global
 
 |  Name                  | Description |
 |  --------------------- | ----- | 
-|  `title`                 | CIMR L2 Sea Ice Drift product |
+|  `title`                 | CIMR L2 Terrestrial Snow Area product |
 |  `processing_level`      | Level-2 |
 |  `time_coverage_start`   | Valid start time of the product |
 |  `time_coverage_end`     | Valid end time of the product |

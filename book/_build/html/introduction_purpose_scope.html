@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,12 +40,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Background and Justification of Selected Algorithm" href="background_justification_algorithm.html" />
     <link rel="prev" title="Definitions" href="definitions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -153,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    ATBD Terrestrial Snow Area
+                    CIMR L2 Terrestrial Snow Area ATBD
                 </a>
             </li>
         </ul>
@@ -335,17 +336,25 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-purpose-and-scope">
-<h1>Introduction, Purpose and Scope<a class="headerlink" href="#introduction-purpose-and-scope" title="Permalink to this headline">#</a></h1>
-<p>Snow cover, the second-largest component of the cryosphere, is a crucial factor in the Earth’s energy balance owing to its high albedo <span id="id1">[<a class="reference internal" href="references.html#id4" title="M. Tedesco. Remote Sensing of the Cryosphere. John Wiley &amp; Sons, Ltd, 2014. doi:10.1002/9781118368909.">Tedesco, 2014</a>]</span>. Even though the largest annual and interannual variations in surface albedo are due to seasonal changes in snow conditions, seasonal snow occurs predominantly in the Northern Hemisphere only. Here, the vast majority of seasonal snow is found above 40° N and the maximum extent reaches about 50% of the hemispheric land area, making snow the dominant land cover type during snow season <span id="id2">[<a class="reference internal" href="references.html#id5" title="W. Rees. Remote Sensing of Snow and Ice. CRC Press, 2005. doi:10.1201/9781420023749.">Rees, 2005</a>]</span>. Meltwater from seasonal snow thus has an essential impact on freshwater resources as well as soil moisture <span id="id3">[<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">Pulliainen <em>et al.</em>, 2020</a>]</span>.</p>
-<p>Snow monitoring on global scale is an important task considering the essential role of snow in global climate and hydrologic systems, and given the scarcity of ground-based snow observations. Snow has distinctive, frequency-dependent characteristics in terms of microwave emission. This enables the use of brightness temperatures, as measured by spaceborne passive microwave sensors, for the estimation of terrestrial snow area (TSA) through (dry) snow detection methods. Those dry snow detection methods form a typical preprocessing step for the global retrieval of snow water equivalent (SWE) in order to minimise uncertainties in the latter. Reliable dry snow detection is thus crucial not only for the estimation of TSA, but also for the quantification of snow mass as demonstrated by <span id="id4">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">2020</a>]</span>. The authors assess hemispheric snow distribution as shown in <a class="reference internal" href="#swe-nature"><span class="std std-numref">Fig. 1</span></a>, amongst other, and their trend analysis provides critical information for the evaluation of the impacts and feedbacks due to changes in snow mass.</p>
+<h1>Introduction, Purpose and Scope<a class="headerlink" href="#introduction-purpose-and-scope" title="Permalink to this heading">#</a></h1>
+<p>Snow cover, the second-largest component of the cryosphere, is a crucial factor in the Earth’s energy balance owing to its high albedo <span id="id1">[<a class="reference internal" href="references.html#id4" title="M. Tedesco. Remote Sensing of the Cryosphere. John Wiley &amp; Sons, Ltd, 2014. doi:10.1002/9781118368909.">Tedesco, 2014</a>]</span>.
+Even though the largest annual and interannual variations in surface albedo are due to seasonal changes in snow conditions, seasonal snow occurs predominantly in the Northern Hemisphere only.
+Here, the vast majority of seasonal snow is found above 40° N and the maximum extent reaches about 50% of the hemispheric land area, making snow the dominant land cover type during snow season <span id="id2">[<a class="reference internal" href="references.html#id5" title="W. Rees. Remote Sensing of Snow and Ice. CRC Press, 2005. doi:10.1201/9781420023749.">Rees, 2005</a>]</span>.
+Meltwater from seasonal snow thus has an essential impact on freshwater resources as well as soil moisture <span id="id3">[<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">Pulliainen <em>et al.</em>, 2020</a>]</span>.</p>
+<p>Snow monitoring on global scale is an important task considering the essential role of snow in global climate and hydrologic systems, and given the scarcity of ground-based snow observations.
+Snow has distinctive, frequency-dependent characteristics in terms of microwave emission. This enables the use of brightness temperatures, as measured by spaceborne passive microwave sensors, for the estimation of terrestrial snow area (TSA) through (dry) snow detection methods.
+Those dry snow detection methods form a typical preprocessing step for the global retrieval of snow water equivalent (SWE) in order to minimise uncertainties in the latter.
+Reliable dry snow detection is thus crucial not only for the estimation of TSA, but also for the quantification of snow mass as demonstrated by <span id="id4">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">2020</a>]</span>.
+The authors assess hemispheric snow distribution as shown in <a class="reference internal" href="#swe-nature"><span class="std std-numref">Fig. 1</span></a>, amongst other, and their trend analysis provides critical information for the evaluation of the impacts and feedbacks due to changes in snow mass.</p>
 <figure class="align-default" id="swe-nature">
 <a class="reference internal image-reference" href="_images/SWE_nature.png"><img alt="_images/SWE_nature.png" src="_images/SWE_nature.png" style="width: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Average snow distribution of the Northern Hemisphere (non-alpine regions above 40° N) between 1980-2018 <span id="id5">[<a class="reference internal" href="references.html#id6" title="J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. Nature, 581:294-298, 2020. doi:10.1038/s41586-020-2258-0.">Pulliainen <em>et al.</em>, 2020</a>]</span>.</span><a class="headerlink" href="#swe-nature" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Dry snow is often detected by the use of multi-spectral and/or multi-polarization methods <span id="id6">[<a class="reference internal" href="references.html#id4" title="M. Tedesco. Remote Sensing of the Cryosphere. John Wiley &amp; Sons, Ltd, 2014. doi:10.1002/9781118368909.">Tedesco, 2014</a>]</span>. Such passive microwave dry snow detection algorithms are commonly based on the Ka and Ku-band <span id="id7">[<a class="reference internal" href="references.html#id7" title="A. Chang, J. Foster, and D. Hall. Nimbus-7 SMMR derived global snow cover parameters. Ann. Glaciol., 9:39-44, 1987. doi:10.3189/S0260305500200736.">Chang <em>et al.</em>, 1987</a>, <a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">Hall <em>et al.</em>, 2002</a>]</span>, though some also incorporate further channels provided by CIMR <span id="id8">[<a class="reference internal" href="references.html#id22" title="J. Foster, D. Hall, J. Eylander, G. Riggs, S. Nghiem, M. Tedesco, E. Kim, P. Montesano, R. Kelly, K. Casey, and B. Choudhury. A blended global snow product using visible, passive microwave and scatterometer satellite data. International Journal of Remote Sensing, 32(5):1371–1395, 2011. doi:10.1080/01431160903548013.">Foster <em>et al.</em>, 2011</a>, <a class="reference internal" href="references.html#id11" title="R. Kelly. The AMSR-E Snow Depth Algorithm: Description and Initial Results. Journal of the Remote Sensing Society of Japan, 29:307-17, 01 2009. doi:10.11440/rssj.29.307.">Kelly, 2009</a>]</span>.</p>
-<p>The purpose of this study as part of CIMR Devalgo is the development of a dry snow detection algorithm tailored to the specifications of CIMR. The scope is to establish a stable initial version using Ka and Ku as core frequency bands according to <span id="id9">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id10">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>, and to prepare a snow dataset for validation and verification purposes. Upon stable performance, the X and C-band will be investigated regarding their potential to improve the dry snow detection algorithm, with the aim to develop a decision tree following the example of <span id="id11">Grody and Basist [<a class="reference internal" href="references.html#id9" title="N. Grody and A. Basist. Global identification of snowcover using SSM/I measurements. IEEE T. Geosci. Remote, 34(1):237-249, 1996. doi:10.1109/36.481908.">1996</a>]</span>. Ultimately, it is planned to evaluate L-band for the determination of subnivean soil properties.</p>
+<p>Dry snow is often detected by the use of multi-spectral and/or multi-polarization methods <span id="id6">[<a class="reference internal" href="references.html#id4" title="M. Tedesco. Remote Sensing of the Cryosphere. John Wiley &amp; Sons, Ltd, 2014. doi:10.1002/9781118368909.">Tedesco, 2014</a>]</span>.
+Such passive microwave dry snow detection algorithms are commonly based on the Ka and Ku-band <span id="id7">[<a class="reference internal" href="references.html#id7" title="A. Chang, J. Foster, and D. Hall. Nimbus-7 SMMR derived global snow cover parameters. Ann. Glaciol., 9:39-44, 1987. doi:10.3189/S0260305500200736.">Chang <em>et al.</em>, 1987</a>, <a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">Hall <em>et al.</em>, 2002</a>]</span>, though some also incorporate further channels provided by CIMR <span id="id8">[<a class="reference internal" href="references.html#id22" title="J. Foster, D. Hall, J. Eylander, G. Riggs, S. Nghiem, M. Tedesco, E. Kim, P. Montesano, R. Kelly, K. Casey, and B. Choudhury. A blended global snow product using visible, passive microwave and scatterometer satellite data. International Journal of Remote Sensing, 32(5):1371–1395, 2011. doi:10.1080/01431160903548013.">Foster <em>et al.</em>, 2011</a>, <a class="reference internal" href="references.html#id11" title="R. Kelly. The AMSR-E Snow Depth Algorithm: Description and Initial Results. Journal of the Remote Sensing Society of Japan, 29:307-17, 01 2009. doi:10.11440/rssj.29.307.">Kelly, 2009</a>]</span>.
+The purpose of this study as part of CIMR Devalgo is the development of a dry snow detection algorithm tailored to the specifications of CIMR. The scope is to establish a stable initial version using Ka and Ku as core frequency bands according to <span id="id9">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id10">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>, and to prepare a snow dataset for validation and verification purposes. Upon stable performance, the X and C-band will be investigated regarding their potential to improve the dry snow detection algorithm, with the aim to develop a decision tree following the example of <span id="id11">Grody and Basist [<a class="reference internal" href="references.html#id9" title="N. Grody and A. Basist. Global identification of snowcover using SSM/I measurements. IEEE T. Geosci. Remote, 34(1):237-249, 1996. doi:10.1109/36.481908.">1996</a>]</span>. Ultimately, it is planned to evaluate L-band for the determination of subnivean soil properties.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -374,10 +383,7 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="definitions.html"
@@ -397,10 +403,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -410,7 +413,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            
+            <div class="bd-footer-content__inner">
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -441,7 +444,7 @@ ESA is not responsible in any way for the content of this document.
 </div>
   </div>
   
-</div>
+</div></div>
           </footer>
         
 
@@ -450,8 +453,8 @@ ESA is not responsible in any way for the content of this document.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
   </footer>
