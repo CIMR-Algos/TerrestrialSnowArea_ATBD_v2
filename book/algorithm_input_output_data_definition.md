@@ -21,7 +21,7 @@ If available, early morning satellite data is preferred as input over late after
 | Field | Description | Shape/Amount |
 | ----- | -------- | ------------ |
 | L2 TSA | Terrestrial Snow Area: <br> 0 for 'snow-free', 1 for 'snow-covered land'  | EASE-Grid 2.0 NH/SH <br> (nx,ny) |
-| Status Flag &nbsp; | Pixel status: <br> 'no data', 'valid, 'open water', 'no snow possible' | EASE-Grid 2.0 NH/SH <br> (nx,ny) |
+| Status Flag &nbsp; | Pixel status: <br> 'no data', 'valid, 'open water' | EASE-Grid 2.0 NH/SH <br> (nx,ny) |
 
 ## Auxiliary data
 
