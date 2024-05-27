@@ -1,5 +1,5 @@
-ease2_nh_3.125km:
-  description: ease2_nh_3.125km
+ease2-3.125km-nh:
+  description: ease2-3.125km-nh
   projection:
     EPSG: 6931
   shape:
