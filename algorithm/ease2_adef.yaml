@@ -8,3 +8,14 @@ ease2_nh_3.125km:
   area_extent:
     lower_left_xy: [-9000000.0, -9000000.0]
     upper_right_xy: [9000000.0, 9000000.0]
+
+ease2-1.0km-testcard:
+  description: ease2-1.0km-testcard
+  projection:
+    EPSG: 6931
+  shape:
+    height: 1400
+    width: 1400
+  area_extent:
+    lower_left_xy: [0.0, -1500000.0]
+    upper_right_xy: [1400000.0, -100000.0]
