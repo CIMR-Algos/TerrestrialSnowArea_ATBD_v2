@@ -1,91 +1,93 @@
 # Acronyms
 
+```{glossary}
 ACDAT
-: Algorithm Calibration Data Set
+  Algorithm Calibration Data Set
 
 AD
-: Applicable Document
+  Applicable Document
 
 AMSR2
-: Advanced Microwave Scanning Radiometer 2
+  Advanced Microwave Scanning Radiometer 2
 
 AVDAT
-: Algorithm Validation Data Set
+  Algorithm Validation Data Set
 
 ATBD
-: Algorithm Theoretical Basis Document
+  Algorithm Theoretical Basis Document
 
 CF
-: NetCDF Climate and Forecast Metadata Conventions
+  NetCDF Climate and Forecast Metadata Conventions
 
 CIMR
-: {term}`Copernicus Imaging Microwave Radiometer`
+  {term}`Copernicus Imaging Microwave Radiometer`
+
+CRS
+  Coordinate Reference System
 
 EASE-Grid
-: {term}`Equal-Area Scalable Earth Grid`
+  {term}`Equal-Area Scalable Earth Grid`
 
 ECMWF
-: European Centre for Medium-Range Weather Forecasts
+  European Centre for Medium-Range Weather Forecasts
 
 ESA
-: European Space Agency
+  European Space Agency
 
 EUMETSAT
-: European Organization for the Exploitation of Meteorological Satellites
+  European Organization for the Exploitation of Meteorological Satellites
 
 FMI
-: Finnish Meteorological Institute
+  Finnish Meteorological Institute
 
 H SAF
-: EUMETSAT Support to Operational Hydrology and Water Management
+  EUMETSAT Support to Operational Hydrology and Water Management
 
 IMS
-: Interactive Multisensor Snow and Ice Mapping System
+  Interactive Multisensor Snow and Ice Mapping System
 
 IODD
-: Input and Output Data Definition
+  Input and Output Data Definition
 
 MPEF
-: Algorithm Performance Metrics
+  Algorithm Performance Metrics
 
 NH
-: Northern Hemisphere
+  Northern Hemisphere
 
 NRT
-: Near Real Time
+  Near Real Time
 
 PMW
-: Passive microwave
+  Passive microwave
 
 QA
-: Quality Assessment
+  Quality Assessment
 
 RRDP
-: Round Robin Data Package
+  Round Robin Data Package
 
 RD
-: Reference Document
+  Reference Document
 
 SD
-: Snow depth
-
-SH
-: Southern Hemisphere
+  Snow depth
 
 SMAP
-: Soil Moisture Active Passive
+  Soil Moisture Active Passive
 
 SSM/I
-: Special Sensor Microwave/Imager
+  Special Sensor Microwave/Imager
 
 SSMIS
-: Special Sensor Microwave Imager/Sounder
+  Special Sensor Microwave Imager/Sounder
 
 SWE
-: {term}`Snow water equivalent`
+  {term}`Snow water equivalent`
 
 TB
-: Brightness temperature
+  Brightness temperature
 
 TSA
-: {term}`Terrestrial snow area`
+  {term}`Terrestrial snow area`
+```

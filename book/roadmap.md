@@ -9,7 +9,7 @@ This would not only improve the TSA algorithm accuracy but also provide likeliho
 Besides, brightness temperature correction for water contamination per footprint or per grid cell is desirable.
 In case such a correction is not provided for CIMR L1b/L1c data products, the TSA algorithm would benefit from open water detection and filtering or correction in order to improve snow mapping accuracy especially in proximity to coastlines and (unmasked) freshwater lakes.
 Further algorithm extensions should address the screening for precipitation and the detection of thin snow cover. The additional scattering due to hydrometeors and the lesser scattering of thin snowpacks are both known challenges to passive microwave dry snow detection {cite:p}`matzler_1994`;
-They have been previously addressed by means of 22-GHz and 85-GHz brightness temperatures, which are sensitive to the respective scattering behaviours {cite:p}`grody_basist_1996, foster_2011`.
+They have been previously addressed by means of 22-GHz and 85-GHz brightness temperatures, which are sensitive to the respective scattering behaviours {cite:p}`grody_1996, foster_2011`.
 As those channels are not available for CIMR, alternative approaches have to be investigated.
 
 Although the TSA product is a stand-alone product, the development and implementation of the CIMR Level-2 Global Snow Water Equivalent (SWE) data product will be closely linked – possibly directly incorporating the TSA data in its processing chain (compare e.g. {cite:p}`luojus_2021`).
