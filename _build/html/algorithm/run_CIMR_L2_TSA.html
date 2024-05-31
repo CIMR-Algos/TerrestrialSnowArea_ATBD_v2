@@ -1,0 +1,734 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; CIMR L2 Terrestrial Snow Area ATBD v2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/watermark.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm/run_CIMR_L2_TSA';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../book/intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../book/intro.html">
+                    CIMR L2 Terrestrial Snow Area ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../book/abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/applicable_ref_docs.html">Applicable and Reference Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/acronyms.html">Acronyms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/definitions.html">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/introduction_purpose_scope.html">Introduction, Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/L2_product_definition.html">Level-2 Product Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/roadmap.html">Roadmap for Future ATBD Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/annex.html">Annex</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/algorithm/run_CIMR_L2_TSA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stand-alone script to run TSA algorithm and write L2 TSA product, alternatively call through:</span>
+<span class="c1"># run_CIMR_L2_PolarOceans.py --no-oza-adjust &quot;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/SCEPS/SCEPS_l1b_sceps_geo_polar_scene_1_unfiltered_tot_minimal_nom_nedt_apc_tot_v2p1.nc&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pyresample</span> <span class="k">as</span> <span class="nn">pr</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="c1"># local imports</span>
+<span class="k">if</span> <span class="s1">&#39;/tools/&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../.../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;algorithm/tools/&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">l2_format</span> <span class="k">as</span> <span class="nn">l2</span>
+<span class="kn">import</span> <span class="nn">TSA_algorithm</span> <span class="k">as</span> <span class="nn">algorithm</span>
+<span class="kn">import</span> <span class="nn">l2_tools</span> <span class="k">as</span> <span class="nn">tools</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reload local imports</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">algorithm</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">tools</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_parameters docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tag &#39;parameters&#39; for the CLI with papermill, adjust if necessary for stand-alone run</span>
+<span class="n">l1b_path</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">l1x_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/SCEPS/SCEPS_l1x@KA_sceps_geo_polar_scene_1_unfiltered_tot_minimal_nom_nedt_apc_tot_v2p1.nc&#39;</span>
+<span class="n">aux_dir</span> <span class="o">=</span> <span class="s1">&#39;../data/auxiliary/&#39;</span>
+<span class="n">l2_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L2 Files/&#39;</span>
+<span class="n">l2_grid</span> <span class="o">=</span> <span class="s1">&#39;ease2-3.125km-nh&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check input parameters</span>
+<span class="n">l1x_scenes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;devalgo_geometric&#39;</span><span class="p">,</span> <span class="s1">&#39;devalgo_radiometric&#39;</span><span class="p">,</span> <span class="s1">&#39;sceps_polar1&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">l1x_path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">l1x_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">l1x_scenes</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The input L1X file does not exist, and is not one of the pre-registered </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l1x_scenes</span><span class="p">,))</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">l2_dir</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The L2 output directory </span><span class="si">{}</span><span class="s2"> does not exist.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l2_dir</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">aux_dir</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The auxiliary directory </span><span class="si">{}</span><span class="s2"> does not exist.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">aux_dir</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Handle pre-defined L1X files</span>
+<span class="k">if</span> <span class="n">l1x_path</span> <span class="ow">in</span> <span class="n">l1x_scenes</span><span class="p">:</span>
+    <span class="n">test_card_name</span> <span class="o">=</span> <span class="n">l1x_path</span>
+    <span class="k">if</span> <span class="n">l1x_path</span> <span class="o">==</span> <span class="s1">&#39;devalgo_geometric&#39;</span><span class="p">:</span>    
+        <span class="c1"># DEVALGO simulated geometric test card</span>
+        <span class="n">l1x_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Geometric/&#39;</span>
+        <span class="n">l1x_fn</span> <span class="o">=</span> <span class="s1">&#39;W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230417T105425_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+    <span class="k">elif</span> <span class="n">l1x_path</span> <span class="o">==</span> <span class="s1">&#39;devalgo_radiometric&#39;</span><span class="p">:</span>
+        <span class="c1"># DEVALGO simulated radiometric test card</span>
+        <span class="n">l1x_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Radiometric/&#39;</span>
+        <span class="n">l1x_fn</span> <span class="o">=</span> <span class="s1">&#39;W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+    <span class="k">elif</span> <span class="n">l1x_path</span> <span class="o">==</span> <span class="s1">&#39;sceps_polar1&#39;</span><span class="p">:</span>
+        <span class="c1"># SCEPS simulated radiometric test card</span>
+        <span class="n">l1x_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/SCEPS/&#39;</span>
+        <span class="n">l1x_fn</span> <span class="o">=</span> <span class="s1">&#39;SCEPS_l1x@KA_sceps_geo_polar_scene_1_unfiltered_tot_minimal_nom_nedt_apc_tot_v2p1.nc&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown test_card </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l1x_path</span><span class="p">))</span>
+        
+    <span class="n">l1x_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l1x_path</span><span class="p">,</span> <span class="n">l1x_fn</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;devalgo_test_scene_1&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">l1x_path</span><span class="p">):</span>
+        <span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;devalgo_radiometric&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;devalgo_test_scene_2&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">l1x_path</span><span class="p">):</span>
+        <span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;devalgo_geometric&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;sceps_geo_polar_scene_1&#39;</span><span class="p">:</span>
+        <span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;sceps_polar1&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;unknown&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area_def</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load_area</span><span class="p">(</span><span class="s1">&#39;ease2_adef.yaml&#39;</span><span class="p">,</span><span class="n">l2_grid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load landmask if available</span>
+<span class="k">if</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_geometric&#39;</span><span class="p">:</span>
+    <span class="n">dem_ref_scenario</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/Test_scenes_downscaled_projected/test_scene_2_compressed_lowres.nc&#39;</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dem_ref_scenario</span><span class="p">)</span>
+    <span class="n">lons</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">lats</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="n">swath_def</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">SwathDefinition</span><span class="p">(</span><span class="n">lons</span><span class="o">=</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="o">=</span><span class="n">lats</span><span class="p">)</span>
+    <span class="n">land_mask</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">kd_tree</span><span class="o">.</span><span class="n">resample_nearest</span><span class="p">(</span><span class="n">swath_def</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;landflag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">area_def</span><span class="p">,</span>
+                            <span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">20000</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_radiometric&#39;</span><span class="p">:</span>
+    <span class="n">dem_ref_scenario</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/Test_scenes_downscaled_projected/test_scene_1_compressed_lowres.nc&#39;</span>
+    <span class="n">ds</span><span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dem_ref_scenario</span><span class="p">)</span>
+    <span class="n">lons</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">lats</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="n">swath_def</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">SwathDefinition</span><span class="p">(</span><span class="n">lons</span><span class="o">=</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="o">=</span><span class="n">lats</span><span class="p">)</span>
+    <span class="n">land_mask</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">kd_tree</span><span class="o">.</span><span class="n">resample_nearest</span><span class="p">(</span><span class="n">swath_def</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;landflag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">area_def</span><span class="p">,</span>
+                            <span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">20000</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;sceps_polar1&#39;</span><span class="p">:</span>
+    <span class="n">dem_ref_scenario</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/SCEPS/cimr_sceps_geo_card_devalgo_polarscene_1_20161217_harmonised_v2p0_surface.nc&#39;</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dem_ref_scenario</span><span class="p">)</span>
+    <span class="n">lons</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span>
+    <span class="n">lats</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span>
+
+    <span class="n">swath_def</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">SwathDefinition</span><span class="p">(</span><span class="n">lons</span><span class="o">=</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="o">=</span><span class="n">lats</span><span class="p">)</span>
+    <span class="n">land_mask</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">kd_tree</span><span class="o">.</span><span class="n">resample_nearest</span><span class="p">(</span><span class="n">swath_def</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;land_sea_ice_mask&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]),</span> <span class="n">area_def</span><span class="p">,</span>
+                            <span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">20000</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+    <span class="n">land_mask</span><span class="p">[(</span><span class="n">land_mask</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">land_mask</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>      <span class="c1"># set water (incl. sea ice)</span>
+    <span class="n">land_mask</span><span class="p">[</span><span class="n">land_mask</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                           <span class="c1"># set land</span>
+
+<span class="n">ds</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">algo</span> <span class="o">=</span> <span class="s1">&#39;Pulliainen2010&#39;</span>
+<span class="n">algo_version</span> <span class="o">=</span> <span class="s1">&#39;0.9.0&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read L1X data</span>
+<span class="n">data_fwd</span><span class="p">,</span><span class="n">geo_fwd</span><span class="p">,</span><span class="n">data_bck</span><span class="p">,</span><span class="n">geo_bck</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">read_l1x</span><span class="p">(</span><span class="n">l1x_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># detection forward and backward</span>
+<span class="n">TSA_fwd</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_fwd</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
+<span class="n">TSA_bck</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_bck</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># individual reprojection</span>
+<span class="n">TSA_fwd_proj</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_fwd</span><span class="p">,</span><span class="n">geo_fwd</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">)</span>
+<span class="n">TSA_bck_proj</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_bck</span><span class="p">,</span><span class="n">geo_bck</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># intermediate combined data</span>
+<span class="n">TSA_comb</span><span class="p">,</span> <span class="n">TSA_comb_uncert</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">combine_proj</span><span class="p">(</span><span class="n">TSA_fwd_proj</span><span class="p">,</span><span class="n">TSA_bck_proj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># status_flag</span>
+<span class="n">TSA_status_flag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_comb</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;i8&#39;</span><span class="p">)</span>
+
+<span class="n">TSA_status_flag</span><span class="p">[</span><span class="n">TSA_status_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>                    <span class="c1"># 8: no data, out of grid</span>
+<span class="n">TSA_status_flag</span><span class="p">[</span><span class="n">land_mask</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                          <span class="c1"># 0: water</span>
+<span class="n">TSA_status_flag</span><span class="p">[(</span><span class="n">TSA_comb</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">land_mask</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># 1: land</span>
+<span class="n">TSA_status_flag</span><span class="p">[(</span><span class="n">TSA_comb</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">land_mask</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>      <span class="c1"># 2: valid snow</span>
+<span class="c1"># TSA_status_flag[] = 3                                      # 3: [placeholder]</span>
+
+<span class="n">status_flag_comment</span> <span class="o">=</span> <span class="s1">&#39;0: water; 1: land; 2: snow (valid); 3-7: [placeholders]; 8: no data, out of grid.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TSA_uncertainty</span>
+<span class="n">TSA_uncertainty</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_comb</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;i8&#39;</span><span class="p">)</span> 
+
+<span class="n">TSA_uncertainty</span><span class="p">[</span><span class="n">TSA_comb_uncert</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                    <span class="c1"># 0: very likely snow-free</span>
+<span class="n">TSA_uncertainty</span><span class="p">[</span><span class="n">TSA_comb_uncert</span> <span class="o">==</span> <span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1"># 1: likely snow</span>
+<span class="n">TSA_uncertainty</span><span class="p">[</span><span class="n">TSA_comb_uncert</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>                    <span class="c1"># 2: very likely snow</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TSA</span>
+<span class="n">TSA_l2</span> <span class="o">=</span> <span class="n">TSA_comb</span>
+<span class="c1"># TSA_l2 = np.zeros(TSA_status_flag.shape)</span>
+
+<span class="c1"># TSA_l2[TSA_l2 == 0] = np.nan                                 # nan: no data, out of grid</span>
+<span class="c1"># TSA_l2[TSA_comb == 0] = 0                                    # 0: snow free</span>
+<span class="c1"># TSA_l2[TSA_comb == 1] = 1                                    # 1: snow covered (dry)</span>
+<span class="c1"># TSA_l2[TSA_comb == 2] = 2                                    # 2: snow covered (wet) [placeholder]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get template L2 format (netCDF/CF) from the Tools module</span>
+<span class="n">ds_l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">get_CIMR_L2_template</span><span class="p">(</span><span class="s1">&#39;grid&#39;</span><span class="p">,</span> <span class="n">geo_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span> <span class="n">add_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># create DataArray for TSA from template</span>
+<span class="n">da_tsa</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">TSA_l2</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                        <span class="n">attrs</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;tsa&#39;</span><span class="p">)</span>
+<span class="n">da_tsa</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Terrestrial Snow Area (</span><span class="si">{}</span><span class="s1"> algorithm)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">algo</span><span class="p">)</span>
+<span class="n">da_tsa</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;standard_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;terrestrial_snow_area&#39;</span>
+<span class="n">da_tsa</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">da_tsa</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;coverage_content_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NA&#39;</span>
+<span class="n">da_tsa</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;auxiliary_variables&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;terrestrial_snow_area_uncertainty,status_flag&#39;</span>
+
+<span class="c1"># create DataArray for TSA_uncertainty from template</span>
+<span class="n">da_uncert</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">TSA_uncertainty</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                        <span class="n">attrs</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;tsa_uncertainty&#39;</span><span class="p">)</span>
+<span class="n">da_uncert</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Qualitative uncertainty for Terrestrial Snow Area&#39;</span>
+<span class="n">da_uncert</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;standard_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;terrestrial_snow_area_uncertainty&#39;</span>
+<span class="n">da_uncert</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;coverage_content_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;QualityInformation&#39;</span>
+<span class="n">da_uncert</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># create DataArray for status_flag from template</span>
+<span class="n">da_flag</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">TSA_status_flag</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                        <span class="n">attrs</span><span class="o">=</span><span class="n">ds_l2</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;status_flag&#39;</span><span class="p">)</span>
+<span class="n">da_flag</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Status flag for Terrestrial Snow Area&#39;</span>
+<span class="n">da_flag</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;coverage_content_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;AuxiliaryInformation&#39;</span>
+<span class="n">da_flag</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;comment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status_flag_comment</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add data arrays to ds_l2 object</span>
+<span class="n">ds_l2</span> <span class="o">=</span> <span class="n">ds_l2</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">da_tsa</span><span class="p">)</span>
+<span class="n">ds_l2</span> <span class="o">=</span> <span class="n">ds_l2</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">da_uncert</span><span class="p">)</span>
+<span class="n">ds_l2</span> <span class="o">=</span> <span class="n">ds_l2</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">da_flag</span><span class="p">)</span>
+
+<span class="c1"># customize global attributes</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;CIMR L2 NRT3H Terrestrial Snow Area&#39;</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Terrestrial Snow Area computed with the prototype algorithm developed in the ESA CIMR DEVALGO study. The algorithm combines brightness temperatures from the Ku and Ka channels. The product file contains the TSA, its uncertainties, and status flag.&#39;</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;l1b_file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">l1b_path</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;l1x_file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">l1x_path</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;algorithm_version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">algo_version</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;creator_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Lina Zschenderlein&#39;</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;creator_email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;lina.zschenderlein@fmi.fi&#39;</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;institution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Finnish Meteorological Institute&#39;</span>
+
+<span class="c1"># remove &#39;template&#39; variable</span>
+<span class="n">ds_l2</span> <span class="o">=</span> <span class="n">ds_l2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">)</span>
+
+<span class="c1"># write to file</span>
+<span class="n">l2_n</span> <span class="o">=</span> <span class="s1">&#39;cimr_devalgo_l2_tsa_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">.nc&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l2_grid</span><span class="p">,</span> <span class="n">test_card_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span> <span class="p">)</span>
+<span class="n">l2_n</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l2_dir</span><span class="p">,</span> <span class="n">l2_n</span><span class="p">)</span>
+<span class="n">ds_l2</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="n">l2_n</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;NETCDF4_CLASSIC&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l2_n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./algorithm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Finnish Meteorological Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR DEVALGO study (2022-2024) (contract 4000137493).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+</div>
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

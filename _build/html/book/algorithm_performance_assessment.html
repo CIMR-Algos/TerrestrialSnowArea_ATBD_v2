@@ -345,6 +345,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-assessment-using-demonstration-reference-scenario">Algorithm Performance Assessment using Demonstration Reference Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -358,34 +359,107 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="algorithm-performance-assessment">
 <h1>Algorithm Performance Assessment<a class="headerlink" href="#algorithm-performance-assessment" title="Permalink to this heading">#</a></h1>
-<p>Self standing Python code and results within Jupyter Book</p>
+<p>The following performance assessment of the CIMR L2 TSA algorithm focuses predominantly on the radiometric scene of the Demonstration Reference Scenario.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Refer <a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html"><span class="doc std std-doc">here</span></a> for a demonstration of the TSA algorithm for the SCEPS Polar Scene.</p>
+</div>
 <section id="l1-e2es-demonstration-reference-scenario-picasso-scene-definition">
 <h2>L1 E2ES Demonstration Reference Scenario (Picasso) scene definition<a class="headerlink" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition" title="Permalink to this heading">#</a></h2>
+<p>The Demonstration Reference Scenario consists of two scenes, highlighting radiometric and geometric properties, respectively.
+Each scene encorporates up to 8 different surface types, including sea ice (first and multi-year ice), land (snow-free and snow-covered), and open ocean (four states of varying sea surface temperature and salinity).
+Each surface condition has allocated a representative <a class="reference internal" href="acronyms.html#term-TB"><span class="xref std std-term">TB</span></a> for each <a class="reference internal" href="acronyms.html#term-CIMR"><span class="xref std std-term">CIMR</span></a> channel and polarisation, with the land TBs being provided in <a class="reference internal" href="#picasso-tb"><span class="std std-numref">Table 4</span></a>.</p>
+<table class="colwidths-auto table" id="picasso-tb">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Brightness temperatures of horizontal and vertical polarization for snow-free and snow-covered land.</span><a class="headerlink" href="#picasso-tb" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-left head"><p> </p></th>
+<th class="head"><p>Snow-covered</p></th>
+<th class="head"><p>TB h-pol (K)</p></th>
+<th class="head"><p>TB v-pol (K)</p></th>
+<th class="text-left head"><p>Snow-free</p></th>
+<th class="head"><p>TB h-pol (K)</p></th>
+<th class="head"><p>TB v-pol (K)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>L  (1.4GHz)</p></td>
+<td><p> </p></td>
+<td><p>229</p></td>
+<td><p>247</p></td>
+<td class="text-left"><p></p></td>
+<td><p>240</p></td>
+<td><p>262</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>C  (6.9GHz)</p></td>
+<td><p> </p></td>
+<td><p>239</p></td>
+<td><p>257</p></td>
+<td class="text-left"><p></p></td>
+<td><p>248</p></td>
+<td><p>252</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>X  (10.9GHz)</p></td>
+<td><p> </p></td>
+<td><p>248</p></td>
+<td><p>261</p></td>
+<td class="text-left"><p></p></td>
+<td><p>247</p></td>
+<td><p>251</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Ku (18.7GHz)</p></td>
+<td><p> </p></td>
+<td><p>261</p></td>
+<td><p>266</p></td>
+<td class="text-left"><p></p></td>
+<td><p>248</p></td>
+<td><p>260</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Ka (36.5GHz)</p></td>
+<td><p> </p></td>
+<td><p>259</p></td>
+<td><p>262</p></td>
+<td class="text-left"><p></p></td>
+<td><p>245</p></td>
+<td><p>240</p></td>
+</tr>
+</tbody>
+</table>
+<p>In the radiometric scene, all surface types are placed adjacent to each other to artificially construct all possible boundary transitions, whilst also providing sea ice concentration sub-resolution gradients (see <a class="reference internal" href="#picasso-scene"><span class="std std-numref">Fig. 5</span></a>, left).
+The geometric scene, on the other hand, features high-contrast brightness temperature patterns for ocean parameters (see <a class="reference internal" href="#picasso-scene"><span class="std std-numref">Fig. 5</span></a>, right).</p>
 <figure class="align-default" id="picasso-scene">
 <a class="reference internal image-reference" href="../_images/picasso-scene.png"><img alt="../_images/picasso-scene.png" src="../_images/picasso-scene.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Demonstration Reference Scenario (Picasso) including a radiometric scene (left) representing 8 different surface types (2x sea ice, 2x land, 4x ocean) adjacent to each other and sea ice concentration sub-resolution gradients, and a geometric scene (right) with a high-contrast brightness temperature pattern.</span><a class="headerlink" href="#picasso-scene" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Demonstration Reference Scenario (Picasso) including a radiometric scene (left) and a geometric scene (right).</span><a class="headerlink" href="#picasso-scene" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="algorithm-performance-metrics-mpef">
 <h2>Algorithm Performance Metrics (MPEF)<a class="headerlink" href="#algorithm-performance-metrics-mpef" title="Permalink to this heading">#</a></h2>
-<p>The performance of the TSA algorithm is evaluated by means of classification accuracy.
-For this, TSA estimates are divided into true positive (TP), false positive (FP), true negative (TN) and false negative (FN) observations.
-Those observation classes for a single day are used to calculate the daily classification accuracy:</p>
+<p>The performance of the binary TSA algorithm is evaluated by means of a confusion matrix set-up.
+For this, TSA estimates are divided into true positive (<a class="reference internal" href="acronyms.html#term-TP"><span class="xref std std-term">TP</span></a>), false positive (<a class="reference internal" href="acronyms.html#term-FP"><span class="xref std std-term">FP</span></a>), true negative (<a class="reference internal" href="acronyms.html#term-TN"><span class="xref std std-term">TN</span></a>) and false negative (<a class="reference internal" href="acronyms.html#term-FN"><span class="xref std std-term">FN</span></a>) observations.
+Those observation classes are used to calculate the classification accuracy per scene:</p>
 <div class="math notranslate nohighlight" id="equation-accuracy">
-<span class="eqno">(2)<a class="headerlink" href="#equation-accuracy" title="Permalink to this equation">#</a></span>\[\text{accuracy} = \frac{\text{TP}+\text{TN}}{\text{TP}+\text{FP}+\text{TN}+\text{FN}},\]</div>
-<p>which is obtained for all days and subsequently used to derive monthly and total mean accuracy values.
-In addition, observation classes are binned with respect to corresponding in situ SD which clarifies the ability of the TSA algorithm to detect dry snow for varying snow depth.</p>
+<span class="eqno">(3)<a class="headerlink" href="#equation-accuracy" title="Permalink to this equation">#</a></span>\[\text{accuracy} = \frac{\text{TP}+\text{TN}}{\text{TP}+\text{FP}+\text{TN}+\text{FN}}.\]</div>
+<p>The evaluation addresses the main TSA product incorporating TB data from forward and backward scans.
+Metrics are further computed separately for the forward and the backward scan to demonstrate the concept’s suitability.</p>
 </section>
 <section id="algorithm-calibration-data-set-acdat">
 <h2>Algorithm Calibration Data Set (ACDAT)<a class="headerlink" href="#algorithm-calibration-data-set-acdat" title="Permalink to this heading">#</a></h2>
+<p>N/a</p>
 </section>
 <section id="algorithm-validation-data-set-avdat">
 <h2>Algorithm Validation Data Set (AVDAT)<a class="headerlink" href="#algorithm-validation-data-set-avdat" title="Permalink to this heading">#</a></h2>
+<p>N/a</p>
 </section>
 <section id="test-results-using-demonstration-reference-scenario">
 <h2>Test Results using Demonstration Reference Scenario<a class="headerlink" href="#test-results-using-demonstration-reference-scenario" title="Permalink to this heading">#</a></h2>
+<p>The algorithm performance assessment for the radiometric scene as well as the algorithm demonstration for the geometric scene follow the overall procedure:</p>
+<ul class="simple">
+<li><p>Definition of the Coordinate Reference System (<a class="reference internal" href="acronyms.html#term-CRS"><span class="xref std std-term">CRS</span></a>)</p></li>
+<li><p>Loading and visualisation of the scene’s ground truth</p></li>
+<li><p>Read in TB data collocated to the Ka-band channel</p></li>
+<li><p>Run the TSA algorithm incl. reprojection to the CRS</p></li>
+</ul>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -432,14 +506,14 @@ In addition, observation classes are binned with respect to corresponding in sit
 </div>
 </details>
 </div>
-<p>Reprojection for algorithm performance assessment: EASE2 1km (test card ground truth)</p>
+<p>For the performance assessment, the <a class="reference internal" href="acronyms.html#term-CRS"><span class="xref std std-term">CRS</span></a> corresponds to the native grid of the Demonstration Reference Scenario, namely EASE-Grid 2.0 polar projection of the Northern Hemisphere with a spatial resolution of 1km.
+Outputs of the TSA algorithm are reprojected to this grid for a comparison with the test card ground truth.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l2_grid</span> <span class="o">=</span> <span class="s1">&#39;testcard_ease2_1km&#39;</span>
-<span class="n">area_def</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load_area</span><span class="p">(</span><span class="s1">&#39;../algorithm/testcard_adef.yaml&#39;</span><span class="p">,</span><span class="n">l2_grid</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l2_grid</span> <span class="o">=</span> <span class="s1">&#39;ease2-1.0km-testcard&#39;</span>
+<span class="n">area_def</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load_area</span><span class="p">(</span><span class="s1">&#39;../algorithm/ease2_adef.yaml&#39;</span><span class="p">,</span><span class="n">l2_grid</span><span class="p">)</span>
 
 <span class="n">cart_crs</span> <span class="o">=</span> <span class="n">area_def</span><span class="o">.</span><span class="n">to_cartopy_crs</span><span class="p">()</span>
-<span class="c1"># extent = cart_crs.bounds</span>
 <span class="n">trg_lon</span><span class="p">,</span> <span class="n">trg_lat</span> <span class="o">=</span> <span class="n">area_def</span><span class="o">.</span><span class="n">get_lonlats</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -447,13 +521,17 @@ In addition, observation classes are binned with respect to corresponding in sit
 </div>
 <section id="radiometric-demonstration-reference-scenario">
 <h3>Radiometric Demonstration Reference Scenario<a class="headerlink" href="#radiometric-demonstration-reference-scenario" title="Permalink to this heading">#</a></h3>
+<p>The snow cover conditions in the radiometric scene simulate an established snowpack of sufficient snow depth and snow density to cause noticeable volume scattering effects for Ka-band brightness temperatures.
+Challenging conditions such as shallow or wet snow are not represented, nor are complex terrain or lake ice.
+Therefore, the results should be interpreted as optimistic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load ground truth of test card</span>
 <span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;devalgo_radiometric&#39;</span>
 
-<span class="n">dem_ref_scene</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/Test_scenes_downscaled_projected/test_scene_1_compressed_lowres.nc&#39;</span>
+<span class="n">dem_ref_scene</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/Test_scenes_downscaled_projected/test_scene_1_compressed_lowres.nc&#39;</span>
 <span class="n">data_rad</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dem_ref_scene</span><span class="p">)</span>
+
 <span class="c1"># mirror ground truth on x-axis</span>
 <span class="n">landmask_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_rad</span><span class="p">[</span><span class="s1">&#39;landflag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">surfaces_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_rad</span><span class="p">[</span><span class="s1">&#39;surfaces&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -479,7 +557,6 @@ In addition, observation classes are binned with respect to corresponding in sit
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
 <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;Water&#39;</span><span class="p">,</span> <span class="s1">&#39;Land&#39;</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-<span class="c1"># ax.set_extent([-110, 110, 60, 90], crs=ccrs.PlateCarree())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -493,7 +570,6 @@ In addition, observation classes are binned with respect to corresponding in sit
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
 <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;1 : First-year sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;2 : Multi-year sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;3 : Snow-covered land&#39;</span><span class="p">,</span> <span class="s1">&#39;4 : Snow-free land&#39;</span><span class="p">,</span> <span class="s1">&#39;5 : Ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;6 : Ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;7 : Ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;8 : Ocean&#39;</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-<span class="c1"># ax.set_extent([-10, 90, 75, 90,], crs=ccrs.PlateCarree())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -509,9 +585,9 @@ In addition, observation classes are binned with respect to corresponding in sit
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_radiometric&#39;</span><span class="p">:</span>
-    <span class="n">l1x</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/L1C Files/Radiometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Radiometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
 <span class="k">elif</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_geometric&#39;</span><span class="p">:</span>
-    <span class="n">l1x</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/L1C Files/Geometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Geometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230417T105425_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
 
 <span class="n">data_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">data_bck</span><span class="p">,</span><span class="n">geoloc_bck</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">read_l1x</span><span class="p">(</span><span class="n">l1x</span><span class="p">)</span>
 </pre></div>
@@ -526,10 +602,10 @@ In addition, observation classes are binned with respect to corresponding in sit
 <span class="n">TSA_fwd</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_fwd</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
 <span class="n">TSA_bck</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_bck</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
 
-<span class="n">TSA_fwd_proj</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
-<span class="n">TSA_bck_proj</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_bck</span><span class="p">,</span><span class="n">geoloc_bck</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">TSA_fwd_rad</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">TSA_bck_rad</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_bck</span><span class="p">,</span><span class="n">geoloc_bck</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
 
-<span class="n">TSA_rad</span><span class="p">,</span> <span class="n">TSA_uncert_rad</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">combine_proj</span><span class="p">(</span><span class="n">TSA_fwd_proj</span><span class="p">,</span><span class="n">TSA_bck_proj</span><span class="p">)</span>
+<span class="n">TSA_rad</span><span class="p">,</span> <span class="n">TSA_uncert_rad</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">combine_proj</span><span class="p">(</span><span class="n">TSA_fwd_rad</span><span class="p">,</span><span class="n">TSA_bck_rad</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -576,10 +652,11 @@ In addition, observation classes are binned with respect to corresponding in sit
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load ground truth of test card</span>
 <span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;devalgo_geometric&#39;</span>
 
-<span class="n">dem_ref_scene</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/Test_scenes_downscaled_projected/test_scene_2_compressed_lowres.nc&#39;</span>
+<span class="n">dem_ref_scene</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/Test_scenes_downscaled_projected/test_scene_2_compressed_lowres.nc&#39;</span>
 <span class="n">data_geo</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dem_ref_scene</span><span class="p">)</span>
-<span class="c1"># # mirror ground truth on x-axis</span>
-<span class="c1"># landmask_geo = np.flip(data_ref[&#39;landflag&#39;].values,0)     # no landmask available for geometric scenario</span>
+
+<span class="c1"># mirror ground truth on x-axis</span>
+<span class="c1"># landmask_geo = np.flip(data_ref[&#39;landflag&#39;].values,0)</span>
 <span class="n">surfaces_geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_geo</span><span class="p">[</span><span class="s1">&#39;surfaces&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">lon_geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_geo</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">lat_geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_geo</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -603,8 +680,8 @@ In addition, observation classes are binned with respect to corresponding in sit
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
 <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;1 : Sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;5: Ocean&#39;</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-<span class="c1"># ax.set_extent([-110, 110, 60, 90], crs=ccrs.PlateCarree())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -618,9 +695,9 @@ In addition, observation classes are binned with respect to corresponding in sit
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_radiometric&#39;</span><span class="p">:</span>
-    <span class="n">l1x</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/L1C Files/Radiometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Radiometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
 <span class="k">elif</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_geometric&#39;</span><span class="p">:</span>
-    <span class="n">l1x</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/L1C Files/Geometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230417T105425_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Geometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230417T105425_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
 
 <span class="n">data_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">data_bck</span><span class="p">,</span><span class="n">geoloc_bck</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">read_l1x</span><span class="p">(</span><span class="n">l1x</span><span class="p">)</span>
 </pre></div>
@@ -635,10 +712,10 @@ In addition, observation classes are binned with respect to corresponding in sit
 <span class="n">TSA_fwd</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_fwd</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
 <span class="n">TSA_bck</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_bck</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
 
-<span class="n">TSA_fwd_proj</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
-<span class="n">TSA_bck_proj</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_bck</span><span class="p">,</span><span class="n">geoloc_bck</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">TSA_fwd_geo</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">TSA_bck_geo</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_bck</span><span class="p">,</span><span class="n">geoloc_bck</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
 
-<span class="n">TSA_geo</span><span class="p">,</span> <span class="n">TSA_uncert_geo</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">combine_proj</span><span class="p">(</span><span class="n">TSA_fwd_proj</span><span class="p">,</span><span class="n">TSA_bck_proj</span><span class="p">)</span>
+<span class="n">TSA_geo</span><span class="p">,</span> <span class="n">TSA_uncert_geo</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">combine_proj</span><span class="p">(</span><span class="n">TSA_fwd_geo</span><span class="p">,</span><span class="n">TSA_bck_geo</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -651,7 +728,7 @@ In addition, observation classes are binned with respect to corresponding in sit
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_plot_geo</span> <span class="o">=</span> <span class="n">TSA_uncert_geo</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="c1"># TSA_plot_geo[landmask_geo == 0] = 0                              # no water mask for geo</span>
+<span class="c1"># TSA_plot_geo[landmask_geo == 0] = 0                              # no water mask for geometric scene</span>
 <span class="n">TSA_plot_geo</span><span class="p">[</span><span class="n">TSA_plot_geo</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span> 
 <span class="n">TSA_plot_geo</span><span class="p">[</span><span class="n">TSA_plot_geo</span> <span class="o">==</span> <span class="mf">1.5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 
@@ -681,7 +758,10 @@ In addition, observation classes are binned with respect to corresponding in sit
 </section>
 <section id="algorithm-performance-assessment-using-demonstration-reference-scenario">
 <h2>Algorithm Performance Assessment using Demonstration Reference Scenario<a class="headerlink" href="#algorithm-performance-assessment-using-demonstration-reference-scenario" title="Permalink to this heading">#</a></h2>
-<p>Only for radiometric test card since geometric does not have snow-free/snow-covered land.</p>
+<p>The core of the performance assessment is conducted using the radiometric test card, as it covers snow-free as well as snow-covered land surfaces.
+The performance metrics are computed for the standard TSA algorithm combining forward and backward scan data, as well as for individual scans.
+Note that the choice of reprojection parameters introduces an uncertainty in the evaluation metrics of about <span class="math notranslate nohighlight">\(\pm\)</span>3%.</p>
+<p>Forward and backward scan:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_rad_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_rad</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -697,6 +777,45 @@ In addition, observation classes are binned with respect to corresponding in sit
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count evaluated pixels</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">TSA_rad_diff</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># print(dict(zip(unique,counts)))</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>              <span class="c1"># -1: FN</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>              <span class="c1">#  0: TP</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>              <span class="c1">#  1: TN</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>              <span class="c1">#  2: FP</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># ignore water and sea ice for total count</span>
+
+<span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span><span class="o">/</span><span class="n">total</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">acc</span><span class="p">)</span>
+<span class="n">tpr</span> <span class="o">=</span> <span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TP rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">tnr</span> <span class="o">=</span> <span class="n">tn</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tn</span><span class="o">+</span><span class="n">fp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TN rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tnr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.95989
+TP rate:  0.95590
+TN rate:  0.96387
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confusion Matrix
+TP =  134897  |  FP =  5099
+FN =  6223    |  TN =  136021
+</pre></div>
+</div>
+</div>
+</div>
+<p>The tendency to underestimate snow presence is reflected by the true negative rate which is higher than the true positive rate.
+For the given test card grid, the TSA algorithm detects a snow cover extent of 134,897km<sup>2</sup> out of the ground truth of 141,120km<sup>2</sup>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -714,9 +833,7 @@ In addition, observation classes are binned with respect to corresponding in sit
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
 <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;Sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;Water&#39;</span><span class="p">,</span> <span class="s1">&#39;False Negative (Underestimation)&#39;</span><span class="p">,</span> <span class="s1">&#39;True Positive (Snow)&#39;</span><span class="p">,</span> <span class="s1">&#39;True Negative (Snow-free land)&#39;</span><span class="p">,</span> <span class="s1">&#39;False Positive (Overestimation)&#39;</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-<span class="c1"># ax.set_extent([-110, 110, 60, 90], crs=ccrs.PlateCarree())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="c1"># plt.savefig(&#39;tsa_eval.png&#39;, format=&#39;png&#39;, dpi=1200, bbox_inches=&#39;tight&#39;)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -727,36 +844,149 @@ In addition, observation classes are binned with respect to corresponding in sit
 <img alt="../_images/456cc8d2712e4df4d6908adde1d5e2e9ff97422b8c8db0c4c35055a844882836.png" src="../_images/456cc8d2712e4df4d6908adde1d5e2e9ff97422b8c8db0c4c35055a844882836.png" />
 </div>
 </div>
-<p>Statistics:</p>
-<div class="cell docutils container">
+<p>For the forward scan, the following metrics are obtained:</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_fwd_rad_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_fwd_rad</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[</span><span class="n">TSA_fwd_rad_diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># FN</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># TP</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># TN</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># FP</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[</span><span class="n">landmask_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>                               <span class="c1"># water</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>       <span class="c1"># sea ice</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count evaluated pixels</span>
-<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">TSA_rad_diff</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span><span class="n">counts</span><span class="p">)))</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">TSA_fwd_rad_diff</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># print(dict(zip(unique,counts)))</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>              <span class="c1"># -1: FN</span>
 <span class="n">tp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>              <span class="c1">#  0: TP</span>
 <span class="n">tn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>              <span class="c1">#  1: TN</span>
 <span class="n">fp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>              <span class="c1">#  2: FP</span>
 <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># ignore water and sea ice for total count</span>
 
-<span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span><span class="o">/</span><span class="n">total</span>   <span class="c1"># (TP+FN percentage)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span><span class="o">/</span><span class="n">total</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">acc</span><span class="p">)</span>
 <span class="n">tpr</span> <span class="o">=</span> <span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TP rate:&#39;</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TP rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpr</span><span class="p">)</span>
 <span class="n">tnr</span> <span class="o">=</span> <span class="n">tn</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tn</span><span class="o">+</span><span class="n">fp</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TN rate:&#39;</span><span class="p">,</span> <span class="n">tnr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TN rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tnr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{-3.0: 689088, -2.0: 988672, -1.0: 6223, 0.0: 134897, 1.0: 136021, 2.0: 5099}
-Accuracy: 0.9598852040816327
-TP rate: 0.9559027777777778
-TN rate: 0.9638676303854875
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.95212
+TP rate:  0.92301
+TN rate:  0.98124
 </pre></div>
 </div>
 </div>
 </div>
+<p>For the backward scan, the following metrics are obtained:</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_bck_rad_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_bck_rad</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[</span><span class="n">TSA_bck_rad_diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># FN</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># TP</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># TN</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># FP</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[</span><span class="n">landmask_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>                               <span class="c1"># water</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>       <span class="c1"># sea ice</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count evaluated pixels</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">TSA_bck_rad_diff</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># print(dict(zip(unique,counts)))</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>              <span class="c1"># -1: FN</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>              <span class="c1">#  0: TP</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>              <span class="c1">#  1: TN</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>              <span class="c1">#  2: FP</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># ignore water and sea ice for total count</span>
+
+<span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span><span class="o">/</span><span class="n">total</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">acc</span><span class="p">)</span>
+<span class="n">tpr</span> <span class="o">=</span> <span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TP rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">tnr</span> <span class="o">=</span> <span class="n">tn</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tn</span><span class="o">+</span><span class="n">fp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TN rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tnr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.94831
+TP rate:  0.91927
+TN rate:  0.97735
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both the accuracy and the TP rate are higher for the TSA product when using combined rather than individual scans.
+Passive microwave snow detection approaches commonly underestimate snow cover area, which can be counteracted when incorporating both scan directions.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>An initial performance assessment of the CIMR L2 TSA algorithm is conducted using primarily the radiometric scene of the Demonstration Reference Scenario (Picasso).
+The radiometric scene contains two land surface types: snow-free and snow-covered ground.
+Note that distinct bare ground as well as established snowpacks are represented, while more challenging conditions such as shallow or wet snow, complex terrain, dense vegetation, and lake ice are not considered.
+Due to this idealistic nature of the artificial scene, high algorithm performance is to be expected.
+Indeed, the TSA algorithm achieves an accuracy of 95.99% together with a true positive rate of 95.59% and a true negative rate of 96.39%.</p>
+<p>The metrics, however, still reflect the common tendency of passive microwave snow detection methodologies to underestimate snow cover area, as the true negative rate is larger than the true positive rate.
+False negative pixels, i.e. pixels affected by underestimation are predominantly found in proximity to land-water boundaries.
+Although more dependent on different sea and sea ice conditions, false positive pixels representing overestimation similarly form elongated clusters along ‘coastlines’.
+Even this simple test scene therefore emphasises the need for water spill-over corrections.</p>
+<p>Despite their simplicity, both scenes of the Demonstration Reference Scenario provide insights into the utility of CIMR’s scanning geometry.
+In case of the radiometric scene, combining snow area estimates from both forward and backward-looking brightness temperatures proves beneficial.
+The overall algorithm performance is better when compared to snow area estimates from only one look direction.
+This supports the current approach of combining snow area estimates after separate processing of forward and backward scans.
+In case of the geometric scene, land surface types are not included.
+Nevertheless, the high-contrast brightness temperature patterns happen to provide a visualisation of the implemented TSA uncertainty flag, highlighting its behaviour and utility along sharp borders and transitions.
+Both aspects encourage the partition of CIMR brightness temperatures depending on look direction.</p>
+<p>In contrast to the Demonstration Reference Scenario, more realistic conditions are found in the SCEPS Polar Scene.
+Yet when applying the TSA algorithm to said polar scene, barely any snow cover is detected over land.
+The primary condition for snow cover to be detected relies on a depression in Ka-band brightness temperature of horizontal polarisation, due to volume scattering effects of snowpacks.
+This is simply not met for the vast majority of the land area.
+It is understood that sample emissivities might have been used for the simulation of land parts contained within the scene.
+Those emissivities likely reflect glacial conditions, which would not result in volume scattering effects due to the continuous transition between snow, firn, and glacial ice.
+Similarly, Ku-band brightness temperatures serve as scatter-free reference which relies on a clear interface between the snowpack and the subnivean substrate.
+Terrestrial snow detection approaches are hence not applicable over glaciers and ice caps.</p>
+<p>Overall, the performance of the TSA algorithm is successfully demonstrated for the different test scenarios.
+Even though synthetic data naturally cannot fully replace real data, the assessment provides a first proof of concept for the algorithm’s handling of forward and backward brightness temperatures in order to estimate snow area and its qualitative uncertainty.</p>
 </section>
 </section>
 
@@ -831,6 +1061,7 @@ TN rate: 0.9638676303854875
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-assessment-using-demonstration-reference-scenario">Algorithm Performance Assessment using Demonstration Reference Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 

@@ -350,14 +350,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="algorithm-input-and-output-data-definition-iodd">
 <h1>Algorithm Input and Output Data Definition (IODD)<a class="headerlink" href="#algorithm-input-and-output-data-definition-iodd" title="Permalink to this heading">#</a></h1>
-<p>The processing of the TSA product requires resampling of TB data from the instrument grid to EASE-Grid 2.0 of polar projection for the Northern or Southern Hemisphere. Even though the application of auxiliary data is not mandatory, it is highly recommended to mask out known water bodies and latitudes which historically do not experience snow cover.</p>
+<p>Except for the input L1b <a class="reference internal" href="acronyms.html#term-TB"><span class="xref std std-term">TB</span></a> data, all auxiliary and output data follow the <a class="reference internal" href="acronyms.html#term-EASE-Grid"><span class="xref std std-term">EASE-Grid</span></a> 2.0 polar projection of the Northern Hemisphere.
+The current target spatial resolution for regridding is 3.125km.</p>
 <section id="input-data">
 <h2>Input data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h2>
-<p>Daily Level-2 brightness temperature data are the main input, requiring data of the Ku-band of horizontal polarisation and of the Ka-band of both polarisations.
-Brightness temperature data of all other bands and polarisations may be necessary for future TSA product versions.</p>
+<p>Daily Level-2 brightness temperature data are the main input, namely Ku-band data of horizontal polarisation and Ka-band data of both polarisations.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If available, early morning satellite data is preferred as input over late afternoon data in order to minimise effects of liquid water within the snowpack.</p>
+<p>If available, night or morning acquisition times are preferred over afternoon or evening brightness temperature data, in order to minimise effects of liquid water within the snowpack due to melt.</p>
 </div>
 <table class="colwidths-auto table">
 <thead>
@@ -367,11 +367,11 @@ Brightness temperature data of all other bands and polarisations may be necessar
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>L1B TB Ku-band  </p></td>
+<tr class="row-even"><td><p>L1b TB Ku-band  </p></td>
 <td><p>L1B Brightness Temperatures at 18.7 GHZ <br> (H polarisation)</p></td>
 <td><p>Full swath or swath section <br> (Nscans,Npos)</p></td>
 </tr>
-<tr class="row-odd"><td><p>L1B TB Ka-band  </p></td>
+<tr class="row-odd"><td><p>L1b TB Ka-band  </p></td>
 <td><p>L1B Brightness Temperatures at 36.5 GHZ <br> (H and V polarisation)</p></td>
 <td><p>Full swath or swath section <br> (Nscans,Npos)</p></td>
 </tr>
@@ -388,22 +388,75 @@ Brightness temperature data of all other bands and polarisations may be necessar
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>L2 TSA</p></td>
-<td><p>Terrestrial Snow Area: <br> 0 for ‘snow-free’, 1 for ‘snow-covered land’</p></td>
-<td><p>EASE-Grid 2.0 NH/SH <br> (nx,ny)</p></td>
+<tr class="row-even"><td><p>TSA</p></td>
+<td><p>Terrestrial Snow Area (TSA)</p></td>
+<td><p>EASE-Grid 2.0 NH <br> (nx,ny)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Status Flag  </p></td>
-<td><p>Pixel status: <br> ‘no data’, ‘valid, ‘open water’</p></td>
-<td><p>EASE-Grid 2.0 NH/SH <br> (nx,ny)</p></td>
+<tr class="row-odd"><td><p>TSA Uncertainty</p></td>
+<td><p>Qualitative uncertainty of TSA variable: <br> ‘0: very likely snow-free (FWD &amp; BCK); 1: likely snow (FWD</p></td>
+<td><p>BCK); 2: very likely snow (FWD &amp; BCK)’</p></td>
+</tr>
+<tr class="row-even"><td><p>Status Flag  </p></td>
+<td><p>Status flag for TSA</p></td>
+<td><p>EASE-Grid 2.0 NH <br> (nx,ny)</p></td>
 </tr>
 </tbody>
 </table>
+<p>The main TSA variable (<code class="docutils literal notranslate"><span class="pre">tsa</span></code>) is a binary mask indicating snow-free pixels as <code class="docutils literal notranslate"><span class="pre">0</span></code>, and snow-covered pixels as <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+The TSA uncertainty (<code class="docutils literal notranslate"><span class="pre">tsa_uncertainty</span></code>) in turn is described through an 8-bit mask with the following allocated values:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Very likely snow free</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Likely snow covered</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Very likely snow covered</p></td>
+</tr>
+</tbody>
+</table>
+<p>The status flag (<code class="docutils literal notranslate"><span class="pre">status_flag</span></code>) similarly is an 8-bit mask with the following allocated values:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Water</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Land</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Dry snow (valid)</p></td>
+</tr>
+<tr class="row-odd"><td><p>3-7</p></td>
+<td><p>Placeholders</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>No data, out of grid</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Empty placeholders within the status flag may be used for future R&amp;D activities, such as the development of a wet snow flag.</p>
+</div>
 </section>
 <section id="auxiliary-data">
 <h2>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Land/water information (EASE-Grid 2.0)</p></li>
-<li><p>Latitude information (EASE-Grid 2.0)</p></li>
+<li><p>Land and water mask
+Although the application of auxiliary data is not required to run the TSA algorithm per se, it is highly recommended to mask out known large water bodies thereby ensuring satisfactory product quality.</p></li>
 </ul>
 </section>
 <section id="ancillary-data">

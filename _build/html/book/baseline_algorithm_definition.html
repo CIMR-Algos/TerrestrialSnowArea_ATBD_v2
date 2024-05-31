@@ -337,16 +337,31 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-method">Retrieval Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-model">Forward Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">CIMR Level-1b Re-sampling Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-resampling-approach">CIMR Level-1b Resampling Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">Algorithm Assumptions and Simplifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">Level-2 End to End Algorithm Functional Flow Diagram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">Functional description of each Algorithm step</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-description">Mathematical description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-process">Validation process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">Level-2 End-to-End Algorithm Functional Flow Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">Functional Description of Each Algorithm Step</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-snow-detection">Dry Snow Detection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-description">Mathematical description</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-reprojection">Combined Reprojection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Input data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Output data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masking-and-flagging">Masking and Flagging</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Description</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Input data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Output data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-process">Validation process</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -362,80 +377,154 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="baseline-algorithm-definition">
 <h1>Baseline Algorithm Definition<a class="headerlink" href="#baseline-algorithm-definition" title="Permalink to this heading">#</a></h1>
-<p>The TSA algorithm is based on dry snow detection as described by <span id="id1">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id2">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>. It is an empirical algorithm, based on the underlying physical principle that microwave radiation of higher frequencies is attenuated by snow cover due to volume scattering, while lower frequencies remain mostly unaffected.</p>
+<p>The <a class="reference internal" href="acronyms.html#term-TSA"><span class="xref std std-term">TSA</span></a> algorithm is based on dry snow detection as described by <span id="id1">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id2">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>. This empirical algorithm is based on the underlying physical principle that microwave radiation of higher frequencies is attenuated by snow cover due to volume scattering, while lower frequencies remain mostly unaffected.
+The TSA product is only concerned with snow cover in the Northern Hemisphere, where seasonal terrestrial snow predominantly occurs.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Refer <a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html"><span class="doc std std-doc">here</span></a> for a top-level script of the Level-2 TSA algorithm including output file generation, and <a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html"><span class="doc std std-doc">here</span></a> for added step-by-step visualization.</p>
+</div>
 <section id="retrieval-method">
 <h2>Retrieval Method<a class="headerlink" href="#retrieval-method" title="Permalink to this heading">#</a></h2>
-<p>N/a</p>
+<p>The retrieval of TSA encompasses the following main steps:</p>
+<ul class="simple">
+<li><p>Step 1: <strong>Dry snow detection</strong> algorithm</p></li>
+<li><p>Step 2: <strong>Combined reprojection</strong> of forward and backward TSA maps</p></li>
+<li><p>Step 3: <strong>Masking and Flagging</strong> for final TSA maps including qualitative uncertainty estimates</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The specifics of the retrieval methodology may be subject to change, but will follow the general structure as outlined.</p>
+</div>
 </section>
 <section id="forward-model">
 <h2>Forward Model<a class="headerlink" href="#forward-model" title="Permalink to this heading">#</a></h2>
-<p>N/a</p>
+<p>The origins of the implemented algorithm stem from <span id="id3">Chang <em>et al.</em> [<a class="reference internal" href="references.html#id7" title="A. Chang, J. Foster, and D. Hall. Nimbus-7 SMMR derived global snow cover parameters. Ann. Glaciol., 9:39-44, 1987. doi:10.3189/S0260305500200736.">1987</a>]</span>, who present a linear relationship between snow depth and spectral difference (see <a class="reference internal" href="#equation-tb-diff">(1)</a>).
+This relationship is derived from an empirical fit of simulated microwave brightness temperatures for varying <a class="reference internal" href="acronyms.html#term-SWE"><span class="xref std std-term">SWE</span></a>, using a microscopic scattering model <span id="id4">[<a class="reference internal" href="references.html#id23" title="A. Chang, J. Foster, D. Hall, A. Rango, and B. Hartline. Snow water equivalent estimation by microwave radiometry. Cold Regions Science and Technology, 5(3):259–267, 1982. doi:10.1016/0165-232X(82)90019-2.">Chang <em>et al.</em>, 1982</a>]</span>.
+The model takes into consideration the underlying (un-)frozen surface conditions as well as the physical temperature, density, and grain size of the snowpack.
+Snow grains are assumed to be spherical and randomly-spaced, resulting in incoherent scattering.
+The radiative transfer equation is solved numerically.</p>
 </section>
-<section id="cimr-level-1b-re-sampling-approach">
-<h2>CIMR Level-1b Re-sampling Approach<a class="headerlink" href="#cimr-level-1b-re-sampling-approach" title="Permalink to this heading">#</a></h2>
-<p>Resampling approach to be defined.
-Subsequent reprojection to EASE-Grid 2.0 polar projections of the Northern Hemisphere (NH).</p>
+<section id="cimr-level-1b-resampling-approach">
+<h2>CIMR Level-1b Resampling Approach<a class="headerlink" href="#cimr-level-1b-resampling-approach" title="Permalink to this heading">#</a></h2>
+<p>Prior to the main TSA algorithm, the current <a class="reference internal" href="acronyms.html#term-CIMR"><span class="xref std std-term">CIMR</span></a> Level-2 TSA framework includes the resampling of L1b TB data to collocate channels to a target channel.
+The implemented resampling approach stems from the <a class="reference external" href="https://github.com/CIMR-Algos/Tools">CIMR Devalgo Tools</a>, with the target resolution of Ku-band TB data being set to match Ka-band resolution.
+For future research purposes, it is encouraged to also remap X-band TB data with Ka-band as target.</p>
 </section>
 <section id="algorithm-assumptions-and-simplifications">
 <h2>Algorithm Assumptions and Simplifications<a class="headerlink" href="#algorithm-assumptions-and-simplifications" title="Permalink to this heading">#</a></h2>
-<p>To be added.</p>
+<p>The implemented algorithm follows a static approach, assuming that snow density and snow grain properties are spatially and temporally constant.
+Different land cover properties are not considered.</p>
 </section>
 <section id="level-2-end-to-end-algorithm-functional-flow-diagram">
-<h2>Level-2 End to End Algorithm Functional Flow Diagram<a class="headerlink" href="#level-2-end-to-end-algorithm-functional-flow-diagram" title="Permalink to this heading">#</a></h2>
-<p><a class="reference internal" href="#flow-diagram"><span class="std std-numref">Fig. 6</span></a> shows the functional structure for the computation of the TSA product.</p>
+<h2>Level-2 End-to-End Algorithm Functional Flow Diagram<a class="headerlink" href="#level-2-end-to-end-algorithm-functional-flow-diagram" title="Permalink to this heading">#</a></h2>
+<p><a class="reference internal" href="#flow-diagram"><span class="std std-numref">Fig. 4</span></a> shows the functional structure for the computation of the TSA product.</p>
 <figure class="align-default" id="flow-diagram">
 <a class="reference internal image-reference" href="../_images/L2-algorithm.png"><img alt="../_images/L2-algorithm.png" src="../_images/L2-algorithm.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Functional flow diagram of the Level-2 end to end algorithm of the TSA product.</span><a class="headerlink" href="#flow-diagram" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Functional flow diagram of the Level-2 end to end algorithm of the TSA product.</span><a class="headerlink" href="#flow-diagram" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="functional-description-of-each-algorithm-step">
-<h2>Functional description of each Algorithm step<a class="headerlink" href="#functional-description-of-each-algorithm-step" title="Permalink to this heading">#</a></h2>
-<p>As outlined in the flow diagram in <a class="reference internal" href="#flow-diagram"><span class="std std-numref">Fig. 6</span></a>, the algorithm follows four major steps:</p>
-<ul class="simple">
-<li><p>Step 1: Mapping of L1B brightness temperatures to gridded brightness temperatures in swath projection.</p></li>
-<li><p>Step 2: Application of dry snow detection algorithm to gridded brightness temperatures.</p></li>
-<li><p>Step 3: Output of L2 TSA maps.</p></li>
-<li><p>Step 4: Optional masking for improved TSA maps, e.g. land/water and latitude masking.</p></li>
-</ul>
+<h2>Functional Description of Each Algorithm Step<a class="headerlink" href="#functional-description-of-each-algorithm-step" title="Permalink to this heading">#</a></h2>
+<p>The three main steps, as outlined in the flow diagram in <a class="reference internal" href="#flow-diagram"><span class="std std-numref">Fig. 4</span></a>, are described hereafter.</p>
+<section id="dry-snow-detection">
+<h3>Dry Snow Detection<a class="headerlink" href="#dry-snow-detection" title="Permalink to this heading">#</a></h3>
 <section id="mathematical-description">
-<h3>Mathematical description<a class="headerlink" href="#mathematical-description" title="Permalink to this heading">#</a></h3>
-<p>The dry snow detection algorithm of the TSA product (Step 2) is based on the approach of <span id="id3">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> but applies updated empirically derived thresholds as implemented for the EUMETSAT H SAF snow status product H11 <span id="id4">[<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">Pulliainen <em>et al.</em>, 2010</a>]</span>. The brightness temperature difference between the Ku and Ka-band is used to estimate snow depth (SD) as</p>
+<h4>Mathematical description<a class="headerlink" href="#mathematical-description" title="Permalink to this heading">#</a></h4>
+<p>The dry snow detection algorithm of the TSA product is based on the approach of <span id="id5">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> but applies updated empirically derived thresholds as implemented for the EUMETSAT H SAF snow status product H11 <span id="id6">[<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">Pulliainen <em>et al.</em>, 2010</a>]</span>. The brightness temperature difference between the Ku and Ka-band is used to estimate snow depth (SD) as</p>
 <div class="math notranslate nohighlight" id="equation-tb-diff">
 <span class="eqno">(1)<a class="headerlink" href="#equation-tb-diff" title="Permalink to this equation">#</a></span>\[\text{SD} = R_c \cdot (T_B^{18H}-T_B^{37H}),\]</div>
 <p>with regression coefficient <span class="math notranslate nohighlight">\(R_c\)</span> of 1.59 cm/K and brightness temperatures <span class="math notranslate nohighlight">\(T_B\)</span>, where the superscripts indicate the frequency and polarisation.
 For the algorithm in <a class="reference internal" href="#equation-tb-diff">(1)</a> to detect dry snow, the following thresholds must be met:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+<div class="math notranslate nohighlight" id="equation-tb-thresholds">
+<span class="eqno">(2)<a class="headerlink" href="#equation-tb-thresholds" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{aligned}
 \text{SD} &amp;≥ 3.0~\text{cm}\\
 T_B^{37V} &amp;&lt; 255~\text{K}\\
 T_B^{37H} &amp;&lt; 250~\text{K}.
 \end{aligned}\end{split}\]</div>
-<p>The use of further CIMR channels for dry snow detection is under investigation.</p>
+<p>The conditions in <a class="reference internal" href="#equation-tb-diff">(1)</a> and <a class="reference internal" href="#equation-tb-thresholds">(2)</a> are applied separately to TBs from forward and backward scans.</p>
 </section>
 <section id="input-data">
-<h3>Input data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h3>
-<p>For the algorithm development phase, brightness temperatures from operational instruments will be used to provide adequate sample data for all CIMR channels: Ka, Ku, X, C and L-band of dual polarisation.</p>
+<h4>Input data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h4>
+<p>After resampling to Ka-band as target, both the forward and backward-looking data of the following brightness temperatures are used as input:</p>
+<ul class="simple">
+<li><p>Ku-band TBs (horizontal polarisation)</p></li>
+<li><p>Ku-band TBs (horizontal and vertical polarisation)</p></li>
+</ul>
 </section>
 <section id="output-data">
-<h3>Output data<a class="headerlink" href="#output-data" title="Permalink to this heading">#</a></h3>
-<p>L2 TSA maps are provided, with 0 for ‘snow-free land’, 1 for ‘snow-covered land’, and NaN otherwise. In addition, flags indicate the reason of NaN values, such as ‘open-water’ and ‘no data’.</p>
+<h4>Output data<a class="headerlink" href="#output-data" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Binary TSA maps, one for each scan direction (forward and backward).</p></li>
+</ul>
+</section>
+</section>
+<section id="combined-reprojection">
+<h3>Combined Reprojection<a class="headerlink" href="#combined-reprojection" title="Permalink to this heading">#</a></h3>
+<section id="description">
+<h4>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h4>
+<p>The preceeding dry snow detection step is applied to resampled swath brightness temperatures of both scan directions.
+The forward and backward TSA maps in swath format are each individually reprojected to the <a class="reference internal" href="acronyms.html#term-EASE-Grid"><span class="xref std std-term">EASE-Grid</span></a> 2.0 <a class="reference internal" href="acronyms.html#term-NH"><span class="xref std std-term">NH</span></a>, and subsequently combined into a single map.
+When combining the binary TSA maps, all snow pixels are retained in order to counteract the tendency of passive microwave approaches to underestimate TSA.
+In other words, snow is flagged when at least one scan direction detects snow.</p>
+</section>
+<section id="id7">
+<h4>Input data<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Binary TSA maps, one for each scan direction (forward and backward).</p></li>
+</ul>
+</section>
+<section id="id8">
+<h4>Output data<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Gridded binary TSA maps, one for each scan direction (forward and backward).</p></li>
+<li><p>Gridded combined binary TSA map</p></li>
+</ul>
+</section>
+</section>
+<section id="masking-and-flagging">
+<h3>Masking and Flagging<a class="headerlink" href="#masking-and-flagging" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h4>Description<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<p>Although masking and flagging are not strictly necessary to retrieve TSA, this step provides relevant complementary information.
+Generally, flagging is preferred over masking with the reasoning that users can later individually tailor the daily TSA map to their needs.</p>
+<p>The TSA Uncertainty Flag in its current form is based on the gridded forward (<a class="reference internal" href="acronyms.html#term-FWD"><span class="xref std std-term">FWD</span></a>) and backward (<a class="reference internal" href="acronyms.html#term-BCK"><span class="xref std std-term">BCK</span></a>) TSA maps.
+Grid cells which see detected snow for both scans (FWD &amp; BCK) are flagged as ‘very likely snow covered’, whereas detected snow for one scan only (FWD | BCK) are set to ‘likely snow covered’.
+If no snow is detected for both scans (FWD &amp; BCK), the flag reads ‘very likely snow free’.
+The Status Flag contains information for each grid cell whether its spatial location corresponds to open water, land, or snow-covered land (valid dry snow), and indicates cells with missing data or out of grid.</p>
+</section>
+<section id="id10">
+<h4>Input data<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Gridded binary TSA maps, one for each scan direction (forward and backward).</p></li>
+<li><p>Gridded combined binary TSA map</p></li>
+<li><p>Land and water mask</p></li>
+</ul>
+</section>
+<section id="id11">
+<h4>Output data<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>TSA Uncertainty Flag</p></li>
+<li><p>Status Flag</p></li>
+</ul>
 </section>
 <section id="auxiliary-data">
-<h3>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Permalink to this heading">#</a></h3>
-<p>Auxiliary data for Step 4 include information on open water in order to have a consistent definition of land and water grid cells. Besides, the TSA product is only concerned with snow cover in the Northern Hemisphere, where seasonal terrestrial snow predominantly occurs. Latitudes at and below 40° N are masked out, as those historically do not experience snow cover, in order to avoid false positive snow cells. Masking for the Southern Hemisphere is to be confirmed.</p>
+<h4>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Permalink to this heading">#</a></h4>
+<p>For future releases, auxiliary data may be included for more comprehensive masking and flagging.
+Information on freshwater lakes could be considered in order to mask or flag grid cells that likely experience water spill-over effects, for instance along coastal areas or in proximity to large water bodies.
+Grid cells with surface water fractions larger than about 50% could accordingly be flagged.
+Besides, the qualitative TSA uncertainty estimates could further draw upon threshold error margins of <a class="reference internal" href="#equation-tb-diff">(1)</a> and <a class="reference internal" href="#equation-tb-thresholds">(2)</a>, brightness temperature uncertainties and Noise Equivalent Delta Temperatures (NE<span class="math notranslate nohighlight">\(\Delta\)</span>T) for Ku and Ka-band brightness temperatures, as well as regional and seasonal snow likelihoods.</p>
 </section>
 <section id="ancillary-data">
-<h3>Ancillary data<a class="headerlink" href="#ancillary-data" title="Permalink to this heading">#</a></h3>
-<p>N/a</p>
+<h4>Ancillary data<a class="headerlink" href="#ancillary-data" title="Permalink to this heading">#</a></h4>
+<p>The masking of regions which historically do not experience snow cover according to a snow climatology may be part of future R&amp;D activities.
+Such ancillary data could further compliment TSA uncertainty estimates.</p>
 </section>
 <section id="validation-process">
-<h3>Validation process<a class="headerlink" href="#validation-process" title="Permalink to this heading">#</a></h3>
-<p>The Level-2 TSA product is validated using brightness temperatures from operational instruments, e.g. AMSR2, which are collocated and temporally matched to exhaustive in situ SD observations from weather stations across the Northern Hemisphere.
-Main sources for SD measurements are the European Centre for Medium-Range Weather Forecasts (ECMWF) and the Global Historical Climatology Network <span id="id5">[<a class="reference internal" href="references.html#id17" title="M. Menne, I. Durre, R. Vose, B. Gleason, and T. Houston. An Overview of the Global Historical Climatology Network-Daily Database. Journal of Atmospheric and Oceanic Technology, 29(7):897–910, 2012. doi:10.1175/JTECH-D-11-00103.1.">Menne <em>et al.</em>, 2012</a>]</span>. Those are complemented by observations of the World Data Center of the All-Russia Research Institute of Hydrometeorological Information <span id="id6">[<a class="reference internal" href="references.html#id24" title="O. Bulygina and V. Razuvaev. Daily Temperature and Precipitation Data for 518 Russian Meteorological Stations (1881-2010). Data Set, ESS-DIVE repository, Carbon Dioxide Information Analysis Center (CDIAC), Oak Ridge National Laboratory (ORNL), 2012. doi:10.3334/CDIAC/CLI.100.">Bulygina and Razuvaev, 2012</a>]</span>, of the Meteorological Service of Canada, and from across the continental United States <span id="id7">[<a class="reference internal" href="references.html#id18" title="J. Dyer and T. Mote. Spatial variability and trends in observed snow depth over North America. Geophysical Research Letters, 33(16):L16503, 2006. doi:10.1029/2006GL027258.">Dyer and Mote, 2006</a>]</span>. The observations encompass both snow and snow-free conditions for thorough validation of both true positive and true negative classifications. The validation dataset follows closely the structure of the Round Robin Data Package (RRDP) <span id="id8">[<a class="reference internal" href="references.html#id16" title="L. Pedersen, R. Saldo, S. Kern, and R. Tonboe. Sea Ice Concentration (SIC) Round Robin Data Package (RRDP). Round Robin Data Package Manual, Version 3, ESA, 2021.">Pedersen <em>et al.</em>, 2021</a>]</span>.</p>
-<p>The main metric used for validation is classification accuracy, including daily as well as monthly and total mean accuracy values.
-By binning observation classes according to in situ SD, the ability of the TSA product to map dry snow for varying snow depth can be evaluated.</p>
+<h4>Validation process<a class="headerlink" href="#validation-process" title="Permalink to this heading">#</a></h4>
+<p>N/a</p>
+</section>
 </section>
 </section>
 </section>
@@ -503,16 +592,31 @@ By binning observation classes according to in situ SD, the ability of the TSA p
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-method">Retrieval Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-model">Forward Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">CIMR Level-1b Re-sampling Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-resampling-approach">CIMR Level-1b Resampling Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">Algorithm Assumptions and Simplifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">Level-2 End to End Algorithm Functional Flow Diagram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">Functional description of each Algorithm step</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-description">Mathematical description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-process">Validation process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">Level-2 End-to-End Algorithm Functional Flow Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">Functional Description of Each Algorithm Step</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-snow-detection">Dry Snow Detection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-description">Mathematical description</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-reprojection">Combined Reprojection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Input data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Output data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masking-and-flagging">Masking and Flagging</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Description</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Input data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Output data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-process">Validation process</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

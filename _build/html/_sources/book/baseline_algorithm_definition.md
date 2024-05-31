@@ -1,29 +1,44 @@
 # Baseline Algorithm Definition
 
-The TSA algorithm is based on dry snow detection as described by {cite:t}`hall_2002` and {cite:t}`pulliainen_2010`. It is an empirical algorithm, based on the underlying physical principle that microwave radiation of higher frequencies is attenuated by snow cover due to volume scattering, while lower frequencies remain mostly unaffected.
+The {term}`TSA` algorithm is based on dry snow detection as described by {cite:t}`hall_2002` and {cite:t}`pulliainen_2010`. This empirical algorithm is based on the underlying physical principle that microwave radiation of higher frequencies is attenuated by snow cover due to volume scattering, while lower frequencies remain mostly unaffected.
+The TSA product is only concerned with snow cover in the Northern Hemisphere, where seasonal terrestrial snow predominantly occurs.
+
+```{seealso}
+Refer [here](../algorithm/run_CIMR_L2_TSA.ipynb) for a top-level script of the Level-2 TSA algorithm including output file generation, and [here](../algorithm/run_CIMR_L2_TSA.ipynb) for added step-by-step visualization.
+```
 
 ## Retrieval Method
 
-N/a
+The retrieval of TSA encompasses the following main steps:
 
+* Step 1: **Dry snow detection** algorithm
+* Step 2: **Combined reprojection** of forward and backward TSA maps
+* Step 3: **Masking and Flagging** for final TSA maps including qualitative uncertainty estimates
+
+```{note}
+The specifics of the retrieval methodology may be subject to change, but will follow the general structure as outlined.
+```
 
 ## Forward Model
 
-N/a
+The origins of the implemented algorithm stem from {cite:t}`chang_1987`, who present a linear relationship between snow depth and spectral difference (see {eq}`TB_diff`).
+This relationship is derived from an empirical fit of simulated microwave brightness temperatures for varying {term}`SWE`, using a microscopic scattering model {cite:p}`chang_1982`.
+The model takes into consideration the underlying (un-)frozen surface conditions as well as the physical temperature, density, and grain size of the snowpack.
+Snow grains are assumed to be spherical and randomly-spaced, resulting in incoherent scattering.
+The radiative transfer equation is solved numerically.
 
+## CIMR Level-1b Resampling Approach
 
-## CIMR Level-1b Re-sampling Approach
-
-Resampling approach to be defined.
-Subsequent reprojection to EASE-Grid 2.0 polar projections of the Northern Hemisphere (NH).
-
+Prior to the main TSA algorithm, the current {term}`CIMR` Level-2 TSA framework includes the resampling of L1b TB data to collocate channels to a target channel.
+The implemented resampling approach stems from the [CIMR Devalgo Tools](https://github.com/CIMR-Algos/Tools), with the target resolution of Ku-band TB data being set to match Ka-band resolution.
+For future research purposes, it is encouraged to also remap X-band TB data with Ka-band as target.
 
 ## Algorithm Assumptions and Simplifications
 
-To be added.
+The implemented algorithm follows a static approach, assuming that snow density and snow grain properties are spatially and temporally constant.
+Different land cover properties are not considered.
 
-
-## Level-2 End to End Algorithm Functional Flow Diagram
+## Level-2 End-to-End Algorithm Functional Flow Diagram
 
 {numref}`flow-diagram` shows the functional structure for the computation of the TSA product.
 
@@ -35,18 +50,15 @@ width: 450px
 Functional flow diagram of the Level-2 end to end algorithm of the TSA product.
 ```
 
-## Functional description of each Algorithm step
+## Functional Description of Each Algorithm Step
 
-As outlined in the flow diagram in {numref}`flow-diagram`, the algorithm follows four major steps: 
+The three main steps, as outlined in the flow diagram in {numref}`flow-diagram`, are described hereafter. 
 
-* Step 1: Mapping of L1B brightness temperatures to gridded brightness temperatures in swath projection.
-* Step 2: Application of dry snow detection algorithm to gridded brightness temperatures.
-* Step 3: Output of L2 TSA maps.
-* Step 4: Optional masking for improved TSA maps, e.g. land/water and latitude masking.
+### Dry Snow Detection
 
-### Mathematical description
+#### Mathematical description
 
-The dry snow detection algorithm of the TSA product (Step 2) is based on the approach of {cite:t}`hall_2002` but applies updated empirically derived thresholds as implemented for the EUMETSAT H SAF snow status product H11 {cite:p}`pulliainen_2010`. The brightness temperature difference between the Ku and Ka-band is used to estimate snow depth (SD) as
+The dry snow detection algorithm of the TSA product is based on the approach of {cite:t}`hall_2002` but applies updated empirically derived thresholds as implemented for the EUMETSAT H SAF snow status product H11 {cite:p}`pulliainen_2010`. The brightness temperature difference between the Ku and Ka-band is used to estimate snow depth (SD) as
 
 ```{math}
 :label: TB_diff
@@ -57,6 +69,7 @@ with regression coefficient $R_c$ of 1.59 cm/K and brightness temperatures $T_B$
 For the algorithm in {eq}`TB_diff` to detect dry snow, the following thresholds must be met:
 
 ```{math}
+:label: TB_thresholds
 \begin{aligned}
 \text{SD} &≥ 3.0~\text{cm}\\
 T_B^{37V} &< 255~\text{K}\\
@@ -64,31 +77,71 @@ T_B^{37H} &< 250~\text{K}.
 \end{aligned}
 ```
 
-The use of further CIMR channels for dry snow detection is under investigation.
+The conditions in {eq}`TB_diff` and {eq}`TB_thresholds` are applied separately to TBs from forward and backward scans.
 
-### Input data
+#### Input data
 
-For the algorithm development phase, brightness temperatures from operational instruments will be used to provide adequate sample data for all CIMR channels: Ka, Ku, X, C and L-band of dual polarisation.
+After resampling to Ka-band as target, both the forward and backward-looking data of the following brightness temperatures are used as input:
+- Ku-band TBs (horizontal polarisation)
+- Ku-band TBs (horizontal and vertical polarisation)
 
-### Output data
+#### Output data
 
-L2 TSA maps are provided, with 0 for 'snow-free land', 1 for 'snow-covered land', and NaN otherwise. In addition, flags indicate the reason of NaN values, such as 'open-water' and 'no data'.
+- Binary TSA maps, one for each scan direction (forward and backward).
 
-### Auxiliary data
+### Combined Reprojection
 
-Auxiliary data for Step 4 include information on open water in order to have a consistent definition of land and water grid cells. Besides, the TSA product is only concerned with snow cover in the Northern Hemisphere, where seasonal terrestrial snow predominantly occurs. Latitudes at and below 40° N are masked out, as those historically do not experience snow cover, in order to avoid false positive snow cells. Masking for the Southern Hemisphere is to be confirmed.
+#### Description
 
-### Ancillary data
+The preceeding dry snow detection step is applied to resampled swath brightness temperatures of both scan directions.
+The forward and backward TSA maps in swath format are each individually reprojected to the {term}`EASE-Grid` 2.0 {term}`NH`, and subsequently combined into a single map.
+When combining the binary TSA maps, all snow pixels are retained in order to counteract the tendency of passive microwave approaches to underestimate TSA.
+In other words, snow is flagged when at least one scan direction detects snow.
+
+#### Input data
+
+- Binary TSA maps, one for each scan direction (forward and backward).
+
+#### Output data
+
+- Gridded binary TSA maps, one for each scan direction (forward and backward).
+- Gridded combined binary TSA map
+
+### Masking and Flagging
+
+#### Description
+
+Although masking and flagging are not strictly necessary to retrieve TSA, this step provides relevant complementary information.
+Generally, flagging is preferred over masking with the reasoning that users can later individually tailor the daily TSA map to their needs.
+
+The TSA Uncertainty Flag in its current form is based on the gridded forward ({term}`FWD`) and backward ({term}`BCK`) TSA maps.
+Grid cells which see detected snow for both scans (FWD & BCK) are flagged as 'very likely snow covered', whereas detected snow for one scan only (FWD | BCK) are set to 'likely snow covered'.
+If no snow is detected for both scans (FWD & BCK), the flag reads 'very likely snow free'.
+The Status Flag contains information for each grid cell whether its spatial location corresponds to open water, land, or snow-covered land (valid dry snow), and indicates cells with missing data or out of grid. 
+
+#### Input data
+
+- Gridded binary TSA maps, one for each scan direction (forward and backward).
+- Gridded combined binary TSA map
+- Land and water mask
+
+#### Output data
+
+- TSA Uncertainty Flag
+- Status Flag
+
+#### Auxiliary data
+
+For future releases, auxiliary data may be included for more comprehensive masking and flagging.
+Information on freshwater lakes could be considered in order to mask or flag grid cells that likely experience water spill-over effects, for instance along coastal areas or in proximity to large water bodies.
+Grid cells with surface water fractions larger than about 50% could accordingly be flagged.
+Besides, the qualitative TSA uncertainty estimates could further draw upon threshold error margins of {eq}`TB_diff` and {eq}`TB_thresholds`, brightness temperature uncertainties and Noise Equivalent Delta Temperatures (NE$\Delta$T) for Ku and Ka-band brightness temperatures, as well as regional and seasonal snow likelihoods.
+
+#### Ancillary data
+
+The masking of regions which historically do not experience snow cover according to a snow climatology may be part of future R&D activities.
+Such ancillary data could further compliment TSA uncertainty estimates.
+
+#### Validation process
 
 N/a
-
-### Validation process
-
-The Level-2 TSA product is validated using brightness temperatures from operational instruments, e.g. AMSR2, which are collocated and temporally matched to exhaustive in situ SD observations from weather stations across the Northern Hemisphere.
-Main sources for SD measurements are the European Centre for Medium-Range Weather Forecasts (ECMWF) and the Global Historical Climatology Network {cite:p}`menne_2012`. Those are complemented by observations of the World Data Center of the All-Russia Research Institute of Hydrometeorological Information {cite:p}`bulygina_2012`, of the Meteorological Service of Canada, and from across the continental United States {cite:p}`dyer_mote_2006`. The observations encompass both snow and snow-free conditions for thorough validation of both true positive and true negative classifications. The validation dataset follows closely the structure of the Round Robin Data Package (RRDP) {cite:p}`pedersen_2021`.
-
-The main metric used for validation is classification accuracy, including daily as well as monthly and total mean accuracy values.
-By binning observation classes according to in situ SD, the ability of the TSA product to map dry snow for varying snow depth can be evaluated.
-
-
-
