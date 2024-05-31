@@ -7,7 +7,7 @@ The origins of the algorithm reach back to a physical model inversion by {cite:t
 
 The algorithm in this form is found to perform best for the channels available from {term}`CIMR`, according to {cite:t}`zschenderlein_2023`.
 This study includes an extensive long-term comparison of {term}`PMW` dry snow detection approaches centering on the Ka and Ku-bands, namely {cite:t}`chang_1987,grody_1996,foster_1997,armstrong_2001`, {cite:t}`hall_2002` and {cite:t}`pulliainen_2010`.
-The latter two algorithms are implemented in the GlobSnow v3.0 SWE product of the Global Snow Monitoring for Climate Research initiative of the European Space Agency ({term}`ESA`) {cite:p}`luojus_2021`, and in the snow status (dry/wet) H11 product by the Support to Operational Hydrology and Water Management ({term}`H SAF`) of the European Organization for the Exploitation of Meteorological Satellites ({term}`EUMETSAT`).
+The latter two algorithms are implemented in the GlobSnow v3.0 {term}`SWE` product of the Global Snow Monitoring for Climate Research initiative of the European Space Agency ({term}`ESA`) {cite:p}`luojus_2021`, and in the snow status (dry/wet) H11 product by the Support to Operational Hydrology and Water Management ({term}`H SAF`) of the European Organization for the Exploitation of Meteorological Satellites ({term}`EUMETSAT`).
 The approaches by {cite:t}`hall_2002` and {cite:t}`pulliainen_2010` are thus referred to as *GlobSnow* and *H SAF*, respectively.
 
 ```{note}

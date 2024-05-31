@@ -2,10 +2,10 @@
 
 % snow importance
 Snow cover is a central component of the Earth’s cryosphere, encountered at mid to high latitudes.
-It plays an important role in the Earth's climate and hydrologic systems, directly influencing the global surface energy budget and regional freshwater resources particularly in the Northern Hemisphere.
+It plays an important role in climate and hydrologic systems, directly influencing the global surface energy budget and regional freshwater resources particularly in the Northern Hemisphere.
 Rising temperatures have resulted in a profound global reduction of snow cover area and seasonal duration, which drastically affect the global climate and restrict communities in accessing subsistence and freshwater resources.
 Understanding those climate impacts and risks to water supply is paramount for successful climate mitigation and adaptation, as well as informed water resource management.
-This requires global snow monitoring tools, including spaceborne snow mapping using typically visible/near-infrared or passive microwave data.
+This requires global monitoring tools, including spaceborne snow mapping using passive microwave data.
 
 % algorithm
 Snow mapping by means of spaceborne passive microwave dry snow detection is commonly based on the spectral difference between 18 GHz (Ku-band) and 36 GHz (Ka-band) brightness temperatures of horizontal polarisation.

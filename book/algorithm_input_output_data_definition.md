@@ -1,6 +1,6 @@
 # Algorithm Input and Output Data Definition (IODD)
 
-Except for the input L1B TB data, all auxiliary and output data follow the EASE-Grid 2.0 polar projection of the Northern Hemisphere.
+Except for the input L1b {term}`TB` data, all auxiliary and output data follow the {term}`EASE-Grid` 2.0 polar projection of the Northern Hemisphere.
 The current target spatial resolution for regridding is 3.125km.
 
 ## Input data
@@ -13,8 +13,8 @@ If available, night or morning acquisition times are preferred over afternoon or
 
 | Field | Description | Shape/Amount |
 | ----- | ----------- | ------------ |
-| L1B TB Ku-band &nbsp; | L1B Brightness Temperatures at 18.7 GHZ <br> (H polarisation) | Full swath or swath section <br> (Nscans,Npos) |
-| L1B TB Ka-band &nbsp; | L1B Brightness Temperatures at 36.5 GHZ <br> (H and V polarisation) | Full swath or swath section <br> (Nscans,Npos) |
+| L1b TB Ku-band &nbsp; | L1B Brightness Temperatures at 18.7 GHZ <br> (H polarisation) | Full swath or swath section <br> (Nscans,Npos) |
+| L1b TB Ka-band &nbsp; | L1B Brightness Temperatures at 36.5 GHZ <br> (H and V polarisation) | Full swath or swath section <br> (Nscans,Npos) |
 
 ## Output data
 

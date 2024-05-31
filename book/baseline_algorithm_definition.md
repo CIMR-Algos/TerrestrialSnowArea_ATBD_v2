@@ -4,7 +4,7 @@ The {term}`TSA` algorithm is based on dry snow detection as described by {cite:t
 The TSA product is only concerned with snow cover in the Northern Hemisphere, where seasonal terrestrial snow predominantly occurs.
 
 ```{seealso}
-Refer [here](../algorithm/run_CIMR_L2_TSA.ipynb) for a top-level script of the L2 TSA algorithm including output file generation, and [here](../algorithm/run_CIMR_L2_TSA.ipynb) for added step-by-step visualization.
+Refer [here](../algorithm/run_CIMR_L2_TSA.ipynb) for a top-level script of the Level-2 TSA algorithm including output file generation, and [here](../algorithm/run_CIMR_L2_TSA.ipynb) for added step-by-step visualization.
 ```
 
 ## Retrieval Method
@@ -22,14 +22,14 @@ The specifics of the retrieval methodology may be subject to change, but will fo
 ## Forward Model
 
 The origins of the implemented algorithm stem from {cite:t}`chang_1987`, who present a linear relationship between snow depth and spectral difference (see {eq}`TB_diff`).
-This relationship is derived from an empirical fit of simulated microwave brightness temperatures for varying SWE, using a microscopic scattering model {cite:p}`chang_1982`.
+This relationship is derived from an empirical fit of simulated microwave brightness temperatures for varying {term}`SWE`, using a microscopic scattering model {cite:p}`chang_1982`.
 The model takes into consideration the underlying (un-)frozen surface conditions as well as the physical temperature, density, and grain size of the snowpack.
 Snow grains are assumed to be spherical and randomly-spaced, resulting in incoherent scattering.
 The radiative transfer equation is solved numerically.
 
 ## CIMR Level-1b Resampling Approach
 
-Prior to the main TSA algorithm, the current CIMR L2 TSA framework includes the resampling of L1b TB data to collocate channels to a target channel.
+Prior to the main TSA algorithm, the current {term}`CIMR` Level-2 TSA framework includes the resampling of L1b TB data to collocate channels to a target channel.
 The implemented resampling approach stems from the [CIMR Devalgo Tools](https://github.com/CIMR-Algos/Tools), with the target resolution of Ku-band TB data being set to match Ka-band resolution.
 For future research purposes, it is encouraged to also remap X-band TB data with Ka-band as target.
 
@@ -77,7 +77,7 @@ T_B^{37H} &< 250~\text{K}.
 \end{aligned}
 ```
 
-The conditions in {eq}`TB_diff`and {eq}`TB_thresholds` are applied separately to TBs from forward and backward scans.
+The conditions in {eq}`TB_diff` and {eq}`TB_thresholds` are applied separately to TBs from forward and backward scans.
 
 #### Input data
 
@@ -94,7 +94,7 @@ After resampling to Ka-band as target, both the forward and backward-looking dat
 #### Description
 
 The preceeding dry snow detection step is applied to resampled swath brightness temperatures of both scan directions.
-The forward and backward TSA maps in swath format are each individually reprojected to the EASE-Grid 2.0 NH, and subsequently combined into a single map.
+The forward and backward TSA maps in swath format are each individually reprojected to the {term}`EASE-Grid` 2.0 {term}`NH`, and subsequently combined into a single map.
 When combining the binary TSA maps, all snow pixels are retained in order to counteract the tendency of passive microwave approaches to underestimate TSA.
 In other words, snow is flagged when at least one scan direction detects snow.
 
@@ -114,7 +114,7 @@ In other words, snow is flagged when at least one scan direction detects snow.
 Although masking and flagging are not strictly necessary to retrieve TSA, this step provides relevant complementary information.
 Generally, flagging is preferred over masking with the reasoning that users can later individually tailor the daily TSA map to their needs.
 
-The TSA Uncertainty Flag in its current form is based on the gridded forward and backward TSA maps.
+The TSA Uncertainty Flag in its current form is based on the gridded forward ({term}`FWD`) and backward ({term}`BCK`) TSA maps.
 Grid cells which see detected snow for both scans (FWD & BCK) are flagged as 'very likely snow covered', whereas detected snow for one scan only (FWD | BCK) are set to 'likely snow covered'.
 If no snow is detected for both scans (FWD & BCK), the flag reads 'very likely snow free'.
 The Status Flag contains information for each grid cell whether its spatial location corresponds to open water, land, or snow-covered land (valid dry snow), and indicates cells with missing data or out of grid. 

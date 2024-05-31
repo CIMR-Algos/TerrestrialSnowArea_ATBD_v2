@@ -7,14 +7,14 @@ ACDAT
 AD
   Applicable Document
 
-AMSR2
-  Advanced Microwave Scanning Radiometer 2
-
 AVDAT
   Algorithm Validation Data Set
 
 ATBD
   Algorithm Theoretical Basis Document
+
+BCK
+  Backward scan
 
 CF
   NetCDF Climate and Forecast Metadata Conventions
@@ -40,6 +40,15 @@ EUMETSAT
 FMI
   Finnish Meteorological Institute
 
+FN
+  False Negative
+
+FP
+  False Positive
+
+FWD
+  Forward scan
+
 H SAF
   EUMETSAT Support to Operational Hydrology and Water Management
 
@@ -56,25 +65,19 @@ NH
   Northern Hemisphere
 
 NRT
-  Near Real Time
+  Near Real-Time
+
+NWP
+  Numerical Weather Prediction
 
 PMW
   Passive microwave
-
-QA
-  Quality Assessment
-
-RRDP
-  Round Robin Data Package
 
 RD
   Reference Document
 
 SD
   Snow depth
-
-SMAP
-  Soil Moisture Active Passive
 
 SSM/I
   Special Sensor Microwave/Imager
@@ -87,6 +90,12 @@ SWE
 
 TB
   Brightness temperature
+
+TN
+  True Negative
+
+TP
+  True Positive
 
 TSA
   {term}`Terrestrial snow area`

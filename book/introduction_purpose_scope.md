@@ -53,7 +53,7 @@ This sensitivity to snow properties can be exploited to derive snow depth estima
 However, snow depths of less than about 3 cm are seldomly detected because the scattering effect is only marginal {cite:p}`chang_1987,hall_2002`.
 To improve the sensitivity to thin snowpacks, brightness temperatures from high frequencies of 85 GHz and above can be included as those are subject to increased volume scattering {cite:p}`grody_1996`.
 In addition, the influence of the underlying ground on the observed emission is more apparent for shallow snowpacks; an increase in soil temperature and/or wetness may significantly increase the measured brightness temperature.
-On the other hand, snow depths corresponding to bulk SWE of about 150 mm become problematic as the maximum observable scattering is reached.
+On the other hand, snow depths corresponding to bulk {term}`SWE` of about 150 mm become problematic as the maximum observable scattering is reached.
 This results in signal saturation i.e. snow depths cannot be reliably estimated anymore using the brightness temperature difference since no variations in scattering are present beyond this snow depth {cite:p}`takala_2011`.
 Snow is now the primary emitter, and its emissivity starts to increase rather than decrease for increasing snow depth {cite:p}`foster_1997,matzler_1994`.
 
@@ -85,10 +85,10 @@ Snow cover in forested areas consequently presents higher emissivities and brigh
 % limitations and polarisation
 Limitations of dry snow detection based on the scattering signature also arise due to anomalous scattering signals, caused for instance by precipitation or cold deserts {cite:p}`grody_1996`, or due to internal variations in snow properties.
 The latter includes variations in density and grain size resulting from the snowpack stratigraphy.
-Those distinctive snow layers affect more the horizontal than the vertical polarisations of the Ku and Ka channels {cite:p}`kelly_2003`.
+Those distinctive snow layers affect more the horizontal than the vertical polarisations of the Ku and Ka-band channels {cite:p}`kelly_2003`.
 It could be derived that vertical polarisations are more appropriate for snow depth estimations given they are less responsive to internal characteristics, whilst horizontal polarisations are more sensitive to those same properties and therefore suitable for detecting dry snow in first place {cite:p}`kelly_2003`.
 Nonetheless, either polarisation have been applied for dry snow detection.
 
 % purpose and scope
 The purpose of this {term}`ATBD` is to detail the implementation of the CIMR Level-2 Terrestrial Snow Area (TSA) product, in form of a binary classification.
-The scope is the implementation of a stable version using horizontally polarised Ka and Ku brightness temperatures as core frequency bands according to {cite:t}`hall_2002` and {cite:t}`pulliainen_2010`.
+The scope is the implementation of a stable version using horizontally polarised Ka and Ku-band brightness temperatures as core frequency bands according to {cite:t}`hall_2002` and {cite:t}`pulliainen_2010`.
