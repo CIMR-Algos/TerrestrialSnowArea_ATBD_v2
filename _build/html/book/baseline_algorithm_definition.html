@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/baseline_algorithm_definition';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Algorithm Input and Output Data Definition (IODD)" href="algorithm_input_output_data_definition.html" />
+    <link rel="next" title="Algorithm Input and Output Data Definition" href="algorithm_input_output_data_definition.html" />
     <link rel="prev" title="Level-2 Product Definition" href="L2_product_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,11 +169,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 Product Definition</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Baseline Algorithm Definition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for Future ATBD Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="annex.html">Annex</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html">CIMR L2 TSA Top-Level Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_PICASSO.html">CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html">CIMR L2 TSA Algorithm for the SCEPS Polar Scene</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -377,11 +382,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="baseline-algorithm-definition">
 <h1>Baseline Algorithm Definition<a class="headerlink" href="#baseline-algorithm-definition" title="Permalink to this heading">#</a></h1>
-<p>The <a class="reference internal" href="acronyms.html#term-TSA"><span class="xref std std-term">TSA</span></a> algorithm is based on dry snow detection as described by <span id="id1">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id2">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>. This empirical algorithm is based on the underlying physical principle that microwave radiation of higher frequencies is attenuated by snow cover due to volume scattering, while lower frequencies remain mostly unaffected.
+<p>The <a class="reference internal" href="acronyms.html#term-TSA"><span class="xref std std-term">TSA</span></a> algorithm is based on dry snow detection as described by <span id="id1">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Annals of Glaciology, 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id2">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>. This empirical algorithm is based on the underlying physical principle that microwave radiation of higher frequencies is attenuated by snow cover due to volume scattering, while lower frequencies remain mostly unaffected.
 The TSA product is only concerned with snow cover in the Northern Hemisphere, where seasonal terrestrial snow predominantly occurs.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Refer <a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html"><span class="doc std std-doc">here</span></a> for a top-level script of the Level-2 TSA algorithm including output file generation, and <a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html"><span class="doc std std-doc">here</span></a> for added step-by-step visualization.</p>
+<p>Refer to the <a class="reference internal" href="annex.html#content-annex"><span class="std std-ref">Annex</span></a> for a <a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html"><span class="doc std std-doc">top-level script</span></a> of the Level-2 TSA algorithm including output file generation, and for a <a class="reference internal" href="../algorithm/CIMR_L2_TSA_PICASSO.html"><span class="doc std std-doc">step-by-step visualization</span></a>.</p>
 </div>
 <section id="retrieval-method">
 <h2>Retrieval Method<a class="headerlink" href="#retrieval-method" title="Permalink to this heading">#</a></h2>
@@ -398,7 +403,7 @@ The TSA product is only concerned with snow cover in the Northern Hemisphere, wh
 </section>
 <section id="forward-model">
 <h2>Forward Model<a class="headerlink" href="#forward-model" title="Permalink to this heading">#</a></h2>
-<p>The origins of the implemented algorithm stem from <span id="id3">Chang <em>et al.</em> [<a class="reference internal" href="references.html#id7" title="A. Chang, J. Foster, and D. Hall. Nimbus-7 SMMR derived global snow cover parameters. Ann. Glaciol., 9:39-44, 1987. doi:10.3189/S0260305500200736.">1987</a>]</span>, who present a linear relationship between snow depth and spectral difference (see <a class="reference internal" href="#equation-tb-diff">(1)</a>).
+<p>The origins of the implemented algorithm stem from <span id="id3">Chang <em>et al.</em> [<a class="reference internal" href="references.html#id7" title="A. Chang, J. Foster, and D. Hall. Nimbus-7 SMMR derived global snow cover parameters. Annals of Glaciology, 9:39-44, 1987. doi:10.3189/S0260305500200736.">1987</a>]</span>, who present a linear relationship between snow depth and spectral difference, as given in <a class="reference internal" href="#equation-tb-diff">(1)</a>.
 This relationship is derived from an empirical fit of simulated microwave brightness temperatures for varying <a class="reference internal" href="acronyms.html#term-SWE"><span class="xref std std-term">SWE</span></a>, using a microscopic scattering model <span id="id4">[<a class="reference internal" href="references.html#id23" title="A. Chang, J. Foster, D. Hall, A. Rango, and B. Hartline. Snow water equivalent estimation by microwave radiometry. Cold Regions Science and Technology, 5(3):259–267, 1982. doi:10.1016/0165-232X(82)90019-2.">Chang <em>et al.</em>, 1982</a>]</span>.
 The model takes into consideration the underlying (un-)frozen surface conditions as well as the physical temperature, density, and grain size of the snowpack.
 Snow grains are assumed to be spherical and randomly-spaced, resulting in incoherent scattering.
@@ -432,7 +437,7 @@ Different land cover properties are not considered.</p>
 <h3>Dry Snow Detection<a class="headerlink" href="#dry-snow-detection" title="Permalink to this heading">#</a></h3>
 <section id="mathematical-description">
 <h4>Mathematical description<a class="headerlink" href="#mathematical-description" title="Permalink to this heading">#</a></h4>
-<p>The dry snow detection algorithm of the TSA product is based on the approach of <span id="id5">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> but applies updated empirically derived thresholds as implemented for the EUMETSAT H SAF snow status product H11 <span id="id6">[<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">Pulliainen <em>et al.</em>, 2010</a>]</span>. The brightness temperature difference between the Ku and Ka-band is used to estimate snow depth (SD) as</p>
+<p>The dry snow detection algorithm of the TSA product is based on the approach of <span id="id5">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Annals of Glaciology, 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> but applies updated empirically derived thresholds as implemented for the EUMETSAT H SAF snow status product H11 <span id="id6">[<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">Pulliainen <em>et al.</em>, 2010</a>]</span>. The brightness temperature difference between the Ku and Ka-band is used to estimate snow depth (SD) as</p>
 <div class="math notranslate nohighlight" id="equation-tb-diff">
 <span class="eqno">(1)<a class="headerlink" href="#equation-tb-diff" title="Permalink to this equation">#</a></span>\[\text{SD} = R_c \cdot (T_B^{18H}-T_B^{37H}),\]</div>
 <p>with regression coefficient <span class="math notranslate nohighlight">\(R_c\)</span> of 1.59 cm/K and brightness temperatures <span class="math notranslate nohighlight">\(T_B\)</span>, where the superscripts indicate the frequency and polarisation.
@@ -571,7 +576,7 @@ Such ancillary data could further compliment TSA uncertainty estimates.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Algorithm Input and Output Data Definition (IODD)</p>
+        <p class="prev-next-title">Algorithm Input and Output Data Definition</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

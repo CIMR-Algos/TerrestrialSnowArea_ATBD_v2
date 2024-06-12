@@ -4,7 +4,7 @@ The {term}`TSA` algorithm is based on dry snow detection as described by {cite:t
 The TSA product is only concerned with snow cover in the Northern Hemisphere, where seasonal terrestrial snow predominantly occurs.
 
 ```{seealso}
-Refer [here](../algorithm/run_CIMR_L2_TSA.ipynb) for a top-level script of the Level-2 TSA algorithm including output file generation, and [here](../algorithm/run_CIMR_L2_TSA.ipynb) for added step-by-step visualization.
+Refer to the {ref}`content:annex` for a [top-level script](../algorithm/run_CIMR_L2_TSA.ipynb) of the Level-2 TSA algorithm including output file generation, and for a [step-by-step visualization](../algorithm/CIMR_L2_TSA_PICASSO.ipynb).
 ```
 
 ## Retrieval Method
@@ -21,7 +21,7 @@ The specifics of the retrieval methodology may be subject to change, but will fo
 
 ## Forward Model
 
-The origins of the implemented algorithm stem from {cite:t}`chang_1987`, who present a linear relationship between snow depth and spectral difference (see {eq}`TB_diff`).
+The origins of the implemented algorithm stem from {cite:t}`chang_1987`, who present a linear relationship between snow depth and spectral difference, as given in {eq}`TB_diff`.
 This relationship is derived from an empirical fit of simulated microwave brightness temperatures for varying {term}`SWE`, using a microscopic scattering model {cite:p}`chang_1982`.
 The model takes into consideration the underlying (un-)frozen surface conditions as well as the physical temperature, density, and grain size of the snowpack.
 Snow grains are assumed to be spherical and randomly-spaced, resulting in incoherent scattering.

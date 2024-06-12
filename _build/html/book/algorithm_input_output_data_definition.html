@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Algorithm Input and Output Data Definition (IODD) &#8212; CIMR L2 Terrestrial Snow Area ATBD v2</title>
+    <title>Algorithm Input and Output Data Definition &#8212; CIMR L2 Terrestrial Snow Area ATBD v2</title>
   
   
   
@@ -167,11 +167,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 Product Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Input and Output Data Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for Future ATBD Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="annex.html">Annex</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html">CIMR L2 TSA Top-Level Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_PICASSO.html">CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html">CIMR L2 TSA Algorithm for the SCEPS Polar Scene</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -323,7 +328,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Algorithm Input and Output Data Definition (IODD)</h1>
+    <h1>Algorithm Input and Output Data Definition</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,10 +338,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-l1-data">Input L1 Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-l2-data">Input L2 Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output Data</a></li>
 </ul>
             </nav>
         </div>
@@ -348,17 +356,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="algorithm-input-and-output-data-definition-iodd">
-<h1>Algorithm Input and Output Data Definition (IODD)<a class="headerlink" href="#algorithm-input-and-output-data-definition-iodd" title="Permalink to this heading">#</a></h1>
-<p>Except for the input L1b <a class="reference internal" href="acronyms.html#term-TB"><span class="xref std std-term">TB</span></a> data, all auxiliary and output data follow the <a class="reference internal" href="acronyms.html#term-EASE-Grid"><span class="xref std std-term">EASE-Grid</span></a> 2.0 polar projection of the Northern Hemisphere.
-The current target spatial resolution for regridding is 3.125km.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="algorithm-input-and-output-data-definition">
+<h1>Algorithm Input and Output Data Definition<a class="headerlink" href="#algorithm-input-and-output-data-definition" title="Permalink to this heading">#</a></h1>
+<p>The Algorithm Input and Output Data Definition (IODD) is described hereafter.
+Except for the input L1b <a class="reference internal" href="acronyms.html#term-TB"><span class="xref std std-term">TB</span></a> data, all auxiliary and output data follow the <a class="reference internal" href="acronyms.html#term-EASE-Grid"><span class="xref std std-term">EASE-Grid</span></a> 2.0 polar projection of the Northern Hemisphere with a preliminary target spatial resolution of 3.125km.</p>
 <section id="input-data">
-<h2>Input data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h2>
-<p>Daily Level-2 brightness temperature data are the main input, namely Ku-band data of horizontal polarisation and Ka-band data of both polarisations.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If available, night or morning acquisition times are preferred over afternoon or evening brightness temperature data, in order to minimise effects of liquid water within the snowpack due to melt.</p>
-</div>
+<h2>Input Data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h2>
+<p>Daily brightness temperature data are the main input, namely Ku-band data of horizontal polarisation and Ka-band data of both polarisations.</p>
+<section id="input-l1-data">
+<h3>Input L1 Data<a class="headerlink" href="#input-l1-data" title="Permalink to this heading">#</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
@@ -377,9 +383,39 @@ The current target spatial resolution for regridding is 3.125km.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If available, night or morning acquisition times are preferred over afternoon or evening brightness temperature data, in order to minimise effects of liquid water within the snowpack due to melt.</p>
+</div>
+</section>
+<section id="auxiliary-data">
+<h3>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Permalink to this heading">#</a></h3>
+<p>Although the application of auxiliary data is not required to run the TSA algorithm per se, it is highly recommended to mask out known large water bodies to ensure satisfactory product quality.
+The use of an internal mask is recommended for consistency among all L2 products.
+Further internal or external auxiliary data files (<a class="reference internal" href="acronyms.html#term-ADF"><span class="xref std std-term">ADF</span></a>) are to be determined.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Shape/Amount</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Water Mask</p></td>
+<td><p>Binary mask of large water bodies, incl. oceans and lakes</p></td>
+<td><p>EASE-Grid 2.0 NH <br> (nx,ny)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="input-l2-data">
+<h3>Input L2 Data<a class="headerlink" href="#input-l2-data" title="Permalink to this heading">#</a></h3>
+<p>The TSA algorithm does not require fields from other L2 processors as input.</p>
+</section>
 </section>
 <section id="output-data">
-<h2>Output data<a class="headerlink" href="#output-data" title="Permalink to this heading">#</a></h2>
+<h2>Output Data<a class="headerlink" href="#output-data" title="Permalink to this heading">#</a></h2>
+<p>Output variables generated by the L2 TSA processor encompass the <a class="reference internal" href="acronyms.html#term-TSA"><span class="xref std std-term">TSA</span></a> map, corresponding uncertainty estimates and complementary status information.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
@@ -449,19 +485,8 @@ The TSA uncertainty (<code class="docutils literal notranslate"><span class="pre
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Empty placeholders within the status flag may be used for future R&amp;D activities, such as the development of a wet snow flag.</p>
+<p>Empty placeholders within the status flag may be used for future research activities, such as the development of a wet snow flag.</p>
 </div>
-</section>
-<section id="auxiliary-data">
-<h2>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Land and water mask
-Although the application of auxiliary data is not required to run the TSA algorithm per se, it is highly recommended to mask out known large water bodies thereby ensuring satisfactory product quality.</p></li>
-</ul>
-</section>
-<section id="ancillary-data">
-<h2>Ancillary data<a class="headerlink" href="#ancillary-data" title="Permalink to this heading">#</a></h2>
-<p>N/a</p>
 </section>
 </section>
 
@@ -526,10 +551,13 @@ Although the application of auxiliary data is not required to run the TSA algori
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-l1-data">Input L1 Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-l2-data">Input L2 Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output Data</a></li>
 </ul>
   </nav></div>
 

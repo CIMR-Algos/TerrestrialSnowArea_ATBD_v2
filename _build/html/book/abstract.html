@@ -167,11 +167,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 Product Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for Future ATBD Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="annex.html">Annex</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html">CIMR L2 TSA Top-Level Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_PICASSO.html">CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html">CIMR L2 TSA Algorithm for the SCEPS Polar Scene</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -344,7 +349,7 @@ Understanding those climate impacts and risks to water supply is paramount for s
 This requires global monitoring tools, including spaceborne snow mapping using passive microwave data.</p>
 <p>Snow mapping by means of spaceborne passive microwave dry snow detection is commonly based on the spectral difference between 18 GHz (Ku-band) and 36 GHz (Ka-band) brightness temperatures of horizontal polarisation.
 This principle is also fundamental for the dry snow detection algorithm of the <a class="reference internal" href="definitions.html#term-Terrestrial-snow-area"><span class="xref std std-term">Terrestrial Snow Area</span></a> (<a class="reference internal" href="acronyms.html#term-TSA"><span class="xref std std-term">TSA</span></a>) Level-2 product for the <a class="reference internal" href="definitions.html#term-Copernicus-Imaging-Microwave-Radiometer"><span class="xref std std-term">Copernicus Imaging Microwave Radiometer</span></a> (<a class="reference internal" href="acronyms.html#term-CIMR"><span class="xref std std-term">CIMR</span></a>) mission.
-The TSA algorithm implements the approaches of <span id="id1">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Ann. Glaciol., 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id2">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>, as described in this Algorithm Theoretical Basis Document (<a class="reference internal" href="acronyms.html#term-ATBD"><span class="xref std std-term">ATBD</span></a>).</p>
+The TSA algorithm implements the approaches of <span id="id1">Hall <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric-scale snow-cover maps. Annals of Glaciology, 34:24-30, 2002. doi:10.3189/172756402781817770.">2002</a>]</span> and <span id="id2">Pulliainen <em>et al.</em> [<a class="reference internal" href="references.html#id3" title="J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN-OBS-2 - Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H-SAF, 2010.">2010</a>]</span>, as described in this Algorithm Theoretical Basis Document (<a class="reference internal" href="acronyms.html#term-ATBD"><span class="xref std std-term">ATBD</span></a>).</p>
 </section>
 
     <script type="text/x-thebe-config">

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; CIMR L2 Terrestrial Snow Area ATBD v2</title>
+    <title>CIMR L2 TSA Top-Level Script &#8212; CIMR L2 Terrestrial Snow Area ATBD v2</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm/run_CIMR_L2_TSA';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)" href="CIMR_L2_TSA_PICASSO.html" />
+    <link rel="prev" title="Annex" href="../book/annex.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../book/abstract.html">Abstract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../book/applicable_ref_docs.html">Applicable and Reference Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../book/acronyms.html">Acronyms</a></li>
@@ -165,11 +167,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../book/background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../book/L2_product_definition.html">Level-2 Product Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../book/baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../book/algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../book/algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../book/roadmap.html">Roadmap for Future ATBD Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../book/references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../book/annex.html">Annex</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../book/annex.html">Annex</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CIMR L2 TSA Top-Level Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CIMR_L2_TSA_PICASSO.html">CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CIMR_L2_TSA_SCEPS.html">CIMR L2 TSA Algorithm for the SCEPS Polar Scene</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -308,9 +315,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -321,19 +326,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>CIMR L2 TSA Top-Level Script</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -343,7 +340,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="cimr-l2-tsa-top-level-script">
+<h1>CIMR L2 TSA Top-Level Script<a class="headerlink" href="#cimr-l2-tsa-top-level-script" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stand-alone script to run TSA algorithm and write L2 TSA product, alternatively call through:</span>
 <span class="c1"># run_CIMR_L2_PolarOceans.py --no-oza-adjust &quot;C:/Users/zschende/OneDrive - Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/SCEPS/SCEPS_l1b_sceps_geo_polar_scene_1_unfiltered_tot_minimal_nom_nedt_apc_tot_v2p1.nc&quot;</span>
@@ -632,6 +631,7 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -661,26 +661,30 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../book/annex.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Annex</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CIMR_L2_TSA_PICASSO.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

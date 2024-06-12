@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Roadmap for Future ATBD Development" href="roadmap.html" />
-    <link rel="prev" title="Algorithm Input and Output Data Definition (IODD)" href="algorithm_input_output_data_definition.html" />
+    <link rel="prev" title="Algorithm Input and Output Data Definition" href="algorithm_input_output_data_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,11 +169,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 Product Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for Future ATBD Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="annex.html">Annex</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html">CIMR L2 TSA Top-Level Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_PICASSO.html">CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html">CIMR L2 TSA Algorithm for the SCEPS Polar Scene</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -362,7 +367,7 @@ document.write(`
 <p>The following performance assessment of the CIMR L2 TSA algorithm focuses predominantly on the radiometric scene of the Demonstration Reference Scenario.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Refer <a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html"><span class="doc std std-doc">here</span></a> for a demonstration of the TSA algorithm for the SCEPS Polar Scene.</p>
+<p>Refer to the <a class="reference internal" href="annex.html#content-annex"><span class="std std-ref">Annex</span></a> for a demonstration of the TSA algorithm for the SCEPS Polar Scene (see <a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html"><span class="doc std std-doc">Jupyter Notebook</span></a>).</p>
 </div>
 <section id="l1-e2es-demonstration-reference-scenario-picasso-scene-definition">
 <h2>L1 E2ES Demonstration Reference Scenario (Picasso) scene definition<a class="headerlink" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition" title="Permalink to this heading">#</a></h2>
@@ -966,7 +971,7 @@ The radiometric scene contains two land surface types: snow-free and snow-covere
 Note that distinct bare ground as well as established snowpacks are represented, while more challenging conditions such as shallow or wet snow, complex terrain, dense vegetation, and lake ice are not considered.
 Due to this idealistic nature of the artificial scene, high algorithm performance is to be expected.
 Indeed, the TSA algorithm achieves an accuracy of 95.99% together with a true positive rate of 95.59% and a true negative rate of 96.39%.</p>
-<p>The metrics, however, still reflect the common tendency of passive microwave snow detection methodologies to underestimate snow cover area, as the true negative rate is larger than the true positive rate.
+<p>Although the performance is very high, the metrics still reflect the common tendency of passive microwave snow detection methodologies to underestimate snow cover area, as the true negative rate is larger than the true positive rate.
 False negative pixels, i.e. pixels affected by underestimation are predominantly found in proximity to land-water boundaries.
 Although more dependent on different sea and sea ice conditions, false positive pixels representing overestimation similarly form elongated clusters along ‘coastlines’.
 Even this simple test scene therefore emphasises the need for water spill-over corrections.</p>
@@ -975,7 +980,7 @@ In case of the radiometric scene, combining snow area estimates from both forwar
 The overall algorithm performance is better when compared to snow area estimates from only one look direction.
 This supports the current approach of combining snow area estimates after separate processing of forward and backward scans.
 In case of the geometric scene, land surface types are not included.
-Nevertheless, the high-contrast brightness temperature patterns happen to provide a visualisation of the implemented TSA uncertainty flag, highlighting its behaviour and utility along sharp borders and transitions.
+Nevertheless, the high-contrast brightness temperature patterns happen to provide a visualisation of the implemented TSA uncertainty flag, highlighting its behaviour and utility along sharp borders and gradient transitions.
 Both aspects encourage the partition of CIMR brightness temperatures depending on look direction.</p>
 <p>In contrast to the Demonstration Reference Scenario, more realistic conditions are found in the SCEPS Polar Scene.
 Yet when applying the TSA algorithm to said polar scene, barely any snow cover is detected over land.
@@ -1024,7 +1029,7 @@ Even though synthetic data naturally cannot fully replace real data, the assessm
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Algorithm Input and Output Data Definition (IODD)</p>
+        <p class="prev-next-title">Algorithm Input and Output Data Definition</p>
       </div>
     </a>
     <a class="right-next"
