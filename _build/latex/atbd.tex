@@ -84,7 +84,7 @@
         
 
 \title{CIMR L2 Terrestrial Snow Area ATBD v2}
-\date{May 31, 2024}
+\date{Jun 12, 2024}
 \release{}
 \author{Finnish Meteorological Institute}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -137,7 +137,7 @@ This document describes the algorithm theoretical basis for the Terrestrial Snow
 
 \item {} 
 \sphinxAtStartPar
-{\hyperref[\detokenize{book/algorithm_input_output_data_definition::doc}]{\sphinxcrossref{Algorithm Input and Output Data Definition (IODD)}}}
+{\hyperref[\detokenize{book/algorithm_input_output_data_definition::doc}]{\sphinxcrossref{Algorithm Input and Output Data Definition}}}
 
 \item {} 
 \sphinxAtStartPar
@@ -218,6 +218,10 @@ Algorithm Calibration Data Set
 \sphinxlineitem{AD\index{AD@\spxentry{AD}|spxpagem}\phantomsection\label{\detokenize{book/acronyms:term-AD}}}
 \sphinxAtStartPar
 Applicable Document
+
+\sphinxlineitem{ADF\index{ADF@\spxentry{ADF}|spxpagem}\phantomsection\label{\detokenize{book/acronyms:term-ADF}}}
+\sphinxAtStartPar
+Auxiliary Data File
 
 \sphinxlineitem{AVDAT\index{AVDAT@\spxentry{AVDAT}|spxpagem}\phantomsection\label{\detokenize{book/acronyms:term-AVDAT}}}
 \sphinxAtStartPar
@@ -521,7 +525,7 @@ This approach is the most accurate to\sphinxhyphen{}date on a global scale for t
 \chapter{Level\sphinxhyphen{}2 Product Definition}
 \label{\detokenize{book/L2_product_definition:level-2-product-definition}}\label{\detokenize{book/L2_product_definition::doc}}
 \sphinxAtStartPar
-The Level\sphinxhyphen{}2 TSA product files are provided in netCDF format, with contents as defined in Tables \hyperref[\detokenize{book/L2_product_definition:product-netcdf}]{\ref{\detokenize{book/L2_product_definition:product-netcdf}}}, \hyperref[\detokenize{book/L2_product_definition:variable-attributes}]{\ref{\detokenize{book/L2_product_definition:variable-attributes}}}, and \hyperref[\detokenize{book/L2_product_definition:global-attributes}]{\ref{\detokenize{book/L2_product_definition:global-attributes}}}.
+The Level\sphinxhyphen{}2 {\hyperref[\detokenize{book/acronyms:term-TSA}]{\sphinxtermref{\DUrole{xref,std,std-term}{TSA}}}} product files are provided in netCDF format, with contents as defined in Tables \hyperref[\detokenize{book/L2_product_definition:product-netcdf}]{\ref{\detokenize{book/L2_product_definition:product-netcdf}}}, \hyperref[\detokenize{book/L2_product_definition:variable-attributes}]{\ref{\detokenize{book/L2_product_definition:variable-attributes}}}, and \hyperref[\detokenize{book/L2_product_definition:global-attributes}]{\ref{\detokenize{book/L2_product_definition:global-attributes}}}.
 Each data variable of the processed data in \hyperref[\detokenize{book/L2_product_definition:product-netcdf}]{Table \ref{\detokenize{book/L2_product_definition:product-netcdf}}} holds conventional attributes following NetCDF Climate and Forecast Metadata Conventions Version 1.7 (CF\sphinxhyphen{}1.7) or above as given in \hyperref[\detokenize{book/L2_product_definition:variable-attributes}]{Table \ref{\detokenize{book/L2_product_definition:variable-attributes}}}.
 Some global attributes of the Level\sphinxhyphen{}2 product files are given in \hyperref[\detokenize{book/L2_product_definition:global-attributes}]{Table \ref{\detokenize{book/L2_product_definition:global-attributes}}}.
 
@@ -531,7 +535,7 @@ Some global attributes of the Level\sphinxhyphen{}2 product files are given in \
 
 
 \sphinxAtStartPar
-Refer \DUrole{xref,myst}{here} for a sample run demonstrating the processing sequence to create the L2 TSA product files.
+Refer to the {\hyperref[\detokenize{book/annex:content-annex}]{\sphinxcrossref{\DUrole{std,std-ref}{Annex}}}} for a sample run demonstrating the processing sequence to create the L2 TSA product files (see {\hyperref[\detokenize{algorithm/CIMR_L2_TSA_PICASSO::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Jupyter Notebook}}}}).
 
 
 
@@ -540,7 +544,7 @@ Refer \DUrole{xref,myst}{here} for a sample run demonstrating the processing seq
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{NetCDF Group: Processed Data (tbc).}\label{\detokenize{book/L2_product_definition:product-netcdf}}
+\sphinxcaption{NetCDF Group: Processed Data.}\label{\detokenize{book/L2_product_definition:product-netcdf}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|T|T|}
 \hline
@@ -562,7 +566,7 @@ Dimension
 \sphinxcode{\sphinxupquote{tsa}}
 &
 \sphinxAtStartPar
-Terrestrial snow area \sphinxcode{\sphinxupquote{(\{term\}}}TSA`)
+Terrestrial snow area ({\hyperref[\detokenize{book/acronyms:term-TSA}]{\sphinxtermref{\DUrole{xref,std,std-term}{TSA}}}})
 &
 \sphinxAtStartPar
 1
@@ -676,7 +680,7 @@ The CIMR Level\sphinxhyphen{}2 TSA product are gridded files. The dimensions of 
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Standard variable attributes (tbc).}\label{\detokenize{book/L2_product_definition:variable-attributes}}
+\sphinxcaption{Standard variable attributes.}\label{\detokenize{book/L2_product_definition:variable-attributes}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|}
 \hline
@@ -725,7 +729,7 @@ Unit of measure
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Global attributes (tbc).}\label{\detokenize{book/L2_product_definition:global-attributes}}
+\sphinxcaption{Global attributes.}\label{\detokenize{book/L2_product_definition:global-attributes}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|}
 \hline
@@ -791,7 +795,7 @@ The TSA product is only concerned with snow cover in the Northern Hemisphere, wh
 
 
 \sphinxAtStartPar
-Refer \DUrole{xref,myst}{here} for a top\sphinxhyphen{}level script of the Level\sphinxhyphen{}2 TSA algorithm including output file generation, and \DUrole{xref,myst}{here} for added step\sphinxhyphen{}by\sphinxhyphen{}step visualization.
+Refer to the {\hyperref[\detokenize{book/annex:content-annex}]{\sphinxcrossref{\DUrole{std,std-ref}{Annex}}}} for a {\hyperref[\detokenize{algorithm/run_CIMR_L2_TSA::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{top\sphinxhyphen{}level script}}}} of the Level\sphinxhyphen{}2 TSA algorithm including output file generation, and for a {\hyperref[\detokenize{algorithm/CIMR_L2_TSA_PICASSO::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{step\sphinxhyphen{}by\sphinxhyphen{}step visualization}}}}.
 
 
 
@@ -824,7 +828,7 @@ The specifics of the retrieval methodology may be subject to change, but will fo
 \section{Forward Model}
 \label{\detokenize{book/baseline_algorithm_definition:forward-model}}
 \sphinxAtStartPar
-The origins of the implemented algorithm stem from Chang \sphinxstyleemphasis{et al.} {[}\hyperlink{cite.book/references:id7}{1987}{]}, who present a linear relationship between snow depth and spectral difference (see \eqref{equation:book/baseline_algorithm_definition:TB_diff}).
+The origins of the implemented algorithm stem from Chang \sphinxstyleemphasis{et al.} {[}\hyperlink{cite.book/references:id7}{1987}{]}, who present a linear relationship between snow depth and spectral difference, as given in \eqref{equation:book/baseline_algorithm_definition:TB_diff}.
 This relationship is derived from an empirical fit of simulated microwave brightness temperatures for varying {\hyperref[\detokenize{book/acronyms:term-SWE}]{\sphinxtermref{\DUrole{xref,std,std-term}{SWE}}}}, using a microscopic scattering model {[}\hyperlink{cite.book/references:id23}{Chang \sphinxstyleemphasis{et al.}, 1982}{]}.
 The model takes into consideration the underlying (un\sphinxhyphen{})frozen surface conditions as well as the physical temperature, density, and grain size of the snowpack.
 Snow grains are assumed to be spherical and randomly\sphinxhyphen{}spaced, resulting in incoherent scattering.
@@ -1018,23 +1022,21 @@ N/a
 \sphinxstepscope
 
 
-\chapter{Algorithm Input and Output Data Definition (IODD)}
-\label{\detokenize{book/algorithm_input_output_data_definition:algorithm-input-and-output-data-definition-iodd}}\label{\detokenize{book/algorithm_input_output_data_definition::doc}}
+\chapter{Algorithm Input and Output Data Definition}
+\label{\detokenize{book/algorithm_input_output_data_definition:algorithm-input-and-output-data-definition}}\label{\detokenize{book/algorithm_input_output_data_definition::doc}}
 \sphinxAtStartPar
-Except for the input L1b {\hyperref[\detokenize{book/acronyms:term-TB}]{\sphinxtermref{\DUrole{xref,std,std-term}{TB}}}} data, all auxiliary and output data follow the {\hyperref[\detokenize{book/acronyms:term-EASE-Grid}]{\sphinxtermref{\DUrole{xref,std,std-term}{EASE\sphinxhyphen{}Grid}}}} 2.0 polar projection of the Northern Hemisphere.
-The current target spatial resolution for regridding is 3.125km.
+The Algorithm Input and Output Data Definition (IODD) is described hereafter.
+Except for the input L1b {\hyperref[\detokenize{book/acronyms:term-TB}]{\sphinxtermref{\DUrole{xref,std,std-term}{TB}}}} data, all auxiliary and output data follow the {\hyperref[\detokenize{book/acronyms:term-EASE-Grid}]{\sphinxtermref{\DUrole{xref,std,std-term}{EASE\sphinxhyphen{}Grid}}}} 2.0 polar projection of the Northern Hemisphere with a preliminary target spatial resolution of 3.125km.
 
 
-\section{Input data}
+\section{Input Data}
 \label{\detokenize{book/algorithm_input_output_data_definition:input-data}}
 \sphinxAtStartPar
-Daily Level\sphinxhyphen{}2 brightness temperature data are the main input, namely Ku\sphinxhyphen{}band data of horizontal polarisation and Ka\sphinxhyphen{}band data of both polarisations.
+Daily brightness temperature data are the main input, namely Ku\sphinxhyphen{}band data of horizontal polarisation and Ka\sphinxhyphen{}band data of both polarisations.
 
-\begin{sphinxadmonition}{important}{Important:}
-\sphinxAtStartPar
-If available, night or morning acquisition times are preferred over afternoon or evening brightness temperature data, in order to minimise effects of liquid water within the snowpack due to melt.
-\end{sphinxadmonition}
 
+\subsection{Input L1 Data}
+\label{\detokenize{book/algorithm_input_output_data_definition:input-l1-data}}
 
 \begin{savenotes}\sphinxattablestart
 \centering
@@ -1075,9 +1077,61 @@ Full swath or swath section  (Nscans,Npos)
 \par
 \sphinxattableend\end{savenotes}
 
+\begin{sphinxadmonition}{important}{Important:}
+\sphinxAtStartPar
+If available, night or morning acquisition times are preferred over afternoon or evening brightness temperature data, in order to minimise effects of liquid water within the snowpack due to melt.
+\end{sphinxadmonition}
 
-\section{Output data}
+
+\subsection{Auxiliary data}
+\label{\detokenize{book/algorithm_input_output_data_definition:auxiliary-data}}
+\sphinxAtStartPar
+Although the application of auxiliary data is not required to run the TSA algorithm per se, it is highly recommended to mask out known large water bodies to ensure satisfactory product quality.
+The use of an internal mask is recommended for consistency among all L2 products.
+Further internal or external auxiliary data files ({\hyperref[\detokenize{book/acronyms:term-ADF}]{\sphinxtermref{\DUrole{xref,std,std-term}{ADF}}}}) are to be determined.
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|}
+\hline
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Field
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Description
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Shape/Amount
+\\
+\hline
+\sphinxAtStartPar
+Water Mask
+&
+\sphinxAtStartPar
+Binary mask of large water bodies, incl. oceans and lakes
+&
+\sphinxAtStartPar
+EASE\sphinxhyphen{}Grid 2.0 NH  (nx,ny)
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\subsection{Input L2 Data}
+\label{\detokenize{book/algorithm_input_output_data_definition:input-l2-data}}
+\sphinxAtStartPar
+The TSA algorithm does not require fields from other L2 processors as input.
+
+
+\section{Output Data}
 \label{\detokenize{book/algorithm_input_output_data_definition:output-data}}
+\sphinxAtStartPar
+Output variables generated by the L2 TSA processor encompass the {\hyperref[\detokenize{book/acronyms:term-TSA}]{\sphinxtermref{\DUrole{xref,std,std-term}{TSA}}}} map, corresponding uncertainty estimates and complementary status information.
+
 
 \begin{savenotes}\sphinxattablestart
 \centering
@@ -1227,24 +1281,8 @@ No data, out of grid
 
 \begin{sphinxadmonition}{note}{Note:}
 \sphinxAtStartPar
-Empty placeholders within the status flag may be used for future R\&D activities, such as the development of a wet snow flag.
+Empty placeholders within the status flag may be used for future research activities, such as the development of a wet snow flag.
 \end{sphinxadmonition}
-
-
-\section{Auxiliary data}
-\label{\detokenize{book/algorithm_input_output_data_definition:auxiliary-data}}\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-Land and water mask
-Although the application of auxiliary data is not required to run the TSA algorithm per se, it is highly recommended to mask out known large water bodies thereby ensuring satisfactory product quality.
-
-\end{itemize}
-
-
-\section{Ancillary data}
-\label{\detokenize{book/algorithm_input_output_data_definition:ancillary-data}}
-\sphinxAtStartPar
-N/a
 
 \sphinxstepscope
 
@@ -1260,7 +1298,7 @@ The following performance assessment of the CIMR L2 TSA algorithm focuses predom
 
 
 \sphinxAtStartPar
-Refer \DUrole{xref,myst}{here} for a demonstration of the TSA algorithm for the SCEPS Polar Scene.
+Refer to the {\hyperref[\detokenize{book/annex:content-annex}]{\sphinxcrossref{\DUrole{std,std-ref}{Annex}}}} for a demonstration of the TSA algorithm for the SCEPS Polar Scene (see {\hyperref[\detokenize{algorithm/CIMR_L2_TSA_SCEPS::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Jupyter Notebook}}}}).
 
 
 
@@ -1810,7 +1848,7 @@ Due to this idealistic nature of the artificial scene, high algorithm performanc
 Indeed, the TSA algorithm achieves an accuracy of 95.99\% together with a true positive rate of 95.59\% and a true negative rate of 96.39\%.
 
 \sphinxAtStartPar
-The metrics, however, still reflect the common tendency of passive microwave snow detection methodologies to underestimate snow cover area, as the true negative rate is larger than the true positive rate.
+Although the performance is very high, the metrics still reflect the common tendency of passive microwave snow detection methodologies to underestimate snow cover area, as the true negative rate is larger than the true positive rate.
 False negative pixels, i.e. pixels affected by underestimation are predominantly found in proximity to land\sphinxhyphen{}water boundaries.
 Although more dependent on different sea and sea ice conditions, false positive pixels representing overestimation similarly form elongated clusters along ‘coastlines’.
 Even this simple test scene therefore emphasises the need for water spill\sphinxhyphen{}over corrections.
@@ -1821,7 +1859,7 @@ In case of the radiometric scene, combining snow area estimates from both forwar
 The overall algorithm performance is better when compared to snow area estimates from only one look direction.
 This supports the current approach of combining snow area estimates after separate processing of forward and backward scans.
 In case of the geometric scene, land surface types are not included.
-Nevertheless, the high\sphinxhyphen{}contrast brightness temperature patterns happen to provide a visualisation of the implemented TSA uncertainty flag, highlighting its behaviour and utility along sharp borders and transitions.
+Nevertheless, the high\sphinxhyphen{}contrast brightness temperature patterns happen to provide a visualisation of the implemented TSA uncertainty flag, highlighting its behaviour and utility along sharp borders and gradient transitions.
 Both aspects encourage the partition of CIMR brightness temperatures depending on look direction.
 
 \sphinxAtStartPar
@@ -1845,14 +1883,20 @@ Even though synthetic data naturally cannot fully replace real data, the assessm
 \label{\detokenize{book/roadmap:roadmap-for-future-atbd-development}}\label{\detokenize{book/roadmap::doc}}
 \sphinxAtStartPar
 Passive microwave snow detection algorithms are known to underestimate global snow cover area {[}\hyperlink{cite.book/references:id2}{Hall \sphinxstyleemphasis{et al.}, 2002}, \hyperlink{cite.book/references:id18}{Zschenderlein \sphinxstyleemphasis{et al.}, 2023}{]}.
-They are sensitive to dry snowpacks with minimal water content, and hence struggle to capture wet snow areas due to fundamentally different radiometric properties {[}\hyperlink{cite.book/references:id13}{Mätzler, 1994}{]}.
+However, the presented performance assessment for synthetic scenes demonstrates the potential of exploiting CIMR’s scanning geometry in this regard; A separate ingestion of forward and backward\sphinxhyphen{}looking brightness temperatures into the TSA algorithm, followed by their combined regridding, increases the detected snow cover area.
+Although promising, this concept requires verification by means of real scenes, for instance from fore and aft WindSat L1c brightness temperatures in swath geometry {[}\hyperlink{cite.book/references:id27}{Meissner \sphinxstyleemphasis{et al.}, 2022}{]}.
+WindSat data could be used as input for the TSA algorithm to not only obtain a proof of concept, but to also gain a deeper understanding of the underestimation problem in the first place.
+
+\sphinxAtStartPar
+Among others, the underestimating behaviour stems from the sensitivity of passive microwave snow retrievals to dry snowpacks with minimal liquid water content.
+Hence, they struggle to capture wet snow areas which have fundamentally different radiometric properties {[}\hyperlink{cite.book/references:id13}{Mätzler, 1994}{]}.
 To expand the capabilities of the Level\sphinxhyphen{}2 {\hyperref[\detokenize{book/acronyms:term-TSA}]{\sphinxtermref{\DUrole{xref,std,std-term}{TSA}}}} product to reliably map also wet snow, the operational implementation of a wet snow detection module should be investigated.
 For this purpose, feasible approaches might incorporate diurnal amplitude variations (e.g. Semmens \sphinxstyleemphasis{et al.} {[}\hyperlink{cite.book/references:id10}{2014}{]}), L\sphinxhyphen{}band brightness temperatures of horizontal polarization {[}\hyperlink{cite.book/references:id26}{Pellarin \sphinxstyleemphasis{et al.}, 2016}, \hyperlink{cite.book/references:id25}{Rautiainen \sphinxstyleemphasis{et al.}, 2012}{]}, or numerical weather prediction ({\hyperref[\detokenize{book/acronyms:term-NWP}]{\sphinxtermref{\DUrole{xref,std,std-term}{NWP}}}}) temperature data {[}\hyperlink{cite.book/references:id24}{Tuttle and Jacobs, 2019}{]}.
 
 \sphinxAtStartPar
 Besides, the concept of the status flag as an indicator of uncertainty may be expanded and refined in the future.
 For binary classifications as implemented within the TSA product, we lack a comprehensive quantitative and/or qualitative uncertainty characterization.
-Further traceable uncertainty sources have to be identified in addition to the current components derived from {\hyperref[\detokenize{book/acronyms:term-TB}]{\sphinxtermref{\DUrole{xref,std,std-term}{TB}}}} data of different looking directions, including for instance the impact of brightness temperature measurement uncertainties on the snow detection results.
+Further traceable uncertainty sources have to be identified in addition to the current components derived from {\hyperref[\detokenize{book/acronyms:term-TB}]{\sphinxtermref{\DUrole{xref,std,std-term}{TB}}}} data of different look directions, including for instance the impact of brightness temperature measurement uncertainties on the snow detection results.
 Moreover, land surface or air temperature data could enable same\sphinxhyphen{}day identification of meteorological conditions that make snow presence (un)likely, thereby supporting near real\sphinxhyphen{}time ({\hyperref[\detokenize{book/acronyms:term-NRT}]{\sphinxtermref{\DUrole{xref,std,std-term}{NRT}}}}) quality assurance.
 Such temperature data would also allow for retrospective quality assessment of the TSA maps: Using temperature data of the whole snow season, an end\sphinxhyphen{}of\sphinxhyphen{}season quality flag could be generated which affirms or rules out snow cover based on the weather conditions across consecutive days.
 Furthermore, the use of a snow climatology could be considered to restrict snow detection to geolocations that have historically experienced snow cover, e.g. Dewey and Heim {[}\hyperlink{cite.book/references:id20}{1982}{]} in Kelly {[}\hyperlink{cite.book/references:id12}{2009}{]}.
@@ -1860,15 +1904,15 @@ This would not only improve the TSA algorithm accuracy but would also provide li
 
 \sphinxAtStartPar
 As the performance assessment highlighted, brightness temperature correction for water contamination per footprint or per grid cell is desirable.
-In the unfortunate case that such a correction is not provided for CIMR L1b/L1c data products, the TSA algorithm would benefit from open water filtering, masking or correction in order to improve snow mapping accuracy in proximity to coastlines and (unmasked) freshwater lakes.
+In the case that such a correction is not provided for CIMR L1b/L1c data products, the TSA algorithm would benefit from open water filtering, masking or correction in order to improve snow mapping accuracy in proximity to coastlines and (unmasked) freshwater lakes.
 Other product extensions could address the screening for precipitation and the detection of thin snow cover.
 Both the additional scattering due to hydrometeors and the lesser scattering of thin snowpacks are known challenges to passive microwave dry snow detection {[}\hyperlink{cite.book/references:id13}{Mätzler, 1994}{]};
 They have been previously addressed by means of brightness temperatures at 22 GHz and 85 GHz, which are sensitive to the respective scattering behaviours {[}\hyperlink{cite.book/references:id21}{Foster \sphinxstyleemphasis{et al.}, 2011}, \hyperlink{cite.book/references:id9}{Grody and Basist, 1996}{]}.
-Since those channels are not available for CIMR, the TSA product could draw upon external satellite TBs although this would fall beyond the Level\sphinxhyphen{}2 status.
+Since those channels are not available for CIMR, the TSA product could draw upon external satellite TBs although this would fall beyond the scope of a Level\sphinxhyphen{}2 product status.
 
 \sphinxAtStartPar
-While the CIMR Level\sphinxhyphen{}2 TSA product is a stand\sphinxhyphen{}alone data product within the CIMR product suite, the development and implementation of the CIMR Level\sphinxhyphen{}2 Global Snow Water Equivalent ({\hyperref[\detokenize{book/acronyms:term-SWE}]{\sphinxtermref{\DUrole{xref,std,std-term}{SWE}}}}) product will be closely linked – directly incorporating the TSA output in its processing chain (compare e.g. {[}\hyperlink{cite.book/references:id22}{Luojus \sphinxstyleemphasis{et al.}, 2021}{]}).
-Although the SWE retrieval itself will require noticeable development efforts, future improvement and development of the TSA algorithm and {\hyperref[\detokenize{book/acronyms:term-ATBD}]{\sphinxtermref{\DUrole{xref,std,std-term}{ATBD}}}} remain of high interest.
+The CIMR Level\sphinxhyphen{}2 TSA product is a stand\sphinxhyphen{}alone data product within the CIMR product suite, yet its development and implementation will be closely linked to the CIMR Level\sphinxhyphen{}2 Snow Water Equivalent ({\hyperref[\detokenize{book/acronyms:term-SWE}]{\sphinxtermref{\DUrole{xref,std,std-term}{SWE}}}}) product, which will directly incorporate the TSA output in its processing chain (compare e.g. {[}\hyperlink{cite.book/references:id22}{Luojus \sphinxstyleemphasis{et al.}, 2021}{]}).
+While the SWE retrieval itself will require noticeable development efforts, future improvements of the TSA algorithm remain of high interest.
 
 \sphinxstepscope
 
@@ -1879,7 +1923,878 @@ Although the SWE retrieval itself will require noticeable development efforts, f
 
 
 \chapter{Annex}
-\label{\detokenize{book/annex:annex}}\label{\detokenize{book/annex::doc}}
+\label{\detokenize{book/annex:annex}}\label{\detokenize{book/annex:content-annex}}\label{\detokenize{book/annex::doc}}
+\sphinxAtStartPar
+The Annex contains Jupyter Notebooks for purposes of:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+running a top\sphinxhyphen{}level code sequence for the Level\sphinxhyphen{}2 TSA product,
+
+\item {} 
+\sphinxAtStartPar
+visualising the Level\sphinxhyphen{}2 TSA processing chain using the Demonstration Reference Scenario (PICASSO), and
+
+\item {} 
+\sphinxAtStartPar
+demonstrating the TSA Algorithm for the SCEPS Polar Scene.
+
+\end{enumerate}
+
+\sphinxstepscope
+
+
+\section{CIMR L2 TSA Top\sphinxhyphen{}Level Script}
+\label{\detokenize{algorithm/run_CIMR_L2_TSA:cimr-l2-tsa-top-level-script}}\label{\detokenize{algorithm/run_CIMR_L2_TSA::doc}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Stand\PYGZhy{}alone script to run TSA algorithm and write L2 TSA product, alternatively call through:}
+\PYG{c+c1}{\PYGZsh{} run\PYGZus{}CIMR\PYGZus{}L2\PYGZus{}PolarOceans.py \PYGZhy{}\PYGZhy{}no\PYGZhy{}oza\PYGZhy{}adjust \PYGZdq{}C:/Users/zschende/OneDrive \PYGZhy{} Ilmatieteen laitos/Files/Projects/CIMR Devalgo/Data/SCEPS/SCEPS\PYGZus{}l1b\PYGZus{}sceps\PYGZus{}geo\PYGZus{}polar\PYGZus{}scene\PYGZus{}1\PYGZus{}unfiltered\PYGZus{}tot\PYGZus{}minimal\PYGZus{}nom\PYGZus{}nedt\PYGZus{}apc\PYGZus{}tot\PYGZus{}v2p1.nc\PYGZdq{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{os} 
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{xarray} \PYG{k}{as} \PYG{n+nn}{xr}
+\PYG{k+kn}{import} \PYG{n+nn}{pyresample} \PYG{k}{as} \PYG{n+nn}{pr}
+\PYG{k+kn}{import} \PYG{n+nn}{importlib}
+
+\PYG{c+c1}{\PYGZsh{} local imports}
+\PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{/tools/}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{sys}\PYG{o}{.}\PYG{n}{path}\PYG{p}{:}
+    \PYG{n}{sys}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../.../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{algorithm/tools/}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{k+kn}{import} \PYG{n+nn}{l2\PYGZus{}format} \PYG{k}{as} \PYG{n+nn}{l2}
+\PYG{k+kn}{import} \PYG{n+nn}{TSA\PYGZus{}algorithm} \PYG{k}{as} \PYG{n+nn}{algorithm}
+\PYG{k+kn}{import} \PYG{n+nn}{l2\PYGZus{}tools} \PYG{k}{as} \PYG{n+nn}{tools}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_remove-output}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} reload local imports}
+\PYG{n}{importlib}\PYG{o}{.}\PYG{n}{reload}\PYG{p}{(}\PYG{n}{l2}\PYG{p}{)}
+\PYG{n}{importlib}\PYG{o}{.}\PYG{n}{reload}\PYG{p}{(}\PYG{n}{algorithm}\PYG{p}{)}
+\PYG{n}{importlib}\PYG{o}{.}\PYG{n}{reload}\PYG{p}{(}\PYG{n}{tools}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_parameters}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} tag \PYGZsq{}parameters\PYGZsq{} for the CLI with papermill, adjust if necessary for stand\PYGZhy{}alone run}
+\PYG{n}{l1b\PYGZus{}path} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/SCEPS/SCEPS\PYGZus{}l1x@KA\PYGZus{}sceps\PYGZus{}geo\PYGZus{}polar\PYGZus{}scene\PYGZus{}1\PYGZus{}unfiltered\PYGZus{}tot\PYGZus{}minimal\PYGZus{}nom\PYGZus{}nedt\PYGZus{}apc\PYGZus{}tot\PYGZus{}v2p1.nc}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{aux\PYGZus{}dir} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../data/auxiliary/}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{l2\PYGZus{}dir} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/L2 Files/}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{l2\PYGZus{}grid} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZhy{}3.125km\PYGZhy{}nh}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} check input parameters}
+\PYG{n}{l1x\PYGZus{}scenes} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}polar1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{isfile}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{l1x\PYGZus{}path} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{l1x\PYGZus{}scenes}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{The input L1X file does not exist, and is not one of the pre\PYGZhy{}registered }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}scenes}\PYG{p}{,}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{isdir}\PYG{p}{(}\PYG{n}{l2\PYGZus{}dir}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{The L2 output directory }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s2}{ does not exist.}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{l2\PYGZus{}dir}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{isdir}\PYG{p}{(}\PYG{n}{aux\PYGZus{}dir}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{The auxiliary directory }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s2}{ does not exist.}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{aux\PYGZus{}dir}\PYG{p}{)}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Handle pre\PYGZhy{}defined L1X files}
+\PYG{k}{if} \PYG{n}{l1x\PYGZus{}path} \PYG{o+ow}{in} \PYG{n}{l1x\PYGZus{}scenes}\PYG{p}{:}
+    \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{=} \PYG{n}{l1x\PYGZus{}path}
+    \PYG{k}{if} \PYG{n}{l1x\PYGZus{}path} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}    
+        \PYG{c+c1}{\PYGZsh{} DEVALGO simulated geometric test card}
+        \PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/L1C Files/Geometric/}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{n}{l1x\PYGZus{}fn} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{W\PYGZus{}PT\PYGZhy{}DME\PYGZhy{}Lisbon\PYGZhy{}SAT\PYGZhy{}CIMR\PYGZhy{}1X@KA\PYGZus{}C\PYGZus{}DME\PYGZus{}20230417T105425\PYGZus{}LD\PYGZus{}20280110T114800\PYGZus{}20280110T115700\PYGZus{}TN.nc}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{elif} \PYG{n}{l1x\PYGZus{}path} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} DEVALGO simulated radiometric test card}
+        \PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/L1C Files/Radiometric/}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{n}{l1x\PYGZus{}fn} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{W\PYGZus{}PT\PYGZhy{}DME\PYGZhy{}Lisbon\PYGZhy{}SAT\PYGZhy{}CIMR\PYGZhy{}1X@KA\PYGZus{}C\PYGZus{}DME\PYGZus{}20230420T103323\PYGZus{}LD\PYGZus{}20280110T114800\PYGZus{}20280110T115700\PYGZus{}TN.nc}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{elif} \PYG{n}{l1x\PYGZus{}path} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}polar1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} SCEPS simulated radiometric test card}
+        \PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/SCEPS/}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{n}{l1x\PYGZus{}fn} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SCEPS\PYGZus{}l1x@KA\PYGZus{}sceps\PYGZus{}geo\PYGZus{}polar\PYGZus{}scene\PYGZus{}1\PYGZus{}unfiltered\PYGZus{}tot\PYGZus{}minimal\PYGZus{}nom\PYGZus{}nedt\PYGZus{}apc\PYGZus{}tot\PYGZus{}v2p1.nc}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Unknown test\PYGZus{}card }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path}\PYG{p}{)}\PYG{p}{)}
+        
+    \PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path}\PYG{p}{,} \PYG{n}{l1x\PYGZus{}fn}\PYG{p}{)}
+\PYG{k}{else}\PYG{p}{:}
+    \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}test\PYGZus{}scene\PYGZus{}1}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{basename}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{elif} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}test\PYGZus{}scene\PYGZus{}2}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{basename}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{elif} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}geo\PYGZus{}polar\PYGZus{}scene\PYGZus{}1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+        \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}polar1}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{unknown}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{area\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{load\PYGZus{}area}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZus{}adef.yaml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{l2\PYGZus{}grid}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} load landmask if available}
+\PYG{k}{if} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/Test\PYGZus{}scenes\PYGZus{}downscaled\PYGZus{}projected/test\PYGZus{}scene\PYGZus{}2\PYGZus{}compressed\PYGZus{}lowres.nc}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{ds} \PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{open\PYGZus{}dataset}\PYG{p}{(}\PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario}\PYG{p}{)}
+    \PYG{n}{lons} \PYG{o}{=} \PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Longitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}
+    \PYG{n}{lats} \PYG{o}{=} \PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Latitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}
+
+    \PYG{n}{swath\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{geometry}\PYG{o}{.}\PYG{n}{SwathDefinition}\PYG{p}{(}\PYG{n}{lons}\PYG{o}{=}\PYG{n}{lons}\PYG{p}{,} \PYG{n}{lats}\PYG{o}{=}\PYG{n}{lats}\PYG{p}{)}
+    \PYG{n}{land\PYGZus{}mask} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{kd\PYGZus{}tree}\PYG{o}{.}\PYG{n}{resample\PYGZus{}nearest}\PYG{p}{(}\PYG{n}{swath\PYGZus{}def}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{float64}\PYG{p}{(}\PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{landflag}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{)}\PYG{p}{,} \PYG{n}{area\PYGZus{}def}\PYG{p}{,}
+                            \PYG{n}{radius\PYGZus{}of\PYGZus{}influence}\PYG{o}{=}\PYG{l+m+mi}{20000}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{fill\PYGZus{}value}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}\PYG{p}{)}
+
+\PYG{k}{elif} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/Test\PYGZus{}scenes\PYGZus{}downscaled\PYGZus{}projected/test\PYGZus{}scene\PYGZus{}1\PYGZus{}compressed\PYGZus{}lowres.nc}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{ds}\PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{open\PYGZus{}dataset}\PYG{p}{(}\PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario}\PYG{p}{)}
+    \PYG{n}{lons} \PYG{o}{=} \PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Longitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}
+    \PYG{n}{lats} \PYG{o}{=} \PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Latitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}
+
+    \PYG{n}{swath\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{geometry}\PYG{o}{.}\PYG{n}{SwathDefinition}\PYG{p}{(}\PYG{n}{lons}\PYG{o}{=}\PYG{n}{lons}\PYG{p}{,} \PYG{n}{lats}\PYG{o}{=}\PYG{n}{lats}\PYG{p}{)}
+    \PYG{n}{land\PYGZus{}mask} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{kd\PYGZus{}tree}\PYG{o}{.}\PYG{n}{resample\PYGZus{}nearest}\PYG{p}{(}\PYG{n}{swath\PYGZus{}def}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{float64}\PYG{p}{(}\PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{landflag}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{)}\PYG{p}{,} \PYG{n}{area\PYGZus{}def}\PYG{p}{,}
+                            \PYG{n}{radius\PYGZus{}of\PYGZus{}influence}\PYG{o}{=}\PYG{l+m+mi}{20000}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{fill\PYGZus{}value}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}\PYG{p}{)}
+
+\PYG{k}{elif} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}polar1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/SCEPS/cimr\PYGZus{}sceps\PYGZus{}geo\PYGZus{}card\PYGZus{}devalgo\PYGZus{}polarscene\PYGZus{}1\PYGZus{}20161217\PYGZus{}harmonised\PYGZus{}v2p0\PYGZus{}surface.nc}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{ds} \PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{open\PYGZus{}dataset}\PYG{p}{(}\PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario}\PYG{p}{)}
+    \PYG{n}{lons} \PYG{o}{=} \PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{longitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+    \PYG{n}{lats} \PYG{o}{=} \PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{latitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+
+    \PYG{n}{swath\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{geometry}\PYG{o}{.}\PYG{n}{SwathDefinition}\PYG{p}{(}\PYG{n}{lons}\PYG{o}{=}\PYG{n}{lons}\PYG{p}{,} \PYG{n}{lats}\PYG{o}{=}\PYG{n}{lats}\PYG{p}{)}
+    \PYG{n}{land\PYGZus{}mask} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{kd\PYGZus{}tree}\PYG{o}{.}\PYG{n}{resample\PYGZus{}nearest}\PYG{p}{(}\PYG{n}{swath\PYGZus{}def}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{float64}\PYG{p}{(}\PYG{n}{ds}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{land\PYGZus{}sea\PYGZus{}ice\PYGZus{}mask}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{n}{area\PYGZus{}def}\PYG{p}{,}
+                            \PYG{n}{radius\PYGZus{}of\PYGZus{}influence}\PYG{o}{=}\PYG{l+m+mi}{20000}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{fill\PYGZus{}value}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}\PYG{p}{)}
+
+    \PYG{n}{land\PYGZus{}mask}\PYG{p}{[}\PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{|} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{9}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}      \PYG{c+c1}{\PYGZsh{} set water (incl. sea ice)}
+    \PYG{n}{land\PYGZus{}mask}\PYG{p}{[}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}                           \PYG{c+c1}{\PYGZsh{} set land}
+
+\PYG{n}{ds}\PYG{o}{.}\PYG{n}{close}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{algo} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pulliainen2010}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{algo\PYGZus{}version} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0.9.0}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} read L1X data}
+\PYG{n}{data\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{data\PYGZus{}bck}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{read\PYGZus{}l1x}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} detection forward and backward}
+\PYG{n}{TSA\PYGZus{}fwd} \PYG{o}{=} \PYG{n}{algorithm}\PYG{o}{.}\PYG{n}{dry\PYGZus{}snow\PYGZus{}detection}\PYG{p}{(}\PYG{n}{data\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{tsa\PYGZus{}algorithm}\PYG{o}{=}\PYG{n}{algo}\PYG{p}{)}
+\PYG{n}{TSA\PYGZus{}bck} \PYG{o}{=} \PYG{n}{algorithm}\PYG{o}{.}\PYG{n}{dry\PYGZus{}snow\PYGZus{}detection}\PYG{p}{(}\PYG{n}{data\PYGZus{}bck}\PYG{p}{,}\PYG{n}{tsa\PYGZus{}algorithm}\PYG{o}{=}\PYG{n}{algo}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} individual reprojection}
+\PYG{n}{TSA\PYGZus{}fwd\PYGZus{}proj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\PYG{n}{TSA\PYGZus{}bck\PYGZus{}proj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}bck}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} intermediate combined data}
+\PYG{n}{TSA\PYGZus{}comb}\PYG{p}{,} \PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{combine\PYGZus{}proj}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}fwd\PYGZus{}proj}\PYG{p}{,}\PYG{n}{TSA\PYGZus{}bck\PYGZus{}proj}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} status\PYGZus{}flag}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i8}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{8}                    \PYG{c+c1}{\PYGZsh{} 8: no data, out of grid}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}                          \PYG{c+c1}{\PYGZsh{} 0: water}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}      \PYG{c+c1}{\PYGZsh{} 1: land}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{2}      \PYG{c+c1}{\PYGZsh{} 2: valid snow}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}status\PYGZus{}flag[] = 3                                      \PYGZsh{} 3: [placeholder]}
+
+\PYG{n}{status\PYGZus{}flag\PYGZus{}comment} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0: water; 1: land; 2: snow (valid); 3\PYGZhy{}7: [placeholders]; 8: no data, out of grid.}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}uncertainty}
+\PYG{n}{TSA\PYGZus{}uncertainty} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i8}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} 
+
+\PYG{n}{TSA\PYGZus{}uncertainty}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}                    \PYG{c+c1}{\PYGZsh{} 0: very likely snow\PYGZhy{}free}
+\PYG{n}{TSA\PYGZus{}uncertainty}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{==} \PYG{l+m+mf}{0.5}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}                  \PYG{c+c1}{\PYGZsh{} 1: likely snow}
+\PYG{n}{TSA\PYGZus{}uncertainty}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{2}                    \PYG{c+c1}{\PYGZsh{} 2: very likely snow}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} TSA}
+\PYG{n}{TSA\PYGZus{}l2} \PYG{o}{=} \PYG{n}{TSA\PYGZus{}comb}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2 = np.zeros(TSA\PYGZus{}status\PYGZus{}flag.shape)}
+
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}l2 == 0] = np.nan                                 \PYGZsh{} nan: no data, out of grid}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}comb == 0] = 0                                    \PYGZsh{} 0: snow free}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}comb == 1] = 1                                    \PYGZsh{} 1: snow covered (dry)}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}comb == 2] = 2                                    \PYGZsh{} 2: snow covered (wet) [placeholder]}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} get template L2 format (netCDF/CF) from the Tools module}
+\PYG{n}{ds\PYGZus{}l2} \PYG{o}{=} \PYG{n}{l2}\PYG{o}{.}\PYG{n}{get\PYGZus{}CIMR\PYGZus{}L2\PYGZus{}template}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{grid}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{geo\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{,} \PYG{n}{add\PYGZus{}time}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} create DataArray for TSA from template}
+\PYG{n}{da\PYGZus{}tsa} \PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{DataArray}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}l2}\PYG{p}{,} \PYG{n}{coords}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{coords}\PYG{p}{,} \PYG{n}{dims}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{dims}\PYG{p}{,}
+                        \PYG{n}{attrs}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tsa}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{da\PYGZus{}tsa}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{long\PYGZus{}name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Terrestrial Snow Area (}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ algorithm)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{algo}\PYG{p}{)}
+\PYG{n}{da\PYGZus{}tsa}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{standard\PYGZus{}name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{terrestrial\PYGZus{}snow\PYGZus{}area}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{da\PYGZus{}tsa}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{units}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{da\PYGZus{}tsa}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{coverage\PYGZus{}content\PYGZus{}type}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NA}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{da\PYGZus{}tsa}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{auxiliary\PYGZus{}variables}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{terrestrial\PYGZus{}snow\PYGZus{}area\PYGZus{}uncertainty,status\PYGZus{}flag}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{c+c1}{\PYGZsh{} create DataArray for TSA\PYGZus{}uncertainty from template}
+\PYG{n}{da\PYGZus{}uncert} \PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{DataArray}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}uncertainty}\PYG{p}{,} \PYG{n}{coords}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{coords}\PYG{p}{,} \PYG{n}{dims}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{dims}\PYG{p}{,}
+                        \PYG{n}{attrs}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tsa\PYGZus{}uncertainty}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{da\PYGZus{}uncert}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{long\PYGZus{}name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Qualitative uncertainty for Terrestrial Snow Area}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{da\PYGZus{}uncert}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{standard\PYGZus{}name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{terrestrial\PYGZus{}snow\PYGZus{}area\PYGZus{}uncertainty}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{da\PYGZus{}uncert}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{coverage\PYGZus{}content\PYGZus{}type}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{QualityInformation}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{da\PYGZus{}uncert}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{units}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+\PYG{c+c1}{\PYGZsh{} create DataArray for status\PYGZus{}flag from template}
+\PYG{n}{da\PYGZus{}flag} \PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{DataArray}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{,} \PYG{n}{coords}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{coords}\PYG{p}{,} \PYG{n}{dims}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{dims}\PYG{p}{,}
+                        \PYG{n}{attrs}\PYG{o}{=}\PYG{n}{ds\PYGZus{}l2}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{status\PYGZus{}flag}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{da\PYGZus{}flag}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{long\PYGZus{}name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Status flag for Terrestrial Snow Area}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{da\PYGZus{}flag}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{coverage\PYGZus{}content\PYGZus{}type}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{AuxiliaryInformation}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{da\PYGZus{}flag}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{comment}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{status\PYGZus{}flag\PYGZus{}comment}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_remove-output}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} add data arrays to ds\PYGZus{}l2 object}
+\PYG{n}{ds\PYGZus{}l2} \PYG{o}{=} \PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(}\PYG{n}{da\PYGZus{}tsa}\PYG{p}{)}
+\PYG{n}{ds\PYGZus{}l2} \PYG{o}{=} \PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(}\PYG{n}{da\PYGZus{}uncert}\PYG{p}{)}
+\PYG{n}{ds\PYGZus{}l2} \PYG{o}{=} \PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(}\PYG{n}{da\PYGZus{}flag}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} customize global attributes}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{title}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{CIMR L2 NRT3H Terrestrial Snow Area}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{summary}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Terrestrial Snow Area computed with the prototype algorithm developed in the ESA CIMR DEVALGO study. The algorithm combines brightness temperatures from the Ku and Ka channels. The product file contains the TSA, its uncertainties, and status flag.}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{l1b\PYGZus{}file}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{l1b\PYGZus{}path}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{l1x\PYGZus{}file}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{l1x\PYGZus{}path}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{algorithm\PYGZus{}version}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{algo\PYGZus{}version}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{creator\PYGZus{}name}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Lina Zschenderlein}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{creator\PYGZus{}email}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{lina.zschenderlein@fmi.fi}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{institution}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Finnish Meteorological Institute}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{c+c1}{\PYGZsh{} remove \PYGZsq{}template\PYGZsq{} variable}
+\PYG{n}{ds\PYGZus{}l2} \PYG{o}{=} \PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{template}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} write to file}
+\PYG{n}{l2\PYGZus{}n} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{cimr\PYGZus{}devalgo\PYGZus{}l2\PYGZus{}tsa\PYGZus{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZus{}}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{.nc}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{l2\PYGZus{}grid}\PYG{p}{,} \PYG{n}{test\PYGZus{}card\PYGZus{}name}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZus{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{,} \PYG{p}{)}
+\PYG{n}{l2\PYGZus{}n} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{l2\PYGZus{}dir}\PYG{p}{,} \PYG{n}{l2\PYGZus{}n}\PYG{p}{)}
+\PYG{n}{ds\PYGZus{}l2}\PYG{o}{.}\PYG{n}{to\PYGZus{}netcdf}\PYG{p}{(}\PYG{n}{l2\PYGZus{}n}\PYG{p}{,} \PYG{n+nb}{format}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NETCDF4\PYGZus{}CLASSIC}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{l2\PYGZus{}n}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\sphinxstepscope
+
+
+\section{CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)}
+\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO:cimr-l2-tsa-processing-chain-for-the-demonstration-reference-scenario-picasso}}\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO::doc}}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\begin{sphinxuseclass}{tag_remove-output}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{algo} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pulliainen2010}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{algo\PYGZus{}version} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0.9.0}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{n}{l1x\PYGZus{}scenes} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}polar1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l2\PYGZus{}grids} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZhy{}3.125km\PYGZhy{}nh}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZhy{}1.0km\PYGZhy{}testcard}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} set test\PYGZus{}card\PYGZus{}name}
+\PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{=} \PYG{n}{l1x\PYGZus{}scenes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}      \PYG{c+c1}{\PYGZsh{} alternative: test\PYGZus{}card\PYGZus{}name = l1x\PYGZus{}scenes[0]}
+\PYG{n}{l2\PYGZus{}grid} \PYG{o}{=} \PYG{n}{l2\PYGZus{}grids}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}               \PYG{c+c1}{\PYGZsh{} nominal L2 product grid}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}    
+    \PYG{c+c1}{\PYGZsh{} DEVALGO simulated geometric test card}
+    \PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/L1C Files/Geometric/}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{l1x\PYGZus{}fn} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{W\PYGZus{}PT\PYGZhy{}DME\PYGZhy{}Lisbon\PYGZhy{}SAT\PYGZhy{}CIMR\PYGZhy{}1X@KA\PYGZus{}C\PYGZus{}DME\PYGZus{}20230417T105425\PYGZus{}LD\PYGZus{}20280110T114800\PYGZus{}20280110T115700\PYGZus{}TN.nc}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{k}{elif} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} DEVALGO simulated radiometric test card}
+    \PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/L1C Files/Radiometric/}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{l1x\PYGZus{}fn} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{W\PYGZus{}PT\PYGZhy{}DME\PYGZhy{}Lisbon\PYGZhy{}SAT\PYGZhy{}CIMR\PYGZhy{}1X@KA\PYGZus{}C\PYGZus{}DME\PYGZus{}20230420T103323\PYGZus{}LD\PYGZus{}20280110T114800\PYGZus{}20280110T115700\PYGZus{}TN.nc}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsection{Step 1: Dry Snow Detection}
+\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO:step-1-dry-snow-detection}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} read L1X data}
+\PYG{n}{data\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{data\PYGZus{}bck}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{read\PYGZus{}l1x}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path} \PYG{o}{+} \PYG{n}{l1x\PYGZus{}fn}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} detection forward and backward}
+\PYG{n}{TSA\PYGZus{}fwd} \PYG{o}{=} \PYG{n}{algorithm}\PYG{o}{.}\PYG{n}{dry\PYGZus{}snow\PYGZus{}detection}\PYG{p}{(}\PYG{n}{data\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{tsa\PYGZus{}algorithm}\PYG{o}{=}\PYG{n}{algo}\PYG{p}{)}
+\PYG{n}{TSA\PYGZus{}bck} \PYG{o}{=} \PYG{n}{algorithm}\PYG{o}{.}\PYG{n}{dry\PYGZus{}snow\PYGZus{}detection}\PYG{p}{(}\PYG{n}{data\PYGZus{}bck}\PYG{p}{,}\PYG{n}{tsa\PYGZus{}algorithm}\PYG{o}{=}\PYG{n}{algo}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{8ac3006e17c6a91dad3b7bbf9c7a611416132fa2faaa360d5eb4fc0a4b5b06f6}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+
+\subsection{Step 2: Combined Reprojection}
+\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO:step-2-combined-reprojection}}
+\sphinxAtStartPar
+Reprojection for nominal TSA product: EASE2 3.125km
+
+\sphinxAtStartPar
+Note that for the Algorithm Performance Assessment, the target grid is the same as the Test Card, namely EASE2 1km.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{area\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{load\PYGZus{}area}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZus{}adef.yaml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{l2\PYGZus{}grid}\PYG{p}{)}
+
+\PYG{n}{cart\PYGZus{}crs} \PYG{o}{=} \PYG{n}{area\PYGZus{}def}\PYG{o}{.}\PYG{n}{to\PYGZus{}cartopy\PYGZus{}crs}\PYG{p}{(}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} extent = cart\PYGZus{}crs.bounds}
+\PYG{c+c1}{\PYGZsh{} trg\PYGZus{}lon, trg\PYGZus{}lat = area\PYGZus{}def.get\PYGZus{}lonlats()}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Step 2.1: Individual Reprojection}
+\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO:step-2-1-individual-reprojection}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{TSA\PYGZus{}fwd\PYGZus{}proj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\PYG{n}{TSA\PYGZus{}bck\PYGZus{}proj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}bck}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{73617a8bd2efe66bdc8f76e016107bb77644dda56018409726f977997785d411}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+
+\subsubsection{Step 2.2: Combining Reprojections}
+\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO:step-2-2-combining-reprojections}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} intermediate combined data}
+\PYG{n}{TSA\PYGZus{}comb}\PYG{p}{,} \PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{combine\PYGZus{}proj}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}fwd\PYGZus{}proj}\PYG{p}{,}\PYG{n}{TSA\PYGZus{}bck\PYGZus{}proj}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsection{Step 3: Masking and Flagging}
+\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO:step-3-masking-and-flagging}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} load surface information}
+\PYG{k}{if} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/Test\PYGZus{}scenes\PYGZus{}downscaled\PYGZus{}projected/test\PYGZus{}scene\PYGZus{}2\PYGZus{}compressed\PYGZus{}lowres.nc}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{k}{elif} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/Test\PYGZus{}scenes\PYGZus{}downscaled\PYGZus{}projected/test\PYGZus{}scene\PYGZus{}1\PYGZus{}compressed\PYGZus{}lowres.nc}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{n}{data\PYGZus{}tc} \PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{open\PYGZus{}dataset}\PYG{p}{(}\PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario}\PYG{p}{)}
+\PYG{n}{swath\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{geometry}\PYG{o}{.}\PYG{n}{SwathDefinition}\PYG{p}{(}\PYG{n}{lons}\PYG{o}{=}\PYG{n}{data\PYGZus{}tc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Longitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,} \PYG{n}{lats}\PYG{o}{=}\PYG{n}{data\PYGZus{}tc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Latitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{)}
+\PYG{n}{land\PYGZus{}mask} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{kd\PYGZus{}tree}\PYG{o}{.}\PYG{n}{resample\PYGZus{}nearest}\PYG{p}{(}\PYG{n}{swath\PYGZus{}def}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{float64}\PYG{p}{(}\PYG{n}{data\PYGZus{}tc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{landflag}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{)}\PYG{p}{,} \PYG{n}{area\PYGZus{}def}\PYG{p}{,}
+                        \PYG{n}{radius\PYGZus{}of\PYGZus{}influence}\PYG{o}{=}\PYG{l+m+mi}{20000}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{fill\PYGZus{}value}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}\PYG{p}{)}
+
+\PYG{n}{data\PYGZus{}tc}\PYG{o}{.}\PYG{n}{close}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} status\PYGZus{}flag}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i8}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{8}                    \PYG{c+c1}{\PYGZsh{} 8: no data, out of grid}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}                          \PYG{c+c1}{\PYGZsh{} 0: water}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}      \PYG{c+c1}{\PYGZsh{} 1: land}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{2}      \PYG{c+c1}{\PYGZsh{} 2: valid snow}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}status\PYGZus{}flag[] = 3                                      \PYGZsh{} 3: [placeholder]}
+
+\PYG{n}{status\PYGZus{}flag\PYGZus{}comment} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0: water; 1: land; 2: snow (valid); 3\PYGZhy{}7: [placeholders]; 8: no data, out of grid.}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}uncertainty}
+\PYG{n}{TSA\PYGZus{}uncertainty} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i8}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} 
+
+\PYG{n}{TSA\PYGZus{}uncertainty}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}                    \PYG{c+c1}{\PYGZsh{} 0: very likely snow\PYGZhy{}free}
+\PYG{n}{TSA\PYGZus{}uncertainty}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{==} \PYG{l+m+mf}{0.5}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}                  \PYG{c+c1}{\PYGZsh{} 1: likely snow}
+\PYG{n}{TSA\PYGZus{}uncertainty}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{2}                    \PYG{c+c1}{\PYGZsh{} 2: very likely snow}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} TSA}
+\PYG{n}{TSA\PYGZus{}l2} \PYG{o}{=} \PYG{n}{TSA\PYGZus{}comb}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2 = np.zeros(TSA\PYGZus{}status\PYGZus{}flag.shape)}
+
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}l2 == 0] = np.nan                                 \PYGZsh{} nan: no data, out of grid}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}comb == 0] = 0                                    \PYGZsh{} 0: snow free}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}comb == 1] = 1                                    \PYGZsh{} 1: snow covered (dry)}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}l2[TSA\PYGZus{}comb == 2] = 2                                    \PYGZsh{} 2: snow covered (wet) [placeholder]}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsection{Visualization of Final Level\sphinxhyphen{}2 TSA Variables}
+\label{\detokenize{algorithm/CIMR_L2_TSA_PICASSO:visualization-of-final-level-2-tsa-variables}}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{57fdaa2aa205fe6bf4e92001ed5e0f97b5b7ff920e1353c49b456d6b9f64579a}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\sphinxstepscope
+
+
+\section{CIMR L2 TSA Algorithm for the SCEPS Polar Scene}
+\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS:cimr-l2-tsa-algorithm-for-the-sceps-polar-scene}}\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS::doc}}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\begin{sphinxuseclass}{tag_remove-output}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{algo} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Pulliainen2010}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{n}{algo\PYGZus{}version} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0.9.0}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{n}{l1x\PYGZus{}scenes} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}geometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{devalgo\PYGZus{}radiometric}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}polar1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l2\PYGZus{}grids} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZhy{}3.125km\PYGZhy{}nh}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZhy{}1.0km\PYGZhy{}testcard}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{=} \PYG{n}{l1x\PYGZus{}scenes}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+\PYG{n}{l2\PYGZus{}grid} \PYG{o}{=} \PYG{n}{l2\PYGZus{}grids}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}               \PYG{c+c1}{\PYGZsh{} SCEPS scene grid}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{n}{test\PYGZus{}card\PYGZus{}name} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sceps\PYGZus{}polar1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}    
+    \PYG{c+c1}{\PYGZsh{} SCEPS test card}
+    \PYG{n}{l1x\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/SCEPS/}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{l1x\PYGZus{}fn} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SCEPS\PYGZus{}l1x@KA\PYGZus{}sceps\PYGZus{}geo\PYGZus{}polar\PYGZus{}scene\PYGZus{}1\PYGZus{}unfiltered\PYGZus{}tot\PYGZus{}minimal\PYGZus{}nom\PYGZus{}nedt\PYGZus{}apc\PYGZus{}tot\PYGZus{}v2p1.nc}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsection{Step 1: Dry Snow Detection}
+\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS:step-1-dry-snow-detection}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} read L1X data}
+\PYG{n}{data\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{data\PYGZus{}bck}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{read\PYGZus{}l1x}\PYG{p}{(}\PYG{n}{l1x\PYGZus{}path} \PYG{o}{+} \PYG{n}{l1x\PYGZus{}fn}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} detection forward and backward}
+\PYG{n}{TSA\PYGZus{}fwd} \PYG{o}{=} \PYG{n}{algorithm}\PYG{o}{.}\PYG{n}{dry\PYGZus{}snow\PYGZus{}detection}\PYG{p}{(}\PYG{n}{data\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{tsa\PYGZus{}algorithm}\PYG{o}{=}\PYG{n}{algo}\PYG{p}{)}
+\PYG{n}{TSA\PYGZus{}bck} \PYG{o}{=} \PYG{n}{algorithm}\PYG{o}{.}\PYG{n}{dry\PYGZus{}snow\PYGZus{}detection}\PYG{p}{(}\PYG{n}{data\PYGZus{}bck}\PYG{p}{,}\PYG{n}{tsa\PYGZus{}algorithm}\PYG{o}{=}\PYG{n}{algo}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{b8bbcd9dd7f93a531d3ce9ce691412d2bbd055d3656f2021ec1dd4fdc5a37723}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+
+\subsection{Step 2: Combined Reprojection}
+\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS:step-2-combined-reprojection}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{area\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{load\PYGZus{}area}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ease2\PYGZus{}adef.yaml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{l2\PYGZus{}grid}\PYG{p}{)}
+
+\PYG{n}{cart\PYGZus{}crs} \PYG{o}{=} \PYG{n}{area\PYGZus{}def}\PYG{o}{.}\PYG{n}{to\PYGZus{}cartopy\PYGZus{}crs}\PYG{p}{(}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} extent = cart\PYGZus{}crs.bounds}
+\PYG{n}{trg\PYGZus{}lon}\PYG{p}{,} \PYG{n}{trg\PYGZus{}lat} \PYG{o}{=} \PYG{n}{area\PYGZus{}def}\PYG{o}{.}\PYG{n}{get\PYGZus{}lonlats}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Step 2.1: Individual Reprojection}
+\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS:step-2-1-individual-reprojection}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{TSA\PYGZus{}fwd\PYGZus{}proj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\PYG{n}{TSA\PYGZus{}bck\PYGZus{}proj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}bck}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Step 2.2: Combining Reprojections}
+\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS:step-2-2-combining-reprojections}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} intermediate combined data}
+\PYG{n}{TSA\PYGZus{}comb}\PYG{p}{,} \PYG{n}{TSA\PYGZus{}comb\PYGZus{}uncert} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{combine\PYGZus{}proj}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}fwd\PYGZus{}proj}\PYG{p}{,}\PYG{n}{TSA\PYGZus{}bck\PYGZus{}proj}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{d5344ab6ef7e72c301370f8cd8cd0c0f7d7b15ace805ed0f15033f2c015bc804}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+
+\subsection{Step 3: Masking and Flagging}
+\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS:step-3-masking-and-flagging}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} load surface information}
+\PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{../../../..../}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Data/SCEPS/cimr\PYGZus{}sceps\PYGZus{}geo\PYGZus{}card\PYGZus{}devalgo\PYGZus{}polarscene\PYGZus{}1\PYGZus{}20161217\PYGZus{}harmonised\PYGZus{}v2p0\PYGZus{}surface.nc}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{n}{data\PYGZus{}tc} \PYG{o}{=} \PYG{n}{xr}\PYG{o}{.}\PYG{n}{open\PYGZus{}dataset}\PYG{p}{(}\PYG{n}{dem\PYGZus{}ref\PYGZus{}scenario}\PYG{p}{)}
+\PYG{n}{swath\PYGZus{}def} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{geometry}\PYG{o}{.}\PYG{n}{SwathDefinition}\PYG{p}{(}\PYG{n}{lons}\PYG{o}{=}\PYG{n}{data\PYGZus{}tc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{longitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}\PYG{p}{,} \PYG{n}{lats}\PYG{o}{=}\PYG{n}{data\PYGZus{}tc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{latitude}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{land\PYGZus{}mask} \PYG{o}{=} \PYG{n}{pr}\PYG{o}{.}\PYG{n}{kd\PYGZus{}tree}\PYG{o}{.}\PYG{n}{resample\PYGZus{}nearest}\PYG{p}{(}\PYG{n}{swath\PYGZus{}def}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{float64}\PYG{p}{(}\PYG{n}{data\PYGZus{}tc}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{land\PYGZus{}sea\PYGZus{}ice\PYGZus{}mask}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{values}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{:}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{n}{area\PYGZus{}def}\PYG{p}{,}
+                        \PYG{n}{radius\PYGZus{}of\PYGZus{}influence}\PYG{o}{=}\PYG{l+m+mi}{20000}\PYG{o}{/}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{fill\PYGZus{}value}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} data\PYGZus{}tc.close()}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} prepare land\PYGZus{}mask}
+\PYG{n}{land\PYGZus{}mask}\PYG{p}{[}\PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{|} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{9}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}      \PYG{c+c1}{\PYGZsh{} set water (incl. sea water)}
+\PYG{n}{land\PYGZus{}mask}\PYG{p}{[}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}                           \PYG{c+c1}{\PYGZsh{} set land}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} status\PYGZus{}flag}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i8}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{8}                    \PYG{c+c1}{\PYGZsh{} 8: no data, out of grid}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}                          \PYG{c+c1}{\PYGZsh{} 0: water}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1}      \PYG{c+c1}{\PYGZsh{} 1: land}
+\PYG{n}{TSA\PYGZus{}status\PYGZus{}flag}\PYG{p}{[}\PYG{p}{(}\PYG{n}{TSA\PYGZus{}comb} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{land\PYGZus{}mask} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{2}      \PYG{c+c1}{\PYGZsh{} 2: valid snow}
+\PYG{c+c1}{\PYGZsh{} TSA\PYGZus{}status\PYGZus{}flag[] = 3                                      \PYGZsh{} 3: [placeholder]}
+
+\PYG{n}{status\PYGZus{}flag\PYGZus{}comment} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0: water; 1: land; 2: snow (valid); 3\PYGZhy{}7: [placeholders]; 8: no data, out of grid.}\PYG{l+s+s1}{\PYGZsq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{2e2913e1f4a4b9348d2b113e4de088bdcea7059df8eee7d2a72aa037e747730f}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+
+\subsection{Visualization of Scene Snow Conditions}
+\label{\detokenize{algorithm/CIMR_L2_TSA_SCEPS:visualization-of-scene-snow-conditions}}
+\sphinxAtStartPar
+Over land, no specific snow conditions are given.
+
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{322a0c9f1cd08bf90f877e9ce6f1abef37e0e1fe37b45b17fcca5029284fc4ff}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\sphinxAtStartPar
+Demonstration of main criterium for dry snow presence, i.e. brightness temperature difference of KU\sphinxhyphen{}KA (h\sphinxhyphen{}pol)
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} TB reprojection}
+\PYG{n}{TB\PYGZus{}KUh\PYGZus{}fwdproj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{data\PYGZus{}fwd}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{KU}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{brightness\PYGZus{}temperature\PYGZus{}h}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\PYG{n}{TB\PYGZus{}KAh\PYGZus{}fwdproj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{data\PYGZus{}fwd}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{KA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{brightness\PYGZus{}temperature\PYGZus{}h}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\PYG{n}{TB\PYGZus{}KAv\PYGZus{}fwdproj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{data\PYGZus{}fwd}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{KA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{brightness\PYGZus{}temperature\PYGZus{}v}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,}\PYG{n}{geo\PYGZus{}fwd}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+
+\PYG{n}{TB\PYGZus{}KUh\PYGZus{}bckproj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{data\PYGZus{}bck}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{KU}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{brightness\PYGZus{}temperature\PYGZus{}h}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\PYG{n}{TB\PYGZus{}KAh\PYGZus{}bckproj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{data\PYGZus{}bck}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{KA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{brightness\PYGZus{}temperature\PYGZus{}h}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\PYG{n}{TB\PYGZus{}KAv\PYGZus{}bckproj} \PYG{o}{=} \PYG{n}{tools}\PYG{o}{.}\PYG{n}{reproject\PYGZus{}to\PYGZus{}grid}\PYG{p}{(}\PYG{n}{data\PYGZus{}bck}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{KA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{brightness\PYGZus{}temperature\PYGZus{}v}\PYG{o}{.}\PYG{n}{values}\PYG{p}{,}\PYG{n}{geo\PYGZus{}bck}\PYG{p}{,}\PYG{n}{area\PYGZus{}def}\PYG{o}{=}\PYG{n}{area\PYGZus{}def}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} TB difference}
+\PYG{n}{diff\PYGZus{}h\PYGZus{}fwdproj} \PYG{o}{=} \PYG{n}{TB\PYGZus{}KUh\PYGZus{}fwdproj}\PYG{o}{\PYGZhy{}}\PYG{n}{TB\PYGZus{}KAh\PYGZus{}fwdproj}
+\PYG{n}{diff\PYGZus{}h\PYGZus{}fwdproj}\PYG{p}{[}\PYG{n}{diff\PYGZus{}h\PYGZus{}fwdproj} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+\PYG{n}{diff\PYGZus{}h\PYGZus{}bckproj} \PYG{o}{=} \PYG{n}{TB\PYGZus{}KUh\PYGZus{}bckproj}\PYG{o}{\PYGZhy{}}\PYG{n}{TB\PYGZus{}KAh\PYGZus{}bckproj}
+\PYG{n}{diff\PYGZus{}h\PYGZus{}bckproj}\PYG{p}{[}\PYG{n}{diff\PYGZus{}h\PYGZus{}bckproj} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{6bc00028d3a1440a56542d877a7e56a82851ff93165103a4fdf2ff49d507c58f}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
 \begin{sphinxthebibliography}{10}
 \bibitem[1]{book/references:id11}
 \sphinxAtStartPar
@@ -1889,7 +2804,7 @@ R. Armstrong and M. Brodzik. Recent Northern Hemisphere snow extent: a compari
 M. Brodzik, B. Billingsley, T. Haran, B. Raup, and M. Savoie. EASE\sphinxhyphen{}Grid 2.0: Incremental but Significant Improvements for Earth\sphinxhyphen{}Gridded Data Sets. \sphinxstyleemphasis{ISPRS International Journal of Geo\sphinxhyphen{}Information}, 1(1):32–45, 2012. \sphinxhref{https://doi.org/10.3390/ijgi1010032}{doi:10.3390/ijgi1010032}.
 \bibitem[3]{book/references:id7}
 \sphinxAtStartPar
-A. Chang, J. Foster, and D. Hall. Nimbus\sphinxhyphen{}7 SMMR derived global snow cover parameters. \sphinxstyleemphasis{Ann. Glaciol.}, 9:39–44, 1987. \sphinxhref{https://doi.org/10.3189/S0260305500200736}{doi:10.3189/S0260305500200736}.
+A. Chang, J. Foster, and D. Hall. Nimbus\sphinxhyphen{}7 SMMR derived global snow cover parameters. \sphinxstyleemphasis{Annals of Glaciology}, 9:39–44, 1987. \sphinxhref{https://doi.org/10.3189/S0260305500200736}{doi:10.3189/S0260305500200736}.
 \bibitem[4]{book/references:id23}
 \sphinxAtStartPar
 A. Chang, J. Foster, D. Hall, A. Rango, and B. Hartline. Snow water equivalent estimation by microwave radiometry. \sphinxstyleemphasis{Cold Regions Science and Technology}, 5(3):259–267, 1982. \sphinxhref{https://doi.org/10.1016/0165-232X(82)90019-2}{doi:10.1016/0165\sphinxhyphen{}232X(82)90019\sphinxhyphen{}2}.
@@ -1907,7 +2822,7 @@ J. Foster, D. Hall, J. Eylander, G. Riggs, S. Nghiem, M. Tedesco, E. Kim,
 N. Grody and A. Basist. Global identification of snowcover using SSM/I measurements. \sphinxstyleemphasis{IEEE Transactions on Geoscience and Remote Sensing}, 34(1):237–249, 1996. \sphinxhref{https://doi.org/10.1109/36.481908}{doi:10.1109/36.481908}.
 \bibitem[9]{book/references:id2}
 \sphinxAtStartPar
-D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric\sphinxhyphen{}scale snow\sphinxhyphen{}cover maps. \sphinxstyleemphasis{Ann. Glaciol.}, 34:24–30, 2002. \sphinxhref{https://doi.org/10.3189/172756402781817770}{doi:10.3189/172756402781817770}.
+D. Hall, R. Kelly, G. Riggs, A. Chang, and J. Foster. Assessment of the relative accuracy of hemispheric\sphinxhyphen{}scale snow\sphinxhyphen{}cover maps. \sphinxstyleemphasis{Annals of Glaciology}, 34:24–30, 2002. \sphinxhref{https://doi.org/10.3189/172756402781817770}{doi:10.3189/172756402781817770}.
 \bibitem[10]{book/references:id12}
 \sphinxAtStartPar
 R. Kelly. The AMSR\sphinxhyphen{}E Snow Depth Algorithm: Description and Initial Results. \sphinxstyleemphasis{Journal of the Remote Sensing Society of Japan}, 29:307–17, 01 2009. \sphinxhref{https://doi.org/10.11440/rssj.29.307}{doi:10.11440/rssj.29.307}.
@@ -1917,43 +2832,46 @@ R. Kelly, A. Chang, L. Tsang, and J. Foster. A prototype AMSR\sphinxhyphen{}
 \bibitem[12]{book/references:id22}
 \sphinxAtStartPar
 K. Luojus, J. Pulliainen, M. Takala, J. Lemmetyinen, C. Mortimer, C. Derksen, L. Mudryk, M. Moisander, M. Hiltunen, T. Smolander, J. Ikonen, J. Cohen, M. Salminen, J. Norberg, K. Veijola, and P. Venäläinen. GlobSnow v3.0 Northern Hemisphere snow water equivalent dataset. \sphinxstyleemphasis{Scientific Data}, 8(163):163, 2021. \sphinxhref{https://doi.org/10.1038/s41597-021-00939-2}{doi:10.1038/s41597\sphinxhyphen{}021\sphinxhyphen{}00939\sphinxhyphen{}2}.
-\bibitem[13]{book/references:id13}
+\bibitem[13]{book/references:id27}
+\sphinxAtStartPar
+T. Meissner, F. Wentz, and M. Brewer. Remote Sensing Systems WindSat Calibrated TOA Level 1C Brightness Temperatures. 2022. \sphinxhref{https://doi.org/10.5067/WSA80-1CRTB}{doi:10.5067/WSA80\sphinxhyphen{}1CRTB}.
+\bibitem[14]{book/references:id13}
 \sphinxAtStartPar
 C. Mätzler. Passive microwave signatures of landscapes in winter. \sphinxstyleemphasis{Meteorology and Atmospheric Physics}, 54:241–260, 1994. \sphinxhref{https://doi.org/10.1007/BF01030063}{doi:10.1007/BF01030063}.
-\bibitem[14]{book/references:id26}
+\bibitem[15]{book/references:id26}
 \sphinxAtStartPar
 T. Pellarin, A. Mialon, R. Biron, C. Coulaud, F. Gibon, Y. Kerr, M. Lafaysse, B. Mercier, S. Morin, I. Redor, M. Schwank, and I. Völksch. Three years of L\sphinxhyphen{}band brightness temperature measurements in a mountainous area: Topography, vegetation and snowmelt issues. \sphinxstyleemphasis{Remote Sensing of Environment}, 180:85–98, 2016. \sphinxhref{https://doi.org/10.1016/j.rse.2016.02.047}{doi:10.1016/j.rse.2016.02.047}.
-\bibitem[15]{book/references:id3}
+\bibitem[16]{book/references:id3}
 \sphinxAtStartPar
 J. Pulliainen, P. Lahtinen, J. Kärnä, and S. Koponen. Algorithm Theoretical Definition Document (ATDD) for Product SN\sphinxhyphen{}OBS\sphinxhyphen{}2 \sphinxhyphen{} Snow Status (Dry/Wet) by Microwave Radiometry. Technical Report H11, EUMETSAT H\sphinxhyphen{}SAF, 2010.
-\bibitem[16]{book/references:id6}
+\bibitem[17]{book/references:id6}
 \sphinxAtStartPar
 J. Pulliainen, K. Luojus, C. Derksen, L. Mudryk, J. Lemmetyinen, M. Salminen, J. Ikonen, M. Takala, J. Cohen, T. Smolander, and J. Norberg. Patterns and trends of Northern Hemisphere snow mass from 1980 to 2018. \sphinxstyleemphasis{Nature}, 581:294–298, 2020. \sphinxhref{https://doi.org/10.1038/s41586-020-2258-0}{doi:10.1038/s41586\sphinxhyphen{}020\sphinxhyphen{}2258\sphinxhyphen{}0}.
-\bibitem[17]{book/references:id25}
+\bibitem[18]{book/references:id25}
 \sphinxAtStartPar
 K. Rautiainen, J. Lemmetyinen, J. Pulliainen, J. Vehviläinen, M. Drusch, A. Kontu, J. Kainulainen, and J. Seppänen. L\sphinxhyphen{}Band Radiometer Observations of Soil Processes in Boreal and Subarctic Environments. \sphinxstyleemphasis{IEEE Transactions on Geoscience and Remote Sensing}, 50(5):1483–1497, 2012. \sphinxhref{https://doi.org/10.1109/TGRS.2011.2167755}{doi:10.1109/TGRS.2011.2167755}.
-\bibitem[18]{book/references:id14}
+\bibitem[19]{book/references:id14}
 \sphinxAtStartPar
 K. Rautiainen, J. Lemmetyinen, M. Schwank, A. Kontu, C. Ménard, C. Mätzler, M. Drusch, A. Wiesmann, J. Ikonen, and J. Pulliainen. Detection of soil freezing from L\sphinxhyphen{}band passive microwave observations. \sphinxstyleemphasis{Remote Sensing of Environment}, 147:206–218, 2014. \sphinxhref{https://doi.org/10.1016/j.rse.2014.03.007}{doi:10.1016/j.rse.2014.03.007}.
-\bibitem[19]{book/references:id5}
+\bibitem[20]{book/references:id5}
 \sphinxAtStartPar
 W. Rees. \sphinxstyleemphasis{Remote Sensing of Snow and Ice}. CRC Press, 2005. \sphinxhref{https://doi.org/10.1201/9781420023749}{doi:10.1201/9781420023749}.
-\bibitem[20]{book/references:id10}
+\bibitem[21]{book/references:id10}
 \sphinxAtStartPar
-Kathryn Semmens, Joan Ramage, Jeremy Apgar, Katrina Bennett, Glen Liston, and Elias Deeb. Passive Microwave Remote Sensing of Snowmelt and Melt‐Refreeze Using Diurnal Amplitude Variations. In \sphinxstyleemphasis{Geophysical Monograph Series}, pages 215–226. Wiley, 1 edition, 2014. \sphinxhref{https://doi.org/10.1002/9781118872086.ch13}{doi:10.1002/9781118872086.ch13}.
-\bibitem[21]{book/references:id19}
+K. Semmens, J. Ramage, J. Apgar, K. Bennett, G. Liston, and E. Deeb. Passive Microwave Remote Sensing of Snowmelt and Melt‐Refreeze Using Diurnal Amplitude Variations. In \sphinxstyleemphasis{Geophysical Monograph Series}, pages 215–226. Wiley, 1 edition, 2014. \sphinxhref{https://doi.org/10.1002/9781118872086.ch13}{doi:10.1002/9781118872086.ch13}.
+\bibitem[22]{book/references:id19}
 \sphinxAtStartPar
 M. Takala, K. Luojus, J. Pulliainen, C. Derksen, J. Lemmetyinen, J. Kärnä, J. Koskinen, and B. Bojkov. Estimating northern hemisphere snow water equivalent for climate research through assimilation of space\sphinxhyphen{}borne radiometer data and ground\sphinxhyphen{}based measurements. \sphinxstyleemphasis{Remote Sensing of Environment}, 115:3517–3529, 2011. \sphinxhref{https://doi.org/10.1016/j.rse.2011.08.014}{doi:10.1016/j.rse.2011.08.014}.
-\bibitem[22]{book/references:id4}
+\bibitem[23]{book/references:id4}
 \sphinxAtStartPar
 M. Tedesco. \sphinxstyleemphasis{Remote Sensing of the Cryosphere}. John Wiley \& Sons, Ltd, 2014. \sphinxhref{https://doi.org/10.1002/9781118368909}{doi:10.1002/9781118368909}.
-\bibitem[23]{book/references:id24}
+\bibitem[24]{book/references:id24}
 \sphinxAtStartPar
 S. Tuttle and J. Jacobs. Enhanced Identification of Snow Melt and Refreeze Events From Passive Microwave Brightness Temperature Using Air Temperature. \sphinxstyleemphasis{Water Resources Research}, 55(4):3248–3265, 2019. \sphinxhref{https://doi.org/10.1029/2018WR023995}{doi:10.1029/2018WR023995}.
-\bibitem[24]{book/references:id15}
+\bibitem[25]{book/references:id15}
 \sphinxAtStartPar
 F. Ulaby and D. Long. \sphinxstyleemphasis{Microwave Radar and Radiometric Remote Sensing}. The University of Michigan Press, 2014. \sphinxhref{https://doi.org/10.3998/0472119356}{doi:10.3998/0472119356}.
-\bibitem[25]{book/references:id18}
+\bibitem[26]{book/references:id18}
 \sphinxAtStartPar
 L. Zschenderlein, K. Luojus, M. Takala, P. Venäläinen, and J. Pulliainen. Evaluation of passive microwave dry snow detection algorithms and application to SWE retrieval during seasonal snow accumulation. \sphinxstyleemphasis{Remote Sensing of Environment}, 288:113476, 2023. \sphinxhref{https://doi.org/10.1016/j.rse.2023.113476}{doi:10.1016/j.rse.2023.113476}.
 \end{sphinxthebibliography}
