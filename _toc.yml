@@ -21,7 +21,7 @@ chapters:
 - file: book/baseline_algorithm_definition
   title: Baseline Algorithm Definition
 - file: book/algorithm_input_output_data_definition
-  title: Algorithm Input and Output Data Definition (IODD)
+  title: Algorithm Input and Output Data Definition
 - file: book/algorithm_performance_assessment
   title: Algorithm Performance Assessment
 - file: book/roadmap
@@ -30,4 +30,8 @@ chapters:
   title: References
 - file: book/annex
   title: Annex
+  sections:
+  - file: algorithm/run_CIMR_L2_TSA
+  - file: algorithm/CIMR_L2_TSA_PICASSO
+  - file: algorithm/CIMR_L2_TSA_SCEPS
 

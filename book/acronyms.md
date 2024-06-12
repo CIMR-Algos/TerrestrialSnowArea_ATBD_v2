@@ -7,6 +7,9 @@ ACDAT
 AD
   Applicable Document
 
+ADF
+  Auxiliary Data File
+
 AVDAT
   Algorithm Validation Data Set
 
