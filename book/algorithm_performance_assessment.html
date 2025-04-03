@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Algorithm Performance Assessment &#8212; CIMR L2 Terrestrial Snow Area ATBD v2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/algorithm_performance_assessment';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Roadmap for Future ATBD Development" href="roadmap.html" />
+    <link rel="prev" title="Algorithm Input and Output Data Definition" href="algorithm_input_output_data_definition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">This ATBD was developed in the CIMR DEVALGO project. The development continues in the <a href="https://github.com/CIMR-L2PAD"style='color: #87CEEB;'>CIMR L2PAD</a> project.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="CIMR L2 Terrestrial Snow Area ATBD v2 - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="CIMR L2 Terrestrial Snow Area ATBD v2 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CIMR L2 Terrestrial Snow Area ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applicable_ref_docs.html">Applicable and Reference Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acronyms.html">Acronyms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_purpose_scope.html">Introduction, Purpose and Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background_justification_algorithm.html">Background and Justification of Selected Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 Product Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Performance Assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for Future ATBD Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="annex.html">Annex</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/run_CIMR_L2_TSA.html">CIMR L2 TSA Top-Level Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_PICASSO.html">CIMR L2 TSA Processing Chain for the Demonstration Reference Scenario (PICASSO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html">CIMR L2 TSA Algorithm for the SCEPS Polar Scene</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD_v2" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/algorithm_performance_assessment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algorithm Performance Assessment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition">L1 E2ES Demonstration Reference Scenario (Picasso) scene definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-metrics-mpef">Algorithm Performance Metrics (MPEF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-calibration-data-set-acdat">Algorithm Calibration Data Set (ACDAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-validation-data-set-avdat">Algorithm Validation Data Set (AVDAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-results-using-demonstration-reference-scenario">Test Results using Demonstration Reference Scenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radiometric-demonstration-reference-scenario">Radiometric Demonstration Reference Scenario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-demonstration-reference-scenario">Geometric Demonstration Reference Scenario</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-assessment-using-demonstration-reference-scenario">Algorithm Performance Assessment using Demonstration Reference Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="algorithm-performance-assessment">
+<h1>Algorithm Performance Assessment<a class="headerlink" href="#algorithm-performance-assessment" title="Link to this heading">#</a></h1>
+<p>The following performance assessment of the CIMR L2 TSA algorithm focuses predominantly on the radiometric scene of the Demonstration Reference Scenario.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Refer to the <a class="reference internal" href="annex.html#content-annex"><span class="std std-ref">Annex</span></a> for a demonstration of the TSA algorithm for the SCEPS Polar Scene (see <a class="reference internal" href="../algorithm/CIMR_L2_TSA_SCEPS.html"><span class="std std-doc">Jupyter Notebook</span></a>).</p>
+</div>
+<section id="l1-e2es-demonstration-reference-scenario-picasso-scene-definition">
+<h2>L1 E2ES Demonstration Reference Scenario (Picasso) scene definition<a class="headerlink" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition" title="Link to this heading">#</a></h2>
+<p>The Demonstration Reference Scenario consists of two scenes, highlighting radiometric and geometric properties, respectively.
+Each scene encorporates up to 8 different surface types, including sea ice (first and multi-year ice), land (snow-free and snow-covered), and open ocean (four states of varying sea surface temperature and salinity).
+Each surface condition has allocated a representative <a class="reference internal" href="acronyms.html#term-TB"><span class="xref std std-term">TB</span></a> for each <a class="reference internal" href="acronyms.html#term-CIMR"><span class="xref std std-term">CIMR</span></a> channel and polarisation, with the land TBs being provided in <a class="reference internal" href="#picasso-tb"><span class="std std-numref">Table 4</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="picasso-tb">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Brightness temperatures of horizontal and vertical polarization for snow-free and snow-covered land.</span><a class="headerlink" href="#picasso-tb" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p> </p></th>
+<th class="head"><p>Snow-covered</p></th>
+<th class="head"><p>TB h-pol (K)</p></th>
+<th class="head"><p>TB v-pol (K)</p></th>
+<th class="head text-left"><p>Snow-free</p></th>
+<th class="head"><p>TB h-pol (K)</p></th>
+<th class="head"><p>TB v-pol (K)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>L  (1.4GHz)</p></td>
+<td><p> </p></td>
+<td><p>229</p></td>
+<td><p>247</p></td>
+<td class="text-left"><p></p></td>
+<td><p>240</p></td>
+<td><p>262</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>C  (6.9GHz)</p></td>
+<td><p> </p></td>
+<td><p>239</p></td>
+<td><p>257</p></td>
+<td class="text-left"><p></p></td>
+<td><p>248</p></td>
+<td><p>252</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>X  (10.9GHz)</p></td>
+<td><p> </p></td>
+<td><p>248</p></td>
+<td><p>261</p></td>
+<td class="text-left"><p></p></td>
+<td><p>247</p></td>
+<td><p>251</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Ku (18.7GHz)</p></td>
+<td><p> </p></td>
+<td><p>261</p></td>
+<td><p>266</p></td>
+<td class="text-left"><p></p></td>
+<td><p>248</p></td>
+<td><p>260</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Ka (36.5GHz)</p></td>
+<td><p> </p></td>
+<td><p>259</p></td>
+<td><p>262</p></td>
+<td class="text-left"><p></p></td>
+<td><p>245</p></td>
+<td><p>240</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In the radiometric scene, all surface types are placed adjacent to each other to artificially construct all possible boundary transitions, whilst also providing sea ice concentration sub-resolution gradients (see <a class="reference internal" href="#picasso-scene"><span class="std std-numref">Fig. 5</span></a>, left).
+The geometric scene, on the other hand, features high-contrast brightness temperature patterns for ocean parameters (see <a class="reference internal" href="#picasso-scene"><span class="std std-numref">Fig. 5</span></a>, right).</p>
+<figure class="align-default" id="picasso-scene">
+<a class="reference internal image-reference" href="../_images/picasso-scene.png"><img alt="../_images/picasso-scene.png" src="../_images/picasso-scene.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Demonstration Reference Scenario (Picasso) including a radiometric scene (left) and a geometric scene (right).</span><a class="headerlink" href="#picasso-scene" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="algorithm-performance-metrics-mpef">
+<h2>Algorithm Performance Metrics (MPEF)<a class="headerlink" href="#algorithm-performance-metrics-mpef" title="Link to this heading">#</a></h2>
+<p>The performance of the binary TSA algorithm is evaluated by means of a confusion matrix set-up.
+For this, TSA estimates are divided into true positive (<a class="reference internal" href="acronyms.html#term-TP"><span class="xref std std-term">TP</span></a>), false positive (<a class="reference internal" href="acronyms.html#term-FP"><span class="xref std std-term">FP</span></a>), true negative (<a class="reference internal" href="acronyms.html#term-TN"><span class="xref std std-term">TN</span></a>) and false negative (<a class="reference internal" href="acronyms.html#term-FN"><span class="xref std std-term">FN</span></a>) observations.
+Those observation classes are used to calculate the classification accuracy per scene:</p>
+<div class="math notranslate nohighlight" id="equation-accuracy">
+<span class="eqno">(3)<a class="headerlink" href="#equation-accuracy" title="Link to this equation">#</a></span>\[\text{accuracy} = \frac{\text{TP}+\text{TN}}{\text{TP}+\text{FP}+\text{TN}+\text{FN}}.\]</div>
+<p>The evaluation addresses the main TSA product incorporating TB data from forward and backward scans.
+Metrics are further computed separately for the forward and the backward scan to demonstrate the concept’s suitability.</p>
+</section>
+<section id="algorithm-calibration-data-set-acdat">
+<h2>Algorithm Calibration Data Set (ACDAT)<a class="headerlink" href="#algorithm-calibration-data-set-acdat" title="Link to this heading">#</a></h2>
+<p>N/a</p>
+</section>
+<section id="algorithm-validation-data-set-avdat">
+<h2>Algorithm Validation Data Set (AVDAT)<a class="headerlink" href="#algorithm-validation-data-set-avdat" title="Link to this heading">#</a></h2>
+<p>N/a</p>
+</section>
+<section id="test-results-using-demonstration-reference-scenario">
+<h2>Test Results using Demonstration Reference Scenario<a class="headerlink" href="#test-results-using-demonstration-reference-scenario" title="Link to this heading">#</a></h2>
+<p>The algorithm performance assessment for the radiometric scene as well as the algorithm demonstration for the geometric scene follow the overall procedure:</p>
+<ul class="simple">
+<li><p>Definition of the Coordinate Reference System (<a class="reference internal" href="acronyms.html#term-CRS"><span class="xref std std-term">CRS</span></a>)</p></li>
+<li><p>Loading and visualisation of the scene’s ground truth</p></li>
+<li><p>Read in TB data collocated to the Ka-band channel</p></li>
+<li><p>Run the TSA algorithm incl. reprojection to the CRS</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pyresample</span> <span class="k">as</span> <span class="nn">pr</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+<span class="kn">from</span> <span class="nn">cartopy</span> <span class="kn">import</span> <span class="n">crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+
+<span class="c1"># local imports</span>
+<span class="k">if</span> <span class="s1">&#39;/algorithm/&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../.../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;algorithm/&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="s1">&#39;/tools/&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../.../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;algorithm/tools/&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">l2_format</span> <span class="k">as</span> <span class="nn">l2</span>
+<span class="kn">import</span> <span class="nn">TSA_algorithm</span> <span class="k">as</span> <span class="nn">algorithm</span>
+<span class="kn">import</span> <span class="nn">l2_tools</span> <span class="k">as</span> <span class="nn">tools</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reload local imports</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">algorithm</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">tools</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>For the performance assessment, the <a class="reference internal" href="acronyms.html#term-CRS"><span class="xref std std-term">CRS</span></a> corresponds to the native grid of the Demonstration Reference Scenario, namely EASE-Grid 2.0 polar projection of the Northern Hemisphere with a spatial resolution of 1km.
+Outputs of the TSA algorithm are reprojected to this grid for a comparison with the test card ground truth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l2_grid</span> <span class="o">=</span> <span class="s1">&#39;ease2-1.0km-testcard&#39;</span>
+<span class="n">area_def</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load_area</span><span class="p">(</span><span class="s1">&#39;../algorithm/ease2_adef.yaml&#39;</span><span class="p">,</span><span class="n">l2_grid</span><span class="p">)</span>
+
+<span class="n">cart_crs</span> <span class="o">=</span> <span class="n">area_def</span><span class="o">.</span><span class="n">to_cartopy_crs</span><span class="p">()</span>
+<span class="n">trg_lon</span><span class="p">,</span> <span class="n">trg_lat</span> <span class="o">=</span> <span class="n">area_def</span><span class="o">.</span><span class="n">get_lonlats</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="radiometric-demonstration-reference-scenario">
+<h3>Radiometric Demonstration Reference Scenario<a class="headerlink" href="#radiometric-demonstration-reference-scenario" title="Link to this heading">#</a></h3>
+<p>The snow cover conditions in the radiometric scene simulate an established snowpack of sufficient snow depth and snow density to cause noticeable volume scattering effects for Ka-band brightness temperatures.
+Challenging conditions such as shallow or wet snow are not represented, nor are complex terrain or lake ice.
+Therefore, the results should be interpreted as optimistic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load ground truth of test card</span>
+<span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;devalgo_radiometric&#39;</span>
+
+<span class="n">dem_ref_scene</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/Test_scenes_downscaled_projected/test_scene_1_compressed_lowres.nc&#39;</span>
+<span class="n">data_rad</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dem_ref_scene</span><span class="p">)</span>
+
+<span class="c1"># mirror ground truth on x-axis</span>
+<span class="n">landmask_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_rad</span><span class="p">[</span><span class="s1">&#39;landflag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">surfaces_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_rad</span><span class="p">[</span><span class="s1">&#39;surfaces&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lon_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_rad</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lat_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_rad</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmap</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="s1">&#39;darkgoldenrod&#39;</span><span class="p">])</span>
+<span class="n">vrange</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">vrange</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertAzimuthalEqualArea</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=+</span><span class="mf">90.0</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">lon_rad</span><span class="p">,</span> <span class="n">lat_rad</span><span class="p">,</span> <span class="n">landmask_rad</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;Water&#39;</span><span class="p">,</span> <span class="s1">&#39;Land&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;darkgoldenrod&#39;</span><span class="p">,</span> <span class="s1">&#39;#89A0CA&#39;</span><span class="p">,</span> <span class="s1">&#39;#658AC7&#39;</span><span class="p">,</span> <span class="s1">&#39;#3869A8&#39;</span><span class="p">,</span> <span class="s1">&#39;#1F4C7B&#39;</span><span class="p">])</span>
+<span class="n">vrange</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">4.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">6.5</span><span class="p">,</span><span class="mf">7.5</span><span class="p">,</span><span class="mf">8.5</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">vrange</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertAzimuthalEqualArea</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=+</span><span class="mf">90.0</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">lon_rad</span><span class="p">,</span> <span class="n">lat_rad</span><span class="p">,</span> <span class="n">surfaces_rad</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+<span class="c1"># ax.set_title(&#39;Test Card Surfaces&#39;)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;1 : First-year sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;2 : Multi-year sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;3 : Snow-covered land&#39;</span><span class="p">,</span> <span class="s1">&#39;4 : Snow-free land&#39;</span><span class="p">,</span> <span class="s1">&#39;5 : Ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;6 : Ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;7 : Ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;8 : Ocean&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/feb84066d6d90c90fe91c239ec6277b614aa991dcdcf8474fbad982ca321bd6d.png" src="../_images/feb84066d6d90c90fe91c239ec6277b614aa991dcdcf8474fbad982ca321bd6d.png" />
+<img alt="../_images/2d2dc676ebf342d0ea64ba05b12c57815a9b0e4583debed41b963824fccbf06b.png" src="../_images/2d2dc676ebf342d0ea64ba05b12c57815a9b0e4583debed41b963824fccbf06b.png" />
+</div>
+</div>
+<p>Testing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_radiometric&#39;</span><span class="p">:</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Radiometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+<span class="k">elif</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_geometric&#39;</span><span class="p">:</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Geometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230417T105425_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+
+<span class="n">data_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">data_bck</span><span class="p">,</span><span class="n">geoloc_bck</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">read_l1x</span><span class="p">(</span><span class="n">l1x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TSA algorithm</span>
+<span class="n">algo</span> <span class="o">=</span> <span class="s1">&#39;Pulliainen2010&#39;</span>
+
+<span class="n">TSA_fwd</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_fwd</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
+<span class="n">TSA_bck</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_bck</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
+
+<span class="n">TSA_fwd_rad</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">TSA_bck_rad</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_bck</span><span class="p">,</span><span class="n">geoloc_bck</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+
+<span class="n">TSA_rad</span><span class="p">,</span> <span class="n">TSA_uncert_rad</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">combine_proj</span><span class="p">(</span><span class="n">TSA_fwd_rad</span><span class="p">,</span><span class="n">TSA_bck_rad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\zschende\OneDrive - Ilmatieteen laitos\Files\Projects\CIMR Devalgo\ATBD\TerrestrialSnowArea_ATBD_v2\algorithm\TSA_algorithm.py:27: FutureWarning: The return type of `Dataset.dims` will be changed to return a set of dimension names in future, in order to be more consistent with `DataArray.dims`. To access a mapping from dimension names to lengths, please use `Dataset.sizes`.
+  shp = tuple(data[&#39;KA&#39;].dims[d] for d in [&#39;n_scans_interleave_feed&#39;,&#39;n_samples_earth&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_plot_rad</span> <span class="o">=</span> <span class="n">TSA_uncert_rad</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">TSA_plot_rad</span><span class="p">[</span><span class="n">landmask_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                              <span class="c1"># water</span>
+<span class="n">TSA_plot_rad</span><span class="p">[</span><span class="n">TSA_plot_rad</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span> 
+<span class="n">TSA_plot_rad</span><span class="p">[</span><span class="n">TSA_plot_rad</span> <span class="o">==</span> <span class="mf">1.5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">])</span>
+<span class="n">vrange</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">vrange</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertAzimuthalEqualArea</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=+</span><span class="mf">90.0</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">trg_lon</span><span class="p">,</span> <span class="n">trg_lat</span><span class="p">,</span> <span class="n">TSA_plot_rad</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+<span class="c1"># ax.set_title(&#39;Radiometric Test Card Evaluation&#39;)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;Water&#39;</span><span class="p">,</span> <span class="s1">&#39;Snow-free land</span><span class="se">\n</span><span class="s1">(high certainty: FWD&amp;BCK)&#39;</span><span class="p">,</span> <span class="s1">&#39;Snow cover</span><span class="se">\n</span><span class="s1">(medium certainty: FWD|BCK)&#39;</span><span class="p">,</span> <span class="s1">&#39;Snow cover</span><span class="se">\n</span><span class="s1">(high certainty: FWD&amp;BCK)&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="c1"># plt.gcf().set_size_inches((20,20))</span>
+
+<span class="c1"># plt.savefig(&#39;tsa_uncert.png&#39;, format=&#39;png&#39;, dpi=1200, bbox_inches=&#39;tight&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/a9a98d3d968b88c81d12c59469a0020cbfcafb83094d5ca509149c7b081ba728.png" src="../_images/a9a98d3d968b88c81d12c59469a0020cbfcafb83094d5ca509149c7b081ba728.png" />
+</div>
+</div>
+</section>
+<section id="geometric-demonstration-reference-scenario">
+<h3>Geometric Demonstration Reference Scenario<a class="headerlink" href="#geometric-demonstration-reference-scenario" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load ground truth of test card</span>
+<span class="n">test_card_name</span> <span class="o">=</span> <span class="s1">&#39;devalgo_geometric&#39;</span>
+
+<span class="n">dem_ref_scene</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/Test_scenes_downscaled_projected/test_scene_2_compressed_lowres.nc&#39;</span>
+<span class="n">data_geo</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">dem_ref_scene</span><span class="p">)</span>
+
+<span class="c1"># mirror ground truth on x-axis</span>
+<span class="c1"># landmask_geo = np.flip(data_ref[&#39;landflag&#39;].values,0)</span>
+<span class="n">surfaces_geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_geo</span><span class="p">[</span><span class="s1">&#39;surfaces&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lon_geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_geo</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lat_geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">data_geo</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmap</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;#89A0CA&#39;</span><span class="p">])</span>
+<span class="n">vrange</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">vrange</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertAzimuthalEqualArea</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=+</span><span class="mf">90.0</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">lon_geo</span><span class="p">,</span> <span class="n">lat_geo</span><span class="p">,</span> <span class="n">surfaces_geo</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;1 : Sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;5: Ocean&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/fc0cbc072d282b6b74d899fd1084d6997917247e4ac775f4ae40ad15e8c2c052.png" src="../_images/fc0cbc072d282b6b74d899fd1084d6997917247e4ac775f4ae40ad15e8c2c052.png" />
+</div>
+</div>
+<p>Testing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_radiometric&#39;</span><span class="p">:</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Radiometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230420T103323_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+<span class="k">elif</span> <span class="n">test_card_name</span> <span class="o">==</span> <span class="s1">&#39;devalgo_geometric&#39;</span><span class="p">:</span>
+    <span class="n">l1x</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../../..../&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Data/L1C Files/Geometric/W_PT-DME-Lisbon-SAT-CIMR-1X@KA_C_DME_20230417T105425_LD_20280110T114800_20280110T115700_TN.nc&#39;</span>
+
+<span class="n">data_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">data_bck</span><span class="p">,</span><span class="n">geoloc_bck</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">read_l1x</span><span class="p">(</span><span class="n">l1x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TSA algorithm</span>
+<span class="n">algo</span> <span class="o">=</span> <span class="s1">&#39;Pulliainen2010&#39;</span>
+
+<span class="n">TSA_fwd</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_fwd</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
+<span class="n">TSA_bck</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">dry_snow_detection</span><span class="p">(</span><span class="n">data_bck</span><span class="p">,</span><span class="n">tsa_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
+
+<span class="n">TSA_fwd_geo</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_fwd</span><span class="p">,</span><span class="n">geoloc_fwd</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">TSA_bck_geo</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">reproject_to_grid</span><span class="p">(</span><span class="n">TSA_bck</span><span class="p">,</span><span class="n">geoloc_bck</span><span class="p">,</span><span class="n">area_def</span><span class="o">=</span><span class="n">area_def</span><span class="p">,</span><span class="n">radius_of_influence</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+
+<span class="n">TSA_geo</span><span class="p">,</span> <span class="n">TSA_uncert_geo</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">combine_proj</span><span class="p">(</span><span class="n">TSA_fwd_geo</span><span class="p">,</span><span class="n">TSA_bck_geo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\zschende\OneDrive - Ilmatieteen laitos\Files\Projects\CIMR Devalgo\ATBD\TerrestrialSnowArea_ATBD_v2\algorithm\TSA_algorithm.py:27: FutureWarning: The return type of `Dataset.dims` will be changed to return a set of dimension names in future, in order to be more consistent with `DataArray.dims`. To access a mapping from dimension names to lengths, please use `Dataset.sizes`.
+  shp = tuple(data[&#39;KA&#39;].dims[d] for d in [&#39;n_scans_interleave_feed&#39;,&#39;n_samples_earth&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_plot_geo</span> <span class="o">=</span> <span class="n">TSA_uncert_geo</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c1"># TSA_plot_geo[landmask_geo == 0] = 0                              # no water mask for geometric scene</span>
+<span class="n">TSA_plot_geo</span><span class="p">[</span><span class="n">TSA_plot_geo</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span> 
+<span class="n">TSA_plot_geo</span><span class="p">[</span><span class="n">TSA_plot_geo</span> <span class="o">==</span> <span class="mf">1.5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">])</span>
+<span class="n">vrange</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">vrange</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertAzimuthalEqualArea</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=+</span><span class="mf">90.0</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">trg_lon</span><span class="p">,</span> <span class="n">trg_lat</span><span class="p">,</span> <span class="n">TSA_plot_geo</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+<span class="c1"># ax.set_title(&#39;Geometric Test Card Evaluation&#39;)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;Snow-free</span><span class="se">\n</span><span class="s1">(high certainty: FWD&amp;BCK)&#39;</span><span class="p">,</span> <span class="s1">&#39;Snow</span><span class="se">\n</span><span class="s1">(medium certainty: FWD|BCK)&#39;</span><span class="p">,</span> <span class="s1">&#39;Snow</span><span class="se">\n</span><span class="s1">(high certainty: FWD&amp;BCK)&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="c1"># plt.gcf().set_size_inches((20,20))</span>
+
+<span class="c1"># plt.savefig(&#39;tsa_uncert2.png&#39;, format=&#39;png&#39;, dpi=1200, bbox_inches=&#39;tight&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/490dc0db4f390eaef428e61cc9a60b0acdb959402780ab0112abe550e5efe830.png" src="../_images/490dc0db4f390eaef428e61cc9a60b0acdb959402780ab0112abe550e5efe830.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="algorithm-performance-assessment-using-demonstration-reference-scenario">
+<h2>Algorithm Performance Assessment using Demonstration Reference Scenario<a class="headerlink" href="#algorithm-performance-assessment-using-demonstration-reference-scenario" title="Link to this heading">#</a></h2>
+<p>The core of the performance assessment is conducted using the radiometric test card, as it covers snow-free as well as snow-covered land surfaces.
+The performance metrics are computed for the standard TSA algorithm combining forward and backward scan data, as well as for individual scans.
+Note that the choice of reprojection parameters introduces an uncertainty in the evaluation metrics of about <span class="math notranslate nohighlight">\(\pm\)</span>3%.</p>
+<p>Forward and backward scan:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_rad_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_rad</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">TSA_rad_diff</span><span class="p">[</span><span class="n">TSA_rad_diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">TSA_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># FN</span>
+<span class="n">TSA_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># TP</span>
+<span class="n">TSA_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># TN</span>
+<span class="n">TSA_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># FP</span>
+<span class="n">TSA_rad_diff</span><span class="p">[</span><span class="n">landmask_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>                               <span class="c1"># water</span>
+<span class="n">TSA_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>       <span class="c1"># sea ice</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count evaluated pixels</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">TSA_rad_diff</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># print(dict(zip(unique,counts)))</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>              <span class="c1"># -1: FN</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>              <span class="c1">#  0: TP</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>              <span class="c1">#  1: TN</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>              <span class="c1">#  2: FP</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># ignore water and sea ice for total count</span>
+
+<span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span><span class="o">/</span><span class="n">total</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">acc</span><span class="p">)</span>
+<span class="n">tpr</span> <span class="o">=</span> <span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TP rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">tnr</span> <span class="o">=</span> <span class="n">tn</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tn</span><span class="o">+</span><span class="n">fp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TN rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tnr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.95989
+TP rate:  0.95590
+TN rate:  0.96387
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confusion Matrix
+TP =  134897  |  FP =  5099
+FN =  6223    |  TN =  136021
+</pre></div>
+</div>
+</div>
+</div>
+<p>The tendency to underestimate snow presence is reflected by the true negative rate which is higher than the true positive rate.
+For the given test card grid, the TSA algorithm detects a snow cover extent of 134,897km<sup>2</sup> out of the ground truth of 141,120km<sup>2</sup>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmap</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span><span class="s1">&#39;darkblue&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;darkgoldenrod&#39;</span><span class="p">,</span> <span class="s1">&#39;darkred&#39;</span><span class="p">])</span>
+<span class="n">vrange</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">]</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">vrange</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertAzimuthalEqualArea</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=+</span><span class="mf">90.0</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">trg_lon</span><span class="p">,</span> <span class="n">trg_lat</span><span class="p">,</span> <span class="n">TSA_rad_diff</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+<span class="c1"># ax.set_title(&#39;Test Card Evaluation&#39;)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">boundaries</span><span class="o">=</span><span class="n">vrange</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.031</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.046</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">&#39;Sea ice&#39;</span><span class="p">,</span> <span class="s1">&#39;Water&#39;</span><span class="p">,</span> <span class="s1">&#39;False Negative (Underestimation)&#39;</span><span class="p">,</span> <span class="s1">&#39;True Positive (Snow)&#39;</span><span class="p">,</span> <span class="s1">&#39;True Negative (Snow-free land)&#39;</span><span class="p">,</span> <span class="s1">&#39;False Positive (Overestimation)&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/fb70aca7a7453a9ba75d3ef5ba1c6cceb6b919af22fdeee3140078192a599601.png" src="../_images/fb70aca7a7453a9ba75d3ef5ba1c6cceb6b919af22fdeee3140078192a599601.png" />
+</div>
+</div>
+<p>For the forward scan, the following metrics are obtained:</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_fwd_rad_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_fwd_rad</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[</span><span class="n">TSA_fwd_rad_diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># FN</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># TP</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># TN</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_fwd_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># FP</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[</span><span class="n">landmask_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>                               <span class="c1"># water</span>
+<span class="n">TSA_fwd_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>       <span class="c1"># sea ice</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count evaluated pixels</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">TSA_fwd_rad_diff</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># print(dict(zip(unique,counts)))</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>              <span class="c1"># -1: FN</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>              <span class="c1">#  0: TP</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>              <span class="c1">#  1: TN</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>              <span class="c1">#  2: FP</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># ignore water and sea ice for total count</span>
+
+<span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span><span class="o">/</span><span class="n">total</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">acc</span><span class="p">)</span>
+<span class="n">tpr</span> <span class="o">=</span> <span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TP rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">tnr</span> <span class="o">=</span> <span class="n">tn</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tn</span><span class="o">+</span><span class="n">fp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TN rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tnr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.95212
+TP rate:  0.92301
+TN rate:  0.98124
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the backward scan, the following metrics are obtained:</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TSA_bck_rad_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">TSA_bck_rad</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[</span><span class="n">TSA_bck_rad_diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># FN</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># TP</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># TN</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">TSA_bck_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># FP</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[</span><span class="n">landmask_rad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>                               <span class="c1"># water</span>
+<span class="n">TSA_bck_rad_diff</span><span class="p">[(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">surfaces_rad</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>       <span class="c1"># sea ice</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count evaluated pixels</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">TSA_bck_rad_diff</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># print(dict(zip(unique,counts)))</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>              <span class="c1"># -1: FN</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>              <span class="c1">#  0: TP</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>              <span class="c1">#  1: TN</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>              <span class="c1">#  2: FP</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># ignore water and sea ice for total count</span>
+
+<span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">tn</span><span class="p">)</span><span class="o">/</span><span class="n">total</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">acc</span><span class="p">)</span>
+<span class="n">tpr</span> <span class="o">=</span> <span class="n">tp</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="n">fn</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TP rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">tnr</span> <span class="o">=</span> <span class="n">tn</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tn</span><span class="o">+</span><span class="n">fp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TN rate: &#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tnr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.94831
+TP rate:  0.91927
+TN rate:  0.97735
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both the accuracy and the TP rate are higher for the TSA product when using combined rather than individual scans.
+Passive microwave snow detection approaches commonly underestimate snow cover area, which can be counteracted when incorporating both scan directions.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>An initial performance assessment of the CIMR L2 TSA algorithm is conducted using primarily the radiometric scene of the Demonstration Reference Scenario (Picasso).
+The radiometric scene contains two land surface types: snow-free and snow-covered ground.
+Note that distinct bare ground as well as established snowpacks are represented, while more challenging conditions such as shallow or wet snow, complex terrain, dense vegetation, and lake ice are not considered.
+Due to this idealistic nature of the artificial scene, high algorithm performance is to be expected.
+Indeed, the TSA algorithm achieves an accuracy of 95.99% together with a true positive rate of 95.59% and a true negative rate of 96.39%.</p>
+<p>Although the performance is very high, the metrics still reflect the common tendency of passive microwave snow detection methodologies to underestimate snow cover area, as the true negative rate is larger than the true positive rate.
+False negative pixels, i.e. pixels affected by underestimation are predominantly found in proximity to land-water boundaries.
+Although more dependent on different sea and sea ice conditions, false positive pixels representing overestimation similarly form elongated clusters along ‘coastlines’.
+Even this simple test scene therefore emphasises the need for water spill-over corrections.</p>
+<p>Despite their simplicity, both scenes of the Demonstration Reference Scenario provide insights into the utility of CIMR’s scanning geometry.
+In case of the radiometric scene, combining snow area estimates from both forward and backward-looking brightness temperatures proves beneficial.
+The overall algorithm performance is better when compared to snow area estimates from only one look direction.
+This supports the current approach of combining snow area estimates after separate processing of forward and backward scans.
+In case of the geometric scene, land surface types are not included.
+Nevertheless, the high-contrast brightness temperature patterns happen to provide a visualisation of the implemented TSA uncertainty flag, highlighting its behaviour and utility along sharp borders and gradient transitions.
+Both aspects encourage the partition of CIMR brightness temperatures depending on look direction.</p>
+<p>In contrast to the Demonstration Reference Scenario, more realistic conditions are found in the SCEPS Polar Scene.
+Yet when applying the TSA algorithm to said polar scene, barely any snow cover is detected over land.
+The primary condition for snow cover to be detected relies on a depression in Ka-band brightness temperature of horizontal polarisation, due to volume scattering effects of snowpacks.
+This is simply not met for the vast majority of the land area.
+It is understood that sample emissivities might have been used for the simulation of land parts contained within the scene.
+Those emissivities likely reflect glacial conditions, which would not result in volume scattering effects due to the continuous transition between snow, firn, and glacial ice.
+Similarly, Ku-band brightness temperatures serve as scatter-free reference which relies on a clear interface between the snowpack and the subnivean substrate.
+Terrestrial snow detection approaches are hence not applicable over glaciers and ice caps.</p>
+<p>Overall, the performance of the TSA algorithm is successfully demonstrated for the different test scenarios.
+Even though synthetic data naturally cannot fully replace real data, the assessment provides a first proof of concept for the algorithm’s handling of forward and backward brightness temperatures in order to estimate snow area and its qualitative uncertainty.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="algorithm_input_output_data_definition.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Algorithm Input and Output Data Definition</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="roadmap.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Roadmap for Future ATBD Development</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition">L1 E2ES Demonstration Reference Scenario (Picasso) scene definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-metrics-mpef">Algorithm Performance Metrics (MPEF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-calibration-data-set-acdat">Algorithm Calibration Data Set (ACDAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-validation-data-set-avdat">Algorithm Validation Data Set (AVDAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-results-using-demonstration-reference-scenario">Test Results using Demonstration Reference Scenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radiometric-demonstration-reference-scenario">Radiometric Demonstration Reference Scenario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-demonstration-reference-scenario">Geometric Demonstration Reference Scenario</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-assessment-using-demonstration-reference-scenario">Algorithm Performance Assessment using Demonstration Reference Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Finnish Meteorological Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR DEVALGO study (2022-2024) (contract 4000137493).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
