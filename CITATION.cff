@@ -13,9 +13,9 @@ authors:
     family-names: Luojus
     orcid: 'https://orcid.org/0000-0002-4066-6005'
     affiliation: Finnish Meteorological Institute
-repository-code: 'https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD'
+repository-code: 'https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD_2'
 url: >-
-  https://cimr-algos.github.io/TerrestrialSnowArea_ATBD/intro.html
+  https://cimr-algos.github.io/TerrestrialSnowArea_ATBD_v2/intro.html
 keywords:
   - Copernicus Imaging Microwave Radiometer (CIMR)
   - ESA DEVALGO
