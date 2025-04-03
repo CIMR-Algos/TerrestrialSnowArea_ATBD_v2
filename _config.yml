@@ -32,13 +32,14 @@ parse:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD  # Online location of your book
+  url: https://github.com/CIMR-Algos/TerrestrialSnowArea_ATBD_v2  # Online location of your book
   path_to_book: book  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  announcement: "This ATBD was developed in the CIMR DEVALGO project. The development continues in the <a href=\"https://github.com/CIMR-L2PAD\"style='color: #87CEEB;'>CIMR L2PAD</a> project."
   use_issues_button: false
   use_repository_button: true
   extra_footer: |
